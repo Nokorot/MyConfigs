@@ -1,0 +1,17 @@
+#!/bin/bash 
+
+# Opens GFM (Github Flavored Markdown) files.
+
+tmpfile=$(mktemp /tmp/XXXXX.html)
+exec 3>"$tmpfile"
+
+echo "$tmpfile"
+
+pandoc -f gfm -t html "$@" -o "$tmpfile"
+
+cat "$tmpfile"
+
+google-chrome --app="file://$tmpfile"
+
+rm "$tmpfile"
+

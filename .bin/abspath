@@ -1,0 +1,6 @@
+#!/usr/bin/python2
+
+import os, sys
+
+print(os.path.abspath(sys.argv[1]))
+

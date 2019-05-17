@@ -1,0 +1,71 @@
+#!/bin/bash
+
+latex_format=standalone
+file_format=png
+CONVERT=false
+ARTICLE=false
+NONSTOP=false
+POSITIONAL=()
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    -a|--article)
+    ARTICLE=true
+    format=article
+    shift # past argument
+    ;;
+    -f|--format)
+    CONVERT=true
+    format=$2
+    shift # past argument
+    shift # past vale
+    ;;
+   # -xc|--xclip)
+   # ARTICLE=true
+   # format=article
+   # shift # past argument
+   # ;;
+    -nsm|--nonstopmode)
+    NONSTOP=true
+    shift # past argument
+    ;;
+    --default)
+    DEFAULT=YES
+    shift # past argument
+    ;;
+    *)    # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift # past argument
+    ;;
+esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+
+cd ~/.bin/tmp
+
+echo "\documentclass[
+   11pt,
+   border=1pt,
+   varwidth,
+   convert
+]{$latex_format}
+ 
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+
+\begin{document}
+  \$ $@ \$
+\end{document}" > file.tex
+
+pdflatex file.tex
+
+if $CONVERT; then
+	magick -density 500 file.pdf -quality 90 file.$format
+	gio open file.$format &
+else
+	gio open file.pdf &
+fi
+
+
