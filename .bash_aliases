@@ -1,0 +1,1 @@
+/home/noko/.bash_aliases
