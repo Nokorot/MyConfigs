@@ -1,0 +1,13 @@
+#!/bin/sh
+
+myconf=$HOME/.myconf
+
+ln -fs "$myconf/.bash_aliases" "$HOME/.bash_aliases"
+ln -fs "$myconf/.bashrc" "$HOME/.bashrc"
+ln -fs "$myconf/.profile" "$HOME/.profile"
+
+ln -fs "$myconf/.bin"  "$HOME/.bin"
+
+for v in `ls $myconf/.config`; do
+    ln -fs "$myconf/.config/$v" "$HOME/.config/$v";
+done
