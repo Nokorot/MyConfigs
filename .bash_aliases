@@ -28,7 +28,7 @@ alias r="ranger"
 # $(python ~/.bin/rstring.py)
 # date +"%T"
 cdlogfile_tag=$(($(date +%s%N)/1000000))
-cdlogfile=~/.bin/cdlogs/$cdlogfile_tag
+cdlogfile=~/.cache/cdlogs/$cdlogfile_tag
 
 # pwd;
 function cd(){
