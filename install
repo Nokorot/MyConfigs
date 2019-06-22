@@ -6,8 +6,9 @@ ln -fs "$myconf/.bash_aliases" "$HOME/.bash_aliases"
 ln -fs "$myconf/.bashrc" "$HOME/.bashrc"
 ln -fs "$myconf/.profile" "$HOME/.profile"
 
-ln -fs "$myconf/.bin"  "$HOME/.bin"
+ln -s "$myconf/.bin"  "$HOME/.bin"
+ln -s "$myconf/.scripts"  "$HOME/.scripts"
 
 for v in `ls $myconf/.config`; do
-    ln -fs "$myconf/.config/$v" "$HOME/.config/$v";
+    ln -s "$myconf/.config/$v" "$HOME/.config/$v";
 done
