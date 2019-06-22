@@ -1,6 +1,8 @@
 set default-bg "#444444"
 set selection-clipboard clipboard
 
+set page-padding 1
+
 #window-title-home-tilde
 #statusbar-home-tilde
 
