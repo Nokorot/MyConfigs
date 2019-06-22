@@ -21,7 +21,7 @@ alias uniPrint="~/.bin/uniPrint"
 alias xc="xclip -selection clipboard"
 alias hl="/usr/share/vim/vim80/macros/less.sh"
 
-alias gg="google-chrome >/dev/null 2>&1 & disown"
+alias gg="google-chrome-stable >/dev/null 2>&1 & disown"
 
 alias r="ranger"
 

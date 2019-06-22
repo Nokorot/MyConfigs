@@ -61,7 +61,7 @@ bar {
 }
 
 # #---Basic Bindings---# #
-bindsym $mod+Return 		exec tabbed-st #$term
+bindsym $mod+Return 		exec tabbed-st # $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
 bindsym $mod+Shift+space 	floating toggle
@@ -97,7 +97,7 @@ bindsym $mod+r 			exec tabbed-st -e ranger #$term -e ranger
 bindsym $mod+Shift+r		exec --no-startup-id winresize
 
 bindsym $mod+t			split toggle
-bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+t		gaps inner current set 15 
 
 bindsym $mod+y			exec $term -e calcurse -D ~/.config/calcurse
 bindsym $mod+Shift+y		exec --no-startup-id i3resize left

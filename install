@@ -5,9 +5,14 @@ myconf=$HOME/.myconf
 ln -fs "$myconf/.bash_aliases" "$HOME/.bash_aliases"
 ln -fs "$myconf/.bashrc" "$HOME/.bashrc"
 ln -fs "$myconf/.profile" "$HOME/.profile"
+ln -fs "$myconf/.vimrc" "$HOME/.vimrc"
+ln -fs "$myconf/.Xdefaults" "$HOME/.Xdefaults"
+ln -fs "$myconf/.Xmodmap" "$HOME/.Xmodmap"
+ln -fs "$myconf/.fehbg" "$HOME/.fehbg"
 
-ln -fs "$myconf/.bin"  "$HOME/.bin"
+[ ! -f "$myconf/.bin" ] && ln -s "$myconf/.bin"  "$HOME/.bin"
+[ ! -f "$myconf/.scripts" ] && ln -s "$myconf/.scripts"  "$HOME/.scripts"
 
 for v in `ls $myconf/.config`; do
-    ln -fs "$myconf/.config/$v" "$HOME/.config/$v";
+    [ -f "$myconf/.config/$v" ] && ln -s "$myconf/.config/$v" "$HOME/.config/$v";
 done
