@@ -120,6 +120,7 @@ case "$mimetype" in
 		try safepipe highlight --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
     # 	try pygmentize -f ${pygmentize_format} "$path" && { dump > "${cached::-4}.txc"; dump | trim; exit 5; }
 	#	try cat "$path" && { dump > "${cached::-4}.txc"; dump | trim; exit 5; }
+		try vimcat "$path" && { dump | trim; exit 5; }
 		try cat "$path" && { dump | trim; exit 5; }
         exit 2;;
     # Ascii-previews of images:
