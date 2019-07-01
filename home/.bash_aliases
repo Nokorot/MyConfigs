@@ -3,6 +3,8 @@
 export PATH=$PATH:"/home/noko/.local/bin"
 export PATH=$PATH:"/home/noko/.bin"
 
+export apps="/usr/share/applications"
+
 #PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$' sDefault
 PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$'
 
@@ -12,7 +14,7 @@ function o(){
 	done
 }
 
-alias lm="ll -dhG *"
+alias c="clear && ls"
 
 alias trash="gio trash"
 alias rm="gio trash"
@@ -24,6 +26,10 @@ alias hl="/usr/share/vim/vim80/macros/less.sh"
 alias gg="google-chrome-stable >/dev/null 2>&1 & disown"
 
 alias r="ranger"
+
+alias mount="sudo mount"
+alias umount="sudo umount"
+alias shutdown="sudo shutdown" 
 
 # $(python ~/.bin/rstring.py)
 # date +"%T"

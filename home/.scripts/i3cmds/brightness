@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 level="$( cat '/sys/class/backlight/intel_backlight/brightness' )"
 maxlevel="$( cat '/sys/class/backlight/intel_backlight/max_brightness' )"
@@ -11,8 +11,6 @@ esac done
 
 [ $level -gt $maxlevel ] && level=$maxlevel;
 [ $level -lt         0 ] && level=0;
-
-whoami
 
 echo $level | tee /sys/class/backlight/intel_backlight/brightness
 cat /sys/class/backlight/intel_backlight/brightness

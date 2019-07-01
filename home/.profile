@@ -10,7 +10,7 @@
 
 export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export FILE="ranger"
-export TERMINAL="st"
+export TERMINAL="tabbed-st"
 export BROWSER="google-chrome"
 export BRIGHTNESS=70
 

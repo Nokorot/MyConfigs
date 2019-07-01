@@ -2,17 +2,20 @@
 
 myconf=$HOME/.myconf
 
-ln -fs "$myconf/.bash_aliases" "$HOME/.bash_aliases"
-ln -fs "$myconf/.bashrc" "$HOME/.bashrc"
-ln -fs "$myconf/.profile" "$HOME/.profile"
-ln -fs "$myconf/.vimrc" "$HOME/.vimrc"
-ln -fs "$myconf/.Xdefaults" "$HOME/.Xdefaults"
-ln -fs "$myconf/.Xmodmap" "$HOME/.Xmodmap"
-ln -fs "$myconf/.fehbg" "$HOME/.fehbg"
+gen_symlinks() 
+{
+    for v in `ls -A $myconf/$1`; do
+        vv="$2/$v";
+        if [ -f $vv ]; then
+            [ -L $vv ] || echo "File $vv alredy exists!"; 
+        elif [ -d $vv ]; then
+            [ -L $vv ] || echo "Dir $vv alredy exists!"; 
+        else	
+            ln -fs "$myconf/$1/$v" $vv;
+        fi;
+    done
+}
 
-[ ! -f "$myconf/.bin" ] && ln -s "$myconf/.bin"  "$HOME/.bin"
-[ ! -f "$myconf/.scripts" ] && ln -s "$myconf/.scripts"  "$HOME/.scripts"
-
-for v in `ls $myconf/.config`; do
-    [ -f "$myconf/.config/$v" ] && ln -s "$myconf/.config/$v" "$HOME/.config/$v";
-done
+gen_symlinks home	$HOME;
+gen_symlinks config	$HOME/.config;
+gen_symlinks share	$HOME/.local/share;
