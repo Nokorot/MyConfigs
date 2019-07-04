@@ -1,7 +1,7 @@
 #!/bin/sh
 # Give a battery name (e.g. BAT0) as an argument.
 
-varfile = "$VARS/battery"
+varfile="$VARS/battery"
 if [ -f "$varfile" ]; then 
 	. "$varfile"
 fi
@@ -34,12 +34,12 @@ elif [ "$capacity" -ge 25 ]; then
 	lowpwr_note=0;
 else
 	color="#ff0000"
-	[ $lowpwr_note -le 0 ] && notify-send "❗ Battery is low $capacity" 
+	[ $lowpwr_note -le 0 ] && [ $status != "Charging"]  && notify-send "❗ Battery is low $capacity" 
 	lowpwr_note=1;
 	warn="❗"
 fi
 
-declare -p lowpwr_note | cut -d ' ' -f 3- > $varfile
+echo "lowpwr_note=\"$lowpwr_note\""> $varfile
 
 [ -z $warn ] && warn=" "
 
