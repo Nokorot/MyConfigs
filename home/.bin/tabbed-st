@@ -1,3 +1,5 @@
 #!/bin/sh
 
-tabbed -cr 2 st -w '' $@  # -e tmux
+echo $@
+# echo $( pwd )
+tabbed -cr 2 st -w '' $@ # -e tmux

@@ -10,7 +10,7 @@
 
 export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export FILE="ranger"
-export TERMINAL="tabbed-st"
+export TERMINAL="st" # "tabbed-st" Trubels with i3 window selection
 export BROWSER="google-chrome"
 export BRIGHTNESS=70
 
