@@ -61,7 +61,7 @@ bar {
 }
 
 # #---Basic Bindings---# #
-bindsym $mod+Return 		exec tabbed-st # $term
+bindsym $mod+Return 		exec st # $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
 bindsym $mod+Shift+space 	floating toggle

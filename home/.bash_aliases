@@ -14,7 +14,10 @@ function o(){
 	done
 }
 
-alias c="clear && ls"
+function c() {
+	[ ! -z "$1" ] && cd $1;
+	clear && pwd && ls;
+}
 
 alias trash="gio trash"
 alias rm="gio trash"
