@@ -29,8 +29,13 @@ markup=pango
 #interval=20
 #signal=7
 
-[weather]
-interval=18000
+#[weather]
+#interval=18000
+#signal=5
+
+[screen_brightness]
+label=💡
+interval=once
 signal=5
 
 #[mailbox]
@@ -42,9 +47,9 @@ signal=5
 interval=30
 label=🧠
 
-[cpu]
-interval=15
-label=💻
+#[cpu]
+#interval=15
+#label=💻
 
 [volume]
 interval=once
@@ -69,5 +74,10 @@ interval=30
 [internet]
 interval=10
 
-[help]
+#[help]
+#interval=once
+
+[end]
+command=echo " "
 interval=once
+
