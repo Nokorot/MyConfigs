@@ -1,5 +1,5 @@
 
-# Clear all the modifiers 
+! Clear all the modifiers 
 clear shift
 clear lock
 clear control
@@ -9,19 +9,24 @@ clear mod3
 clear mod4 
 clear mod5
 
-# Remap keys
-keycode   9 = Escape     # The Escape key
-keycode  37 = Control_L  # The Control_L key
-keycode  66 = Escape 	 # The Caps_Lock key
-keycode 135 = Super_R	 # The Menu key
-keycode 248 = Caps_Lock	 # Fn + f11
+! Remap keys
+keycode   9 = Mode_switch	# The Escape key
+keycode  37 = Control_L		# The Control_L key
+keycode  66 = Escape	 	# The Caps_Lock key
+keycode 135 = Super_R	 	# The Menu key
+keycode 248 = Caps_Lock		# Fn + f11
 
-# Redefine modifiers
+! <no mod> <Shift> <Mode_switch> <Shift+Mode_switch> <ISO_Level3_Shift> <ISO_Level3_Shift+Shift> 
+keycode  21 = backslash grave backslash dead_grave acute notsign 
+keycode  35 = asciitilde asciicircum dead_tilde dead_circumflex diaeresis dead_diaeresis # tilde key
+keycode  48 = slash AE ae AE ae 
+
+! Redefine modifiers
 add shift   = Shift_L Shift_R				# default Shift_L Shift_R
 add lock    = Caps_Lock						# default Caps_Lock
 add control = Escape Control_L Control_R	# default Control_L Control_R
 add mod1    = Alt_L Meta_L					# default Alt_L Meta_L
 add mod2    = Num_Lock						# default Num_Lock 
-# add mod3 = ...							# default ...
+# add mod3	= ...							# default ...
 add mod4    = Super_R Super_L Hyper_L		# default Escape Super_R Super_L Hyper_L
 add mod5    = ISO_Level3_Shift Mode_switch	# default ISO_Level3_Shift Mode_switch

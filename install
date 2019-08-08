@@ -19,3 +19,5 @@ gen_symlinks()
 gen_symlinks home	$HOME;
 gen_symlinks config	$HOME/.config;
 gen_symlinks share	$HOME/.local/share;
+
+gen_symlinks bin	/usr/local/bin;

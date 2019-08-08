@@ -29,7 +29,7 @@ if [ "$capacity" -ge 75 ]; then
 elif [ "$capacity" -ge 50 ]; then
 	color="#ffffff"
 	lowpwr_note=0;
-elif [ "$capacity" -ge 25 ]; then
+elif [ "$capacity" -ge 20 ]; then
 	color="#ffff00"
 	lowpwr_note=0;
 else

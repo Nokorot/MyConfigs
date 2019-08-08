@@ -1,0 +1,11 @@
+#!/bin/sh
+
+level="$( cat '/sys/class/backlight/intel_backlight/brightness' )"
+maxlevel="$( cat '/sys/class/backlight/intel_backlight/max_brightness' )"
+
+if [ -f '/tmp/xbrightness' ]; then
+	xlevel=$( printf %.1f $(( $(cat /tmp/xbrightness) ))e-2 )
+	echo "$xlevel-$(( $level * 100 / $maxlevel ))%"
+else
+	echo "$(( $level * 100 / $maxlevel ))%"
+fi;

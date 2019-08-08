@@ -1,0 +1,46 @@
+#!/usr/bin/python3.7
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+import sys, os, getopt
+
+A = "abs,acos:arccos,asin:arcsin,atan:arctan,atan2:arctan2".split(',')
+B = "ceil,cos,cosh,degrees,e,exp,fabs,floor,fmod,frexp,hypot".split(',')
+C = "ldexp,log,log10,modf,pi,radians,sin,sinh,sqrt,tan,tanh".split(',')
+maths_expr = A+B+C
+
+def safe_eval(expr, locals=[]):
+    def pair(k):
+        if ':' in k:
+            [key, value] = k.split(':')
+        else:
+            [key, value] = [k,k]
+        return (key, np.__dict__[value]);
+    safe_locals = dict([pair(k) for k in maths_expr]);
+
+    for k in locals:
+        safe_locals[k] = locals[k];
+
+    return eval(expr, {"__builtins__":None}, safe_locals)
+
+def plot(expr, interval):
+	x = np.linspace(interval[0], interval[1], 1000);
+	plt.plot(x, safe_eval(expr, {'x': x}))
+	plt.show()
+
+def main(argv):
+	interval = [-1,1];
+	
+	try:
+		opts, args = getopt.getopt(argv, "hi:", ["interval"]);
+	except getopt.GetoptError:
+		helpmessage()
+	for opt, arg in opts:
+		if opt == '-h': helpmessage();
+		elif opt in ('-i', '--interval'):
+			interval = safe_eval(arg);
+	plot(args[0], interval)
+
+if __name__ == "__main__":
+	main(sys.argv[1:])

@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Netflix
+Exec=google-chrome --app="http://www.netflix.com"

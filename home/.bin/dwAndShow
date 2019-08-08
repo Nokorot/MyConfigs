@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo $1
+echo $2
+
+curl "$1" > "$2" 
+sxiv "$2"
