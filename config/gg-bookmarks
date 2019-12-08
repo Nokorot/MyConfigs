@@ -1,0 +1,7 @@
+youtube www.youtube.com/feed/subscriptions
+youtube-home www.youtube.com
+learn www.learn.ed.ac.uk
+messenger --app="https://www.messenger.com"
+netflix --app="https://www.netflix.com"
+twitch --app="https://www.twitch.com"
+incognito --incognito
