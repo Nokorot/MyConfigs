@@ -1,0 +1,72 @@
+#!/usr/bin/python3
+
+import sys, os
+import tempfile
+import getopt
+
+def main(argv, flags):
+    
+    # Create and edit the file list
+    filenames = argv[:]
+    listfile = tempfile.NamedTemporaryFile(delete=False)
+    listpath = listfile.name
+    
+    listfile.write("\n".join(filenames).encode("utf-8"))
+    listfile.close()
+
+    if flags.__contains__('enumerate'):
+        tmp = tempfile.NamedTemporaryFile(delete=False)
+        os.system(f'nl -n rz -w2 -s\'-\' "{listpath}" > "{tmp.name}"')
+        os.system(f'mv {tmp.name} {listpath}')
+    
+    # Edit listfile
+    editor = os.environ.get('EDITOR', 'nano')
+    os.system('%s "%s"' % (editor, listpath))
+    
+    # Read listfile
+    listfile = open(listpath, 'r')
+    new_filenames = listfile.read().split("\n")
+    listfile.close()
+    os.unlink(listpath)
+    if all(a == b for a, b in zip(filenames, new_filenames)):
+        print("No renaming to be done!")
+        sys.exit(0)
+    
+    # Generate script
+    cmdfile = tempfile.NamedTemporaryFile()
+    script_lines = []
+    script_lines.append("# This file will be executed when you close the editor.\n")
+    script_lines.append("# Please double-check everything, clear the file to abort.\n")
+    script_lines.extend("mv -vi -- \"%s\" \"%s\"\n" % (old, new) for (old, new) in zip(filenames, new_filenames) if old != new )
+    
+    script_content = "".join(script_lines)
+    cmdfile.write(script_content.encode("utf-8"))
+    cmdfile.flush()
+    
+    # Open the script and let the user review it, then check if the script
+    # was modified by the user
+    os.system('vim "%s"' % cmdfile.name)
+    cmdfile.seek(0)
+    script_was_edited = (script_content != cmdfile.read())
+    
+    # Do the renaming
+    os.system('/bin/sh "%s"' % cmdfile.name)
+    cmdfile.close()
+   
+def helpmessage():
+    print('bulkrename -n')    
+ 
+if __name__ == '__main__':
+    flags = []
+    
+    try:
+        opts, argv = getopt.getopt(sys.argv[1:], "hn", ["enumerate"]);
+    except getopt.GetoptError:
+        helpmessage()
+    for opt, arg in opts:
+        if opt == '-h': helpmessage();
+        elif opt in ('-n', '--enumerate'):
+            flags.append('enumerate')
+
+    main(argv, flags)
+

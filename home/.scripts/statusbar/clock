@@ -9,3 +9,5 @@ case $BLOCK_BUTTON in
 	3) pgrep -x dunst >/dev/null && notify-send "📅 Time/date module" "\- Left click to show upcoming appointments for the next three days via \`calcurse -d3\` and show the month via \`cal\`
 - Middle click opens calcurse if installed" ;;
 esac
+
+# 🕛 🕧 🕐 🕜 🕑 🕝 🕒 🕞 🕓 🕟 🕔 🕠 🕕 🕡 🕖 🕢 🕗 🕣 🕘 🕤 🕙 🕥 🕚 🕦

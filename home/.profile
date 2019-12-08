@@ -1,19 +1,18 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+#!/bin/sh
+# Profile file. Runs on login
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
+#Needed for conecting to the uni-cloud-print, not in use at the moment
+export CUPS_USER="s1706798" 
 
-export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export FILE="ranger"
-export TERMINAL="st" # "tabbed-st" Trubels with i3 window selection
+export TERMINAL="urxvt" # "tabbed-st" Trubels with i3 window selection
 export BROWSER="google-chrome"
-export EDITOR="vim"
-export BRIGHTNESS=70
+export EDITOR="nvim"
+
+export URXVT_PERL_LIB=$HOME/.config/urxvt/ext
+
+
+[ -f "$HOME/.Xresources" ] && xrdb ~/.Xresources
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -23,13 +22,16 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+add2path() {
+	[ -d $1 ] && PATH="$PATH:$1"
+}
+add2pathRec() {
+	[ -d $1 ] && PATH="$PATH:$(du $1 | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+}
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+add2path $HOME/.bin/
+add2path $HOME/.local/bin/
+
+add2pathRec $HOME/.scripts/
+
 

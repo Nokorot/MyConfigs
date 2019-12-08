@@ -1,9 +1,16 @@
-URxvt.font:            xft:Monospace-12
+/* st */
+st.alpha: 0.8
+st.font: Monospace-12;
+
+/* URxvt */
+URxvt.font:    xft:DejaVu Sans Mono-12
+/* URxvt.font:    xft:System San Francisco Display, FontAwesome 11:pixelsize12 */
+ 
 
 URxvt.scrollBar: false
 
 URxvt.depth: 32
-URxvt.background: rgba:2800/2800/2800/f000
+URxvt.background: rgba:2800/2800/2800/c500
 
 URxvt.perl-ext-common: resize-font,fullscreen,keyboard-select,clipboard
 URxvt.keysym.F11: perl:fullscreen:switch
@@ -18,22 +25,11 @@ URxvt.clipboard.autocopy: true
 URxvt.keysym.M-c: perl:clipboard:copy
 URxvt.keysym.M-v: perl:clipboard:paste
 
-/* *.foreground: #d6dbe5 */
-/* *.background: #131313 */
-/* *.color0:     #1f1f1f */
-/* *.color4:     #2a84d2 */
-/* *.color5:     #4e5ab7 */
-/* *.color6:     #1081d6 */
-/* *.color7:     #d6dbe5 */
-/* *.color8:     #d6dbe5 */
-/* *.color9:     #de352e */
-/* *.color10:    #1dd361 */
-/* *.color11:    #f3bd09 */
-/* *.color12:    #1081d6 */
-/* *.color13:    #5350b9 */
-/* *.color14:    #0f7ddb */
-/* *.color15:    #ffffff */
+/* Sxiv */
+Sxiv.background: #202020
  
+
+/* General */
 *.foreground: #ecdcc2
 *.color0:  #1d2021  
 *.color1:  #cc241d  
@@ -52,9 +48,3 @@ URxvt.keysym.M-v: perl:clipboard:paste
 *.color14: #8ec07c 
 *.color15: #ebdbb2 
 *.colorBD: #d6bde5 
-
-/* *.background: #282828 */
-/* *.foreground: #ebdbb2 */
-/* *.cursorColor: #add8e6 */ 
-
-

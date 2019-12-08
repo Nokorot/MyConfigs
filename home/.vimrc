@@ -1,15 +1,24 @@
-nnoremap <C-Left> 	:tabprevious<CR>
-nnoremap <C-Right> 	:tabnext<CR>
 nnoremap <C-j> 		:tabprevious<CR>
 nnoremap <C-k> 		:tabnext<CR>
-
-nnoremap <C-Up>		:move -2<CR>
-nnoremap <C-Down> 	:move +1<CR>
-
-imap <A-d> 	<C-d>
-imap <A-u> 	<C-u>
 
 inoremap jj <ESC>
 
 set tabstop=4
 " set smartindent
+
+
+
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+set shellslash
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'

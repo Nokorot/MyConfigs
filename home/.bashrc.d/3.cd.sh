@@ -14,5 +14,5 @@ function cd() {
 		builtin cd "$@"; 
 		[ "$loc" != "$(pwd)" ] && echo "$loc" >> $cdlogfile;
 	fi
-	[ "$loc" != "$(pwd)" ] && (pp; ls)
+	[ "$loc" != "$(pwd)" ] && (pp; ls --color=auto)
 }

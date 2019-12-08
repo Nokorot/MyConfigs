@@ -1,0 +1,8 @@
+#!/bin/sh 
+
+i3 workspace "7: 📖"
+i3 layout tabbed
+
+zathura "$@" & disown
+
+

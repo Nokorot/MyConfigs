@@ -1,12 +1,17 @@
 #!/bin/sh
 # Give a battery name (e.g. BAT0) as an argument.
 
+low_battery_audio_file="$HOME/.config/low_battery.wav"
+
 varfile="$VARS"battery
 if [ -f "$varfile" ]; then 
 	. "$varfile"
 fi
 
 [ -x $lowpwr_note ] && lowpwr_note=0;
+[ -x $play_low_battery_sound ] && play_low_battery_sound=1;
+
+[ -x $sound ] && lowpwr_note=0; "Off, auto,"
 
 case $BLOCK_BUTTON in
     3) pgrep -x dunst >/dev/null && notify-send "🔋 Battery module" "🔋: discharging
@@ -37,9 +42,21 @@ else
 	warn="❗"
 fi
 
+if [ "$capacity" -le 5 ] && [ "$status" != "Charging" ]; then
+	[ $play_low_battery_sound -ge 1 ] && \ 
+		ffplay -nodisp -autoexit -t 2 $low_battery_audio_file \
+				> /dev/null 2>&1 &
+	notify-send "❗ Battery is low $capacity"
+else 
+	low_battery_audio_file=1
+fi
+
+echo $(date) "$capacity" >> $HOME/.config/battery.txt
 echo "lowpwr_note=\"$lowpwr_note\""> $varfile
+echo "play_low_battery_sound=\"$play_low_battery_sound\"">> $varfile
 
 [ -z $warn ] && warn=" "
-
 [ "$status" = "Charging" ] && color="#ffffff"
-printf "<span color='%s'>%s%s%s</span>\n" "$color" "$(echo "$status" | sed -e "s/,//;s/Discharging/🔋/;s/Not Charging/🛑/;s/Charging/🔌/;s/Unknown/♻️/;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+#     🔋
+#  🔌
+printf "<span color='%s'>%s%s%s</span>\n" "$color" "$(echo "$status" | sed -e "s/,//;s/Discharging/🔋/;s/Not Charging/🛑/;s/Charging/ /;s/Unknown/♻️/;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"

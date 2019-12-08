@@ -1,0 +1,10 @@
+#!/bin/sh
+
+setbg &		# Set the background
+remaps
+[ -f "$HOME/.Xresources" ] && xrdb $HOME/.Xresources
+unclutter &		# Remove mouse when idle
+compton &		# xcompmgr for transparency
+dunst &			# dunst for notifications
+mpdupdate &
+dropbox start &

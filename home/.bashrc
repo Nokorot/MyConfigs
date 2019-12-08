@@ -14,4 +14,10 @@ if [ -d ~/.bashrc.d ]; then
   unset i
 fi
 
+# This is for esting
+
+alias mv="mv -i"
+
+
 ###
+

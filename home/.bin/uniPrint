@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "" | neomutt -F $HOME/.config/mutt/uniPrint_muttrc -s "EveryonePrint" -a "$@" -- EveryonePrint@ed.ac.uk
