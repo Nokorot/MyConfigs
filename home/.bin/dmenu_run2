@@ -1,0 +1,2 @@
+#!/bin/sh
+< ~/.config/dmenu_run.wlist dmenu "$@" | ${SHELL:-"/bin/sh"} &

@@ -97,7 +97,7 @@ set $ugaps gaps outer current
 # Maybe move the workspace assignment and naiming to .profile
 #
 for_window 	[class="chrome"] 		border pixel 3
-for_window 	[class="chrome"] 		move workspace $ws2	
+# for_window 	[class="chrome"] 		move workspace $ws2	
 for_window 	[class="thunderbird"] 	move workspace $ws10
 for_window 	[class="zathura"] 		move workspace $ws7
 for_window 	[class="zathura"] 		workspace $ws7; layout tabbed
