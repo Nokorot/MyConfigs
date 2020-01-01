@@ -7,6 +7,7 @@
 # sudo apt install -y dunst unclutter libnotify-bin
 # sudo apt install -y suckless-tools feh 
 # sudo apt install -y sxiv
+# sudo apt install -y gnome-screenshot
 # 
 # sudo apt install -y fonts-dejavu fonts-font-awsome fonts-emojione 
 
