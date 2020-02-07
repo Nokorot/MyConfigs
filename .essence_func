@@ -31,5 +31,5 @@ install_google_chorme() {
 ## Set sudoers no-pass premition 
 sudoers_nopass() {
  echo "%sudo ALL=NOPASSWD: /usr/bin/mount, /urs/bin/umount, /usr/local/bin/brightness, /usr/sbin/shutdown" \
-		> /etc/sudoers.d/no-pass
+		| sudo tee /etc/sudoers.d/no-pass
 }
