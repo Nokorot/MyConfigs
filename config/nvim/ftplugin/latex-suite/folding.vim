@@ -7,6 +7,11 @@
 "  Description: functions to interact with Syntaxfolds.vim
 "=============================================================================
 
+" This is to disable folding
+finish
+
+
+
 nnoremap <unique> <Plug>Tex_RefreshFolds :call MakeTexFolds(1, 1)<cr>
 
 augroup LatexSuite

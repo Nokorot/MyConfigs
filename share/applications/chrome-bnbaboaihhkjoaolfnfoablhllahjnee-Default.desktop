@@ -6,5 +6,4 @@ Type=Application
 Name=GeoGebra Classic
 Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=bnbaboaihhkjoaolfnfoablhllahjnee
 Icon=chrome-bnbaboaihhkjoaolfnfoablhllahjnee-Default
-NoDisplay=true
 StartupWMClass=crx_bnbaboaihhkjoaolfnfoablhllahjnee

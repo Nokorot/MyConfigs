@@ -66,10 +66,13 @@ bindsym $mod+Shift+aring	$movetoendws
 # bindsym $mod+Ctrl+aring		$move 0; workspace 0; $move prev; workspace back_and_forth
 bindsym $mod+Prior			workspace prev
 bindsym $mod+Shift+Prior	$move prev; workspace prev;
+bindsym $mod+Ctrl+Prior	    $move prev
 bindsym $mod+Next			workspace next
 bindsym $mod+Shift+Next		$move next; workspace next;
+bindsym $mod+Ctrl+Next		$move next
 
 # switch to workspace
+bindsym $mod+|		workspace $ws0
 bindsym $mod+1		workspace $ws1
 bindsym $mod+2		workspace $ws2
 bindsym $mod+3		workspace $ws3
@@ -82,6 +85,7 @@ bindsym $mod+9		workspace $ws9
 bindsym $mod+0		workspace $ws10
 
 # move focused container to workspace
+bindsym $mod+Control+|	$move $ws0
 bindsym $mod+Control+1	$move $ws1
 bindsym $mod+Control+2	$move $ws2
 bindsym $mod+Control+3	$move $ws3
@@ -94,7 +98,7 @@ bindsym $mod+Control+9	$move $ws9
 bindsym $mod+Control+0	$move $ws10
 
 # move focused container to workspace and go there
-bindsym $mod+Shift+1	$move $ws1;  workspace $ws1
+bindsym $mod+Shift+|	$move $ws0;  workspace $ws0
 bindsym $mod+Shift+2	$move $ws2;  workspace $ws2
 bindsym $mod+Shift+3	$move $ws3;  workspace $ws3
 bindsym $mod+Shift+4	$move $ws4;  workspace $ws4

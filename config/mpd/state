@@ -1,9 +1,9 @@
-sw_volume: 58
+sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:toggle_visualizer
-state: play
-current: 49
-time: 4.121000
+state: pause
+current: 445
+time: 1349.916000
 random: 1
 repeat: 0
 single: 0
@@ -105,4 +105,515 @@ playlist_begin
 90:DragonForce/cp/DragonForce - Trail of Broken Hearts-xS62zFXDLzw.opus
 91:DragonForce/cp/DragonForce - Valley Of The Damned (Bonus Track) (Full Album)-TqU_Ujkp3u0.ogg
 92:pl1/Wagner - Tannhauser - Arrival of the Guests at Wartburg.mp3
+93:pl1/Celtic Fantasy Music - Hymn to AnnÃ»mara.mp3
+94:pl1/Celtic Music - Morrígan.mp3
+95:Mix01/jdqcB_lKS1A - Magic Fantasy Music - The Last of Her Kind ( Epic Emotional ).opus
+96:Mix01/dUNOfNad59Q - Dark Vampire Music - The Vampire Masquerade _ Waltz Music.opus
+97:Mix01/7sALMd4Pojc - Dark Vampiric Music - I Bleed For You _ Emotional.opus
+98:Mix01/VHxjyBtKxpM - Nordic_Viking Music - Fólkvangr.opus
+99:Mix01/WoiEYpK_Eyw - Position Music - Catapult (2WEI - 'Wonder Woman' Trailer 2 Music).opus
+100:pl1/Alone Wolf (violin).mp3
+101:pl1/Memories - Beautiful Piano Music.mp3
+102:pl1/Alone Wolf (violin).mp3
+103:pl1/Angels Call - Beautiful violin music.mp3
+104:pl1/Beautiful Piano Music - Time to Let Go.mp3
+105:pl1/Beautiful Piano Music ~ Relaxing Music Mix for Studying & Sleeping.mp3
+106:pl1/Broken Wings - Beautiful Piano Music.mp3
+107:pl1/Brunuhville  - Age Of  Wonders.mp3
+108:pl1/Celtic Fantasy Music - Hymn to AnnÃ»mara.mp3
+109:pl1/Celtic Music - Ancient Storm.mp3
+110:pl1/Celtic Music - Bua Nó Bás (Victory or Death).mp3
+111:pl1/Celtic Music - For the King (1).mp3
+112:pl1/Celtic Music - For the King.mp3
+113:pl1/Celtic Music - Mists of Avalon.mp3
+114:pl1/Celtic Music - Moonsong.mp3
+115:pl1/Celtic Music - Morrígan.mp3
+116:pl1/Celtic Music - Victorious.mp3
+117:pl1/Celtic Music - Woodland Tales.mp3
+118:pl1/Cold  - Jorge Méndez (Sad Piano & Violin Instrumental).mp3
+119:pl1/Endless Love {Piano Version}   Beautiful Piano.mp3
+120:pl1/Epic Celtic Music - Medieval Anthem - Peter Crowley Fantasy Dream.mp3
+121:pl1/Epic Fantasy Music - Dragon Empress.mp3
+122:pl1/Epic Fantasy Music - Rising Sun (1).mp3
+123:pl1/Epic Fantasy Music - Rising Sun (2).mp3
+124:pl1/Epic Fantasy Music - Rising Sun.mp3
+125:pl1/Epic Orchestral Siren Music - Queen Of The Sea.mp3
+126:pl1/Eternal Love - Beautiful violin music.mp3
+127:pl1/EURIELLE - Rescue Me GEMINNA.mp3
+128:pl1/Fantasy Celtic Music - Spirit of the Wild.mp3
+129:pl1/Fantasy Elven Music - The Voice of the Forest.mp3
+130:pl1/Fantasy Medieval Music - Rise of a Kingdom.mp3
+131:pl1/Fantasy Medieval Music - Rise of the Fallen.mp3
+132:pl1/Fantasy Medieval Music - Song of the North.mp3
+133:pl1/Fantasy Medieval Music - Wolfborn.mp3
+134:pl1/Fantasy Music - Age of Wonders.mp3
+135:pl1/Fantasy Music - The Hunt.mp3
+136:pl1/Globus - The Promise (Epic Orchestral Choir)(Vocal)(Lyrics).mp3
+137:pl1/Magical Music Instrumental - Wishing Well.mp3
+138:pl1/Mattia Cupelli - Love Lost (Beautiful Emotional Orchestral).mp3
+139:pl1/Memories - Beautiful Piano Music.mp3
+140:pl1/Mitosis vs Meiosis RAP BATTLE!.mp3
+141:pl1/Most Epic Music Ever- Supernova-.mp3
+142:pl1/My Silent Cry - Beautiful violin music.mp3
+143:pl1/Naruto - Sadness and Sorrow (Violin) - Taylor Davis.mp3
+144:pl1/Ocean Soul - Beautiful Piano Music.mp3
+145:pl1/Orff - Carmina Burana - Fortuna Imperatrix Mundi - O Fortuna.mp3
+146:pl1/Pirate Love Song - Black Heart.mp3
+147:pl1/Pirate Music - Escaping The Kraken - Peter Crowley Fantasy Dream.mp3
+148:pl1/Prokofiev - Dance Of The Knights And Juliet s Dance.mp3
+149:pl1/Relax Violin Music.mp3
+150:pl1/Sad piano (it s hard to say Goodbye ) by Michael Ortega.mp3
+151:pl1/Sad Piano & Violin Song -   Moonlight Improvisation  Music by Vadim Kiselev.mp3
+152:pl1/Sad Violin (2).mp3
+153:pl1/Sad Violin [HQ].mp3
+154:pl1/Sad Violin and Piano.mp3
+155:pl1/Sad Violin.mp3
+156:pl1/Schumann - Traumerei.mp3
+157:pl1/Sibelius - Finlandia.mp3
+158:pl1/Sibelius - Valse Triste.mp3
+159:pl1/Smetana - The Moldau.mp3
+160:pl1/Smetna - The Bartered Bride.mp3
+161:pl1/Song From A Secret Garden - Violin & Piano.mp3
+162:pl1/Sound of an Angel - Beautiful violin music.mp3
+163:pl1/Stand-up Maths - Stand-up Maths theme.mp3
+164:pl1/Suppe - Light Cavalry.mp3
+165:pl1/Suppe - Poet and Peasant.mp3
+166:pl1/Tchaikovsky - Marche Slave.mp3
+167:pl1/Tchaikovsky - Piano Concerto No. 1 in B flat minor.mp3
+168:pl1/Tchaikovsky - Polonaise.mp3
+169:pl1/Tchaikovsky - The Sleeping Beauty.mp3
+170:pl1/Tchaikovsky - Waltz of the FLowers, from  The Nutcracker.mp3
+171:pl1/Verdi - La Traviata.mp3
+172:pl1/Verdi - Nabucco.mp3
+173:pl1/Verdi - The Force of Destiny.mp3
+174:pl1/VERY SAD PIANO SONG (this will make you cry).mp3
+175:pl1/Vivaldi - Flute Concerto in G minor  La Notte.mp3
+176:pl1/Vivaldi - Mandoline Concerto in C.mp3
+177:pl1/Vivaldi - The Four Seasons - Spring.mp3
+178:pl1/Wagner - Lohengin.mp3
+179:pl1/Wagner - Ride of the Valkyries.mp3
+180:pl1/Wagner - Siegfried s Death and Funeral March.mp3
+181:pl1/Wagner - Tannhauser - Arrival of the Guests at Wartburg.mp3
+182:pl1/Wanderer - Epic Celtic Music.mp3
+183:pl1/Weber - Der Freischutz.mp3
+184:pl1/When the Last Angel Falls - Beautiful piano music.mp3
+185:pl1/S1.mp3
+186:pl1/Pirate Fantasy Music - Sons of the Storm.mp3
+187:pl2/Ivan Torrent - Before I Leave This World (Beautiful Orchestral).mp3
+188:pl2/Eurielle - Carry Me [Emotional Vocal Orchestral].mp3
+189:pl2/Marcus Warner - Homeward [Electronic Inspirational Music].mp3
+190:pl2/Ivan Torrent - Icarus (feat. Julie Elven).mp3
+191:pl2/Most Epic Music Ever After The Fall by Phil Rey.mp3
+192:pl2/Twelve Titans Music - From The Ashes Reborn [Powerful Epic Music].mp3
+193:pl2/Twelve Titans Music - Indestructible [Powerful Epic Music].mp3
+194:pl2/Most Epic Music Ever Hunted Assassin.mp3
+195:pl2/Most Epic Music Ever Demo by Stefano Mocini.mp3
+196:pl2/Most Epic Music Ever Black Eagle by Symphonic Sound Space.mp3
+197:pl2/Most Epic Music Ever The Land Of Gods by Corentin Sauvage.mp3
+198:pl2/EPIC POP  ''Open Your Eyes'' by Jules Bromley [Feat.Victoria Beaumont].mp3
+199:pl2/Most Epic Music Ever Eternity.mp3
+200:pl2/Most Epic Music Ever Around The World.mp3
+201:pl2/Most Epic Music Ever The Great Unknown by Yaroslav Mjelsky.mp3
+202:pl2/Most Epic Music Ever Deja Vu (Déjà vu) by Emy Uiuiu.mp3
+203:pl2/Most Wondrous Battle Music Ever Facing The Gods.mp3
+204:pl2/Most Epic Aggressive Modern Hybrid-Orchestral Music  Hour Epic Massive Powerful Music Mix.mp3
+205:pl2/Gothic Music - Lua Eterna (Symphonic Metal ending).mp3
+206:pl2/Most Beautiful Music Suns And Stars by Really Slow Motion.mp3
+207:pl2/Most Beautiful Music Sun by Thomas Bergersen (1).mp3
+208:pl2/Most Beautiful Music Sun by Thomas Bergersen.mp3
+209:pl2/Most Epic Music Ever Longest Journey.mp3
+210:pl2/Most Epic Music Ever Never Give Up (1).mp3
+211:pl2/Most Epic Music Ever Never Give Up.mp3
+212:pl2/Most Epic Battle Music Legends Remembered by Epic Score.mp3
+213:pl2/Most Epic Music Ever The Eternal Rest Of A Ronin.mp3
+214:pl2/Most Epic Music A Hero Will Rise by Must Save Jane.mp3
+215:pl2/Most Emotional Music Ever Essence Of Love.mp3
+216:pl2/Most Beautiful Music Silver Lining by Lights & Motion.mp3
+217:pl2/Most Epic Music Lullaby Of The Siren by Audiomachine (1).mp3
+218:pl2/Most Epic Music Lullaby Of The Siren by Audiomachine.mp3
+219:pl2/Most Epic Music Ever Atlas.mp3
+220:pl2/Most Epic Music Ever Arise by Christian Baczyk.mp3
+221:pl2/Most Emotional Music Ever Nightsky.mp3
+222:pl2/Most Epic Music Ever A Dying Planet.mp3
+223:pl2/Most Epic Music Ever Let There Be Light.mp3
+224:pl2/Most Epic Music Ever World Of Wonder.mp3
+225:pl2/Most Epic Battle Music Wars Of Faith by Audiomachine (1).mp3
+226:pl2/Most Epic Battle Music Wars Of Faith by Audiomachine.mp3
+227:pl2/Most Epic Music Ever Iron Poetry by Really Slow Motion.mp3
+228:pl2/Most Epic Music Ever Wisdom Of The Ages.mp3
+229:pl2/Most Epic Music Ever Against The Odds by Magic Music Studio.mp3
+230:pl2/Most Epic Music Ever Fantasy Island.mp3
+231:pl2/Most Epic Music Ever Seeds Of Promise by audiomachine.mp3
+232:pl2/Most Wondrous Battle Music Ever The Wild Card (Epic RockAction).mp3
+233:pl2/Most Epic Music Ever Land of Shadows.mp3
+234:pl2/Most Wondrous Battle Music Ever Action Star (Rock).mp3
+235:pl2/Most Epic Music No Retreat, No Surrender by Audiomachine (1).mp3
+236:pl2/Most Epic Music No Retreat, No Surrender by Audiomachine.mp3
+237:pl2/Most Epic Music Ever Fragments Of Another World.mp3
+238:pl2/Most Epic Music Ever Rising Souls.mp3
+239:pl2/Most Epic Music Ever Revenge Of The Earth by Michael Maas.mp3
+240:pl2/Most Wondrous Battle Music Ever Lords of Lankhmar by Audiomachine.mp3
+241:pl2/Celtic & Northern Music THE JOURNEY  by Ian Fontova Valero.mp3
+242:pl2/Most Epic Music Ever Pantheon by Sound Adventures.mp3
+243:pl2/Most Epic Music Rebirth by Must Save Jane (1).mp3
+244:pl2/Most Epic Music Rebirth by Must Save Jane.mp3
+245:pl2/Most Epic Music Ever Legendary.mp3
+246:pl2/Most Epic Music Ever Rise Of An Empire.mp3
+247:pl2/Most Epic Music Ever Heaven On Earth by Jonathan Wright.mp3
+248:pl2/Most Epic Music Ever Crescendo.mp3
+249:pl2/Most Epic Music Ever Seraphim by J.T. Peterson.mp3
+250:pl2/Most Epic Music Deep Heart by Audiomachine.mp3
+251:pl2/Most Epic Music Ever Final Hope.mp3
+252:pl2/Most Epic Battle Music Leviathan by Really Slow Motion.mp3
+253:pl2/Most Epic Music Ever It's Coming.mp3
+254:pl2/Most Epic Music Ever Fields Of Elysium by BrunuhVille.mp3
+255:pl2/Most Epic Music Ever Waltz With Vampires.mp3
+256:pl2/Most Epic Music Ever Floating Land by Allegro.mp3
+257:pl2/Most Epic Music Ever Live Free.mp3
+258:pl2/Most Epic Music Ever The Honor In Her Efforts by Phil Lober.mp3
+259:pl2/Most Epic Music Ever The Prophecy.mp3
+260:pl2/Emotional Dark Music - The Eternal Forest.mp3
+261:pl2/Most Epic Music Ever Castaways.mp3
+262:pl2/Most Epic Battle Music Ever Battlefield Earth by Phil Rey.mp3
+263:pl2/Most Epic Music Ever We Are Stars.mp3
+264:pl2/Most Epic Music Satori by Audiomachine.mp3
+265:pl2/Most Epic Music Lara by Phil Lober.mp3
+266:pl2/Most Epic Music Ever Affinity.mp3
+267:pl2/Most Epic Music Ever Into The Wild  Chapter II.mp3
+268:pl2/Most Epic Battle Music You Better Run by Audiomachine.mp3
+269:pl2/Most Epic Music Ever Oriana by MythFox.mp3
+270:pl2/Most Epic Music Greatness Within by J.T. Peterson.mp3
+271:pl2/Most Epic Music Ever Terra Nova.mp3
+272:pl2/Most Beautiful Music Beyond Our Dreams by Epic Soul Factory.mp3
+273:pl2/Most Epic Music Ever Tosca Fantasy.mp3
+274:pl2/Most Epic Electronic Music We Are Lions.mp3
+275:pl2/Most Epic Music Ever Edge Of Time.mp3
+276:pl2/Most Beautiful Music Ever Beyond the Bounds of Joy by Sound Adventures.mp3
+277:pl2/Most Epic Music Ever The Wolf And The Moon by BrunuhVille (1).mp3
+278:pl2/Most Epic Music Ever The Wolf And The Moon by BrunuhVille.mp3
+279:pl2/Most Epic Battle Music Destiny And Honor (Mix) by Epic Score.mp3
+280:pl2/Most Epic Music Ever Whispers Of Wonders by Paul Dinletir.mp3
+281:pl2/Most Epic Music Ever Brotherhood.mp3
+282:pl2/Most Epic Battle Music Dragonland by Thomas Bergersen.mp3
+283:pl2/Most Epic Music Ever Revelation by Really Slow Motion.mp3
+284:pl2/Most Epic Music Ever Question of Purpose.mp3
+285:pl2/Most Epic Music Ever Lacrimosa.mp3
+286:pl2/Most Beautiful Music Ever We Rule The World by Phil Lober.mp3
+287:pl2/Most Epic Music Ever No Deadlines.mp3
+288:pl2/Most Epic Music Ever Anomaly.mp3
+289:pl2/Most Emotional Music Ever Chorale (Five) by Iskra String Quartet.mp3
+290:pl2/Most Epic Music Victory by Two Steps From Hell.mp3
+291:pl2/Most Epic Music Ever Royal Salvation.mp3
+292:pl2/WHO WILL SAVE US NOW  by David Chappell.mp3
+293:pl2/Most Epic Music Ever Ignite.mp3
+294:pl2/Most Epic Music Ever Father by Cinesonic.mp3
+295:pl2/Most Wondrous Battle Music Ever One Destiny.mp3
+296:pl2/Most Wondrous Battle Music Ever The Awakening.mp3
+297:pl2/Most Epic Music Ever A Man Of His Word.mp3
+298:pl2/Most Epic Music Ever Final Mission.mp3
+299:pl2/Most Epic Music Ever Supernova.mp3
+300:pl2/Most Epic Music Ever Eternal Realms by David Butterfield.mp3
+301:pl2/Most Epic Music Ever When It All Falls Down by Ivan Torrent (1).mp3
+302:pl2/Most Epic Music Ever When It All Falls Down by Ivan Torrent.mp3
+303:pl2/Most Epic Music Ever El Dorado.mp3
+304:pl2/Most Epic Music Ever Further.mp3
+305:pl2/Most Epic Music Ever Dreamland by J.T. Peterson.mp3
+306:pl2/Most Epic Battle Music Ever Deadwood by Really Slow Motion.mp3
+307:pl2/Most Epic Music Ever Terra Mirus.mp3
+308:pl2/Battle Music Fearless by Thomas Bergersen.mp3
+309:pl2/Most Wondrous Battle Music Ever Plague.mp3
+310:pl2/Mattia Turzo - Infinito [Epic Action Music].mp3
+311:pl2/Most Epic Music Ever Immortal Enigma.mp3
+312:pl2/Most Epic Music Ever Tuesday (Day of Tiw).mp3
+313:pl2/Most Epic Music Ever Tales Of The Forgotten (Mix).mp3
+314:pl2/Most Epic Music Ever Remember.mp3
+315:pl2/Most Wondrous Battle Music Ever Guardian Of Homeland (HybridDubstep).mp3
+316:pl2/Most Emotional Music Ever Letting Go.mp3
+317:pl2/Most Wondrous Battle Music Ever Injustice.mp3
+318:pl2/Most Epic Music Ever Disappear.mp3
+319:pl2/Most Epic Music Ever Odyssey (DarkSuspenseful).mp3
+320:pl2/Most Wondrous Battle Music Ever Young Pirate by Mattia Turzo.mp3
+321:pl2/Most Epic Music Ever City Of Ashes.mp3
+322:pl2/Most Epic Music Ever Hero Wins.mp3
+323:pl2/Most Epic Music Ever The Northern Passage.mp3
+324:pl2/Most Epic Music Ever Hero Memories.mp3
+325:pl2/Most Epic Music Ever Fortune City.mp3
+326:pl2/Most Epic Music Ever Magic Of Dernon.mp3
+327:pl2/Most Epic Music Festival Of Light by Audiomachine.mp3
+328:pl2/Most Epic Battle Music Fate's Compass by Audiomachine.mp3
+329:pl2/Most Beautiful Music Zsera Suite by Tales Of The Forgotten.mp3
+330:pl2/Most Epic Music Ever Distant Lands.mp3
+331:pl2/Most Epic Music Ever Deed And Destiny by Sound Adventures.mp3
+332:pl2/Most Epic Music Ever Rising Climax.mp3
+333:pl2/Most Epic Music Ever Parallel Universe (1).mp3
+334:pl2/Most Epic Music Ever Parallel Universe.mp3
+335:pl2/Most Epic Music Last Of The Light by Two Steps From Hell.mp3
+336:pl2/Most Epic Music Ever We Made It.mp3
+337:pl2/Most Epic Music Ever Sacred Mountain.mp3
+338:pl2/Most Epic Music Ever We Overcome by Petteri Sainio.mp3
+339:pl2/Most Epic Music Ever Whisper Of Hope.mp3
+340:pl2/Most Epic Music Ever Light Of Hope.mp3
+341:pl2/Most Epic Music Ever Two Worlds.mp3
+342:pl2/Most Beautiful Music Ever 'Alive' by Phil Lober (1).mp3
+343:pl2/Most Beautiful Music Ever 'Alive' by Phil Lober.mp3
+344:pl2/Most Epic Music Ever Your Soul Is Mine by Thomas-Adam Habuda.mp3
+345:pl2/Most Epic Music Ever Bright Like Stars by Really Slow Motion.mp3
+346:pl2/Most Epic Music Ever The Fable by Fran Soto.mp3
+347:pl2/Most Epic Music Ever Oblivion's Cordage.mp3
+348:pl2/Most Epic Music Ever Epic Rise.mp3
+349:pl2/Most Epic Music Ever Embraces The Sky.mp3
+350:pl2/Most Epic Battle Music Warriors To The End (Mix) by Epic Score (1).mp3
+351:pl2/Most Epic Battle Music Warriors To The End (Mix) by Epic Score.mp3
+352:pl2/Most Epic Music Ever Between The Worlds.mp3
+353:pl2/Most Epic Music Ever Suspense.mp3
+354:pl2/Factor Eight - Anemoi [Uplifting Emotional Music].mp3
+355:pl2/Most Epic Music Ever Tales Of Neverland by J.T. Peterson.mp3
+356:pl2/Most Epic Music Red Sorrow by Audiomachine.mp3
+357:pl2/Soundmopi - Return Of The Hero [Epic Heroic Choral Action].mp3
+358:pl2/Most Epic Music Ever Time to Come.mp3
+359:pl2/Most Epic Music Ever Empire Of Angels by Thomas Bergersen.mp3
+360:pl2/Most Wondrous Battle Music Ever Vengeance.mp3
+361:pl2/Most Epic Music Ever Intense.mp3
+362:pl2/Most Epic Music Ever Eternity by Montee.mp3
+363:pl2/Most Epic Music Ever Translation.mp3
+364:pl2/Most Epic Music This Is Our World by Must Save Jane.mp3
+365:pl2/Most Beautiful Music Song Of The Ancients  Fate (1).mp3
+366:pl2/Most Beautiful Music Song Of The Ancients  Fate.mp3
+367:pl2/Most Epic Battle Music All Is Hell That Ends Well by Two Steps From Hell.mp3
+368:pl2/Most Epic Music Amaria by Two Steps From Hell.mp3
+369:pl2/Phantom Power Music - Overpowered.mp3
+370:pl2/Most Epic Music Ever A Hero Must Die.mp3
+371:pl2/Most Epic Music Ever Timelord.mp3
+372:pl2/Most Epic Music Ever Solaris.mp3
+373:pl2/Most Epic Music Ever Glory.mp3
+374:pl2/Most Emotional Music Ever Reality Is Lonely.mp3
+375:pl2/Most Epic Music Ever Beyond The Stars by Maria Rubel.mp3
+376:pl2/Most Epic Music Ever Sunder by Really Slow Motion (1).mp3
+377:pl2/Most Epic Music Ever Sunder by Really Slow Motion.mp3
+378:pl2/Most Epic Music Ever Adagio For Honor.mp3
+379:pl2/Most Emotional Music Rain by Ed Carlsen.mp3
+380:pl2/Most Wondrous Battle Music Ever Master Of Shadows.mp3
+381:pl2/Most Epic Music Ever Icenian Skies by Roman Heuser.mp3
+382:pl2/Most Epic Electronic Music Fading Away.mp3
+383:pl2/Most Epic Music Ever Dawn Of Mankind by Elegy Music.mp3
+384:pl2/Most Epic Music Ever The Messenger.mp3
+385:pl2/Most Beautiful Music Sun And Stars by Audiomachine.mp3
+386:pl2/Most Epic Music Ever Ashes Of Time (1).mp3
+387:pl2/Most Epic Music Ever Ashes Of Time.mp3
+388:pl2/Most Epic Music Ever Our Destiny by Thomas Bergersen (1).mp3
+389:pl2/Most Epic Music Ever Our Destiny by Thomas Bergersen.mp3
+390:pl2/Most Epic Music Ever We Will Not Yield.mp3
+391:pl2/Most Epic Music Ever Virus.mp3
+392:pl2/Most Epic Music Wild Hunt by Dorian Marko.mp3
+393:pl2/Most Epic Music Ever Enchantress by Ezietto.mp3
+394:pl2/Most Epic Music Ever Time Will Remember Us.mp3
+395:pl2/Most Epic Music Made Of Stardust by Epic Soul Factory.mp3
+396:pl2/Most Epic Music Ever The Demon Within.mp3
+397:pl2/Most Beautiful Music EVERY DAY  by Nick Tzios.mp3
+398:pl2/Most Epic Music Ever The Quest.mp3
+399:pl2/Most Epic Music Ever Aeon.mp3
+400:pl2/Most Epic Music Ever The Return Home.mp3
+401:pl2/Most Epic Music Ever Mosane.mp3
+402:Mix Metal/_ODpg3ZPZ2w -- Powerwolf - Blessed and Possessed.ogg
+403:Mix Metal/-qNXxyr0mSA -- Dream Evil - Dragon Slayer.ogg
+404:Mix Metal/04F4xlWSFh0 -- Drowning Pool - Bodies.opus
+405:Mix Metal/0L_iOnLNt9M -- Rhapsody of Fire - Dawn of Victory.ogg
+406:Mix Metal/1w7OgIMMRc4 -- Guns N' Roses - Sweet Child O' Mine.opus
+407:Mix Metal/3-4Nxh-1Xzk -- Freedom Call  - Eternity.opus
+408:Mix Metal/3YxaaGgTQYM -- Evanescence - Bring Me To Life.opus
+409:Mix Metal/4PM1hkaSKQc -- 201408ドラゴンフォース⑥マキシマム・オーバーロード  輸入盤　フルアルバム　日本盤ボーナス無し.ogg
+410:Mix Metal/5abamRO41fE -- Slipknot - Psychosocial.ogg
+411:Mix Metal/6_MzMLrQnn8 -- Stratovarius - Destiny.opus
+412:Mix Metal/68lwA6EfSAo -- Helloween - Keeper Of The Seven Keys Part. 1.opus
+413:Mix Metal/6fVE8kSM43I -- Slipknot - Duality.opus
+414:Mix Metal/8SbUC-UaAxE -- Guns N' Roses - November Rain.opus
+415:Mix Metal/9-SQGOYOjxs -- Rise Against - Prayer Of The Refugee.opus
+416:Mix Metal/94bGzWyHbu0 -- Avenged Sevenfold - Nightmare.opus
+417:Mix Metal/9jK-NcRmVcw -- Europe - The Final Countdown.opus
+418:Mix Metal/9s08x-kIxFs -- Paradise Lost   Symphony X (2007).opus
+419:Mix Metal/9sTQ0QdkN3Q -- Bullet For My Valentine - Tears Don't Fall.opus
+420:Mix Metal/a8Z2jSATjqQ -- Iron Maiden - Best of the Beast 1996 Greatest Hits.opus
+421:Mix Metal/AOBpBOZD8gg -- Children of Bodom - Follow The Reaper.ogg
+422:Mix Metal/AXc4iDAk7zM -- Avenged Sevenfold - Avenged Sevenfold.opus
+423:Mix Metal/BE2XjC5p0Yg -- Dragonland - Starfall.ogg
+424:Mix Metal/Bh7G8m8cPtE -- Blind Guardian - Somewhere Far Beyond.ogg
+425:Mix Metal/BLweYLMeClw -- Blind Guardian Imaginations from the Other Side.ogg
+426:Mix Metal/BrDTe4HGSU8 -- Helloween - Walls Of Jericho'.opus
+427:Mix Metal/CD-E-LDc384 -- Metallica - Enter Sandman.opus
+428:Mix Metal/CDl9ZMfj6aE -- Alien Ant Farm - Smooth Criminal.m4a
+429:Mix Metal/CSvFpBOe8eY -- System Of A Down - Chop Suey!.opus
+430:Mix Metal/d8ekz_CSBVg -- Three Days Grace - I Hate Everything About You.opus
+431:Mix Metal/DC5Wmz6kjBs -- Rhapsody - Dawn of Victory.opus
+432:Mix Metal/DelhLppPSxY -- Avenged Sevenfold - Hail to the King.opus
+433:Mix Metal/dISMYaYENf8 -- Amon Amarth - Surtur Rising.ogg
+434:Mix Metal/DnGdoEa1tPg -- System Of A Down - Lonely Day.opus
+435:Mix Metal/DqDeH3hwxfw -- Metallica - Black album.ogg
+436:Mix Metal/dw6YHdYk4WA -- Avenged Sevenfold - So Far Away.opus
+437:Mix Metal/e8X3ACToii0 -- Rise Against - Savior.opus
+438:Mix Metal/ek7jUrVK04w -- Sonata Arctica - Winterheart's Guild.opus
+439:Mix Metal/eVTXPUF4Oz4 -- In The End - Linkin Park.opus
+440:Mix Metal/fnJaNAtW2g4 -- HammerFall - Built To Last.ogg
+441:Mix Metal/ftQzGV0LSDQ -- 2002 - Crimson Thunder - HammerFall - Full Album.opus
+442:Mix Metal/Gd9OhYroLN0 -- Crawling - Linkin Park.opus
+443:Mix Metal/gz98MWnvyM0 -- Rhapsody - Symphony of Enchanted Lands.opus
+444:Mix Metal/HyHNuVaZJ-k -- Gorillaz - Feel Good Inc.m4a
+445:Mix Metal/I4LEKKJyHNI -- Infinite - Stratovarius.ogg
+446:Mix Metal/iywaBOMvYLI -- System Of A Down - Toxicity.opus
+447:Mix Metal/j2FoYW70QCQ -- 201204ドラゴンフォース⑤ザ・パワー ウィズイン  輸入盤　フルアルバム　日本盤ボーナス無し.ogg
+448:Mix Metal/jlmq2qdI9dg -- Gallows End - Nemesis Devine.ogg
+449:Mix Metal/k0xuOCscero -- Children of Bodom - Hatebreeder.ogg
+450:Mix Metal/K6LA7v1PApU -- Metallica - Master Of Puppets.m4a
+451:Mix Metal/kVXhZivTR50 -- Rhapsody - Power Of The Dragonflame.ogg
+452:Mix Metal/L-iepu3EtyE -- System Of A Down - Aerials.opus
+453:Mix Metal/L2QTtdeL3dE -- Disturbed - Indestructible.ogg
+454:Mix Metal/lDK9QqIzhwk -- Bon Jovi - Livin' On A Prayer.opus
+455:Mix Metal/meNeY0iDs_I -- Powerslave Full Album.opus
+456:Mix Metal/MXSDPoWeXIg -- Gloryhammer - TFTKOF.ogg
+457:Mix Metal/NhE3bi56fW8 -- IRON FIRE - To the Grave.ogg
+458:Mix Metal/noScmXCbQAk -- Dethklok - The Dethalbum Deluxe Edition.opus
+459:Mix Metal/Nx08MK_O_TQ -- Pantera - Vulgar Display Of Power.opus
+460:Mix Metal/o1tj2zJ2Wvg -- Guns N' Roses - Welcome To The Jungle.opus
+461:Mix Metal/O4irXQhgMqg -- The Rolling Stones - Paint It, Black.m4a
+462:Mix Metal/oen3-gC-paI -- Sonata Arctica - Ecliptica.ogg
+463:Mix Metal/OhT0g9jULpw -- Metallica - Ride The Lightning.opus
+464:Mix Metal/oNZO5muOKas -- Epsilon - Dreamtale.ogg
+465:Mix Metal/pJaJ8G2xEHw -- Helloween - Keeper Of The Seven Keys Part II.ogg
+466:Mix Metal/pPQxLRv8owM -- Nightwish - Wishmaster.opus
+467:Mix Metal/q2I0ulTZWXA -- Bullet For My Valentine - Waking The Demon.m4a
+468:Mix Metal/qmxCy0NH-eM -- Rhapsody - Legendary Tales.opus
+469:Mix Metal/qsRVl1CfN9Q -- Amon Amarth  - Jomsviking FULL ALBUM.opus
+470:Mix Metal/qw2LU1yS7aw -- Slipknot - Before I Forget.opus
+471:Mix Metal/R38UVw7xOcU -- Children of Bodom - Bed Of Razors.ogg
+472:Mix Metal/Rbm6GXllBiw -- Guns N' Roses - Paradise City.opus
+473:Mix Metal/RoVAUUFjl0I -- Dream Theater - The Enemy Inside.ogg
+474:Mix Metal/SBjQ9tuuTJQ -- Foo Fighters - The Pretender.opus
+475:Mix Metal/SejsRiaVRqI -- Rhapsody Of Fire - Symphony Of Enchanted Lands II - The Dark Secret.opus
+476:Mix Metal/SGd1AzGaA3s -- Dream Evil - The Book of Heavy Metal.ogg
+477:Mix Metal/SN_bWCsGKE0 -- Timo Tolkki's Avalon - The Land Of New Hope.ogg
+478:Mix Metal/Soa3gO7tL-c -- Green Day - 'Boulevard Of Broken Dreams'.opus
+479:Mix Metal/sp24seA2UzE -- Helloween.ogg
+480:Mix Metal/TXbbkV3LQJc -- Avenged Sevenfold - Nightmare - Entire Awesome Album.opus
+481:Mix Metal/TY6CbRJlfho -- Helloween - Time Of The Oath.opus
+482:Mix Metal/u_WHqkYefU0 -- Avenged Sevenfold - Hail to the King.opus
+483:Mix Metal/uGcsIdGOuZY -- Skillet - Hero.ogg
+484:Mix Metal/v2AC41dglnM -- AC_DC - Thunderstruck (Official Video).opus
+485:Mix Metal/v6oNE2lT8R4 -- Blind Guardian - Fly.opus
+486:Mix Metal/vx2u5uUu3DE -- Bon Jovi - It's My Life.opus
+487:Mix Metal/w1tuPc2FGvs -- Dreamtale - Beyond Reality.opus
+488:Mix Metal/xnKhsTXoKCI -- Metallica - Master Of Puppets.opus
+489:Mix Metal/XpASSx0ecTU -- Dragon Force - Through the Fire and Flames - Tina S Cover.opus
+490:Mix Metal/xPU8OAjjS4k -- 3 Doors Down - Kryptonite.opus
+491:Mix Metal/xqds0B_meys -- Three Days Grace - Animal I Have Become.opus
+492:Mix Metal/XTKzdnZ9F4s -- Heavenly - Virus.opus
+493:Mix Metal/YlUKcNNmywk -- Red Hot Chili Peppers - Californication.opus
+494:Mix Metal/YRKI2Nu7oJ8 -- Stratovarius - Episode.opus
+495:Mix Metal/YWu7Orf97bE -- Dark Moor - The Hall Of Olden Dreams FULL ALBUM.ogg
+496:Mix Metal/zkc-HW2IN2g -- Dragonland - Holy War.ogg
+497:Mix Metal/zUzd9KyIDrM -- System Of A Down - B.Y.O.B..ogg
+498:Mix Metal/_ODpg3ZPZ2w -- Powerwolf - Blessed and Possessed.ogg
+499:Mix Metal/-qNXxyr0mSA -- Dream Evil - Dragon Slayer.ogg
+500:Mix Metal/04F4xlWSFh0 -- Drowning Pool - Bodies.opus
+501:Mix Metal/0L_iOnLNt9M -- Rhapsody of Fire - Dawn of Victory.ogg
+502:Mix Metal/1w7OgIMMRc4 -- Guns N' Roses - Sweet Child O' Mine.opus
+503:Mix Metal/3-4Nxh-1Xzk -- Freedom Call  - Eternity.opus
+504:Mix Metal/3YxaaGgTQYM -- Evanescence - Bring Me To Life.opus
+505:Mix Metal/4PM1hkaSKQc -- 201408ドラゴンフォース⑥マキシマム・オーバーロード  輸入盤　フルアルバム　日本盤ボーナス無し.ogg
+506:Mix Metal/5abamRO41fE -- Slipknot - Psychosocial.ogg
+507:Mix Metal/6_MzMLrQnn8 -- Stratovarius - Destiny.opus
+508:Mix Metal/68lwA6EfSAo -- Helloween - Keeper Of The Seven Keys Part. 1.opus
+509:Mix Metal/6fVE8kSM43I -- Slipknot - Duality.opus
+510:Mix Metal/8SbUC-UaAxE -- Guns N' Roses - November Rain.opus
+511:Mix Metal/9-SQGOYOjxs -- Rise Against - Prayer Of The Refugee.opus
+512:Mix Metal/94bGzWyHbu0 -- Avenged Sevenfold - Nightmare.opus
+513:Mix Metal/9jK-NcRmVcw -- Europe - The Final Countdown.opus
+514:Mix Metal/9s08x-kIxFs -- Paradise Lost   Symphony X (2007).opus
+515:Mix Metal/9sTQ0QdkN3Q -- Bullet For My Valentine - Tears Don't Fall.opus
+516:Mix Metal/a8Z2jSATjqQ -- Iron Maiden - Best of the Beast 1996 Greatest Hits.opus
+517:Mix Metal/AOBpBOZD8gg -- Children of Bodom - Follow The Reaper.ogg
+518:Mix Metal/AXc4iDAk7zM -- Avenged Sevenfold - Avenged Sevenfold.opus
+519:Mix Metal/BE2XjC5p0Yg -- Dragonland - Starfall.ogg
+520:Mix Metal/Bh7G8m8cPtE -- Blind Guardian - Somewhere Far Beyond.ogg
+521:Mix Metal/BLweYLMeClw -- Blind Guardian Imaginations from the Other Side.ogg
+522:Mix Metal/BrDTe4HGSU8 -- Helloween - Walls Of Jericho'.opus
+523:Mix Metal/CD-E-LDc384 -- Metallica - Enter Sandman.opus
+524:Mix Metal/CDl9ZMfj6aE -- Alien Ant Farm - Smooth Criminal.m4a
+525:Mix Metal/CSvFpBOe8eY -- System Of A Down - Chop Suey!.opus
+526:Mix Metal/d8ekz_CSBVg -- Three Days Grace - I Hate Everything About You.opus
+527:Mix Metal/DC5Wmz6kjBs -- Rhapsody - Dawn of Victory.opus
+528:Mix Metal/DelhLppPSxY -- Avenged Sevenfold - Hail to the King.opus
+529:Mix Metal/dISMYaYENf8 -- Amon Amarth - Surtur Rising.ogg
+530:Mix Metal/DnGdoEa1tPg -- System Of A Down - Lonely Day.opus
+531:Mix Metal/DqDeH3hwxfw -- Metallica - Black album.ogg
+532:Mix Metal/dw6YHdYk4WA -- Avenged Sevenfold - So Far Away.opus
+533:Mix Metal/e8X3ACToii0 -- Rise Against - Savior.opus
+534:Mix Metal/ek7jUrVK04w -- Sonata Arctica - Winterheart's Guild.opus
+535:Mix Metal/eVTXPUF4Oz4 -- In The End - Linkin Park.opus
+536:Mix Metal/fnJaNAtW2g4 -- HammerFall - Built To Last.ogg
+537:Mix Metal/ftQzGV0LSDQ -- 2002 - Crimson Thunder - HammerFall - Full Album.opus
+538:Mix Metal/Gd9OhYroLN0 -- Crawling - Linkin Park.opus
+539:Mix Metal/gz98MWnvyM0 -- Rhapsody - Symphony of Enchanted Lands.opus
+540:Mix Metal/HyHNuVaZJ-k -- Gorillaz - Feel Good Inc.m4a
+541:Mix Metal/I4LEKKJyHNI -- Infinite - Stratovarius.ogg
+542:Mix Metal/iywaBOMvYLI -- System Of A Down - Toxicity.opus
+543:Mix Metal/j2FoYW70QCQ -- 201204ドラゴンフォース⑤ザ・パワー ウィズイン  輸入盤　フルアルバム　日本盤ボーナス無し.ogg
+544:Mix Metal/jlmq2qdI9dg -- Gallows End - Nemesis Devine.ogg
+545:Mix Metal/k0xuOCscero -- Children of Bodom - Hatebreeder.ogg
+546:Mix Metal/K6LA7v1PApU -- Metallica - Master Of Puppets.m4a
+547:Mix Metal/kVXhZivTR50 -- Rhapsody - Power Of The Dragonflame.ogg
+548:Mix Metal/L-iepu3EtyE -- System Of A Down - Aerials.opus
+549:Mix Metal/L2QTtdeL3dE -- Disturbed - Indestructible.ogg
+550:Mix Metal/lDK9QqIzhwk -- Bon Jovi - Livin' On A Prayer.opus
+551:Mix Metal/meNeY0iDs_I -- Powerslave Full Album.opus
+552:Mix Metal/MXSDPoWeXIg -- Gloryhammer - TFTKOF.ogg
+553:Mix Metal/NhE3bi56fW8 -- IRON FIRE - To the Grave.ogg
+554:Mix Metal/noScmXCbQAk -- Dethklok - The Dethalbum Deluxe Edition.opus
+555:Mix Metal/Nx08MK_O_TQ -- Pantera - Vulgar Display Of Power.opus
+556:Mix Metal/o1tj2zJ2Wvg -- Guns N' Roses - Welcome To The Jungle.opus
+557:Mix Metal/O4irXQhgMqg -- The Rolling Stones - Paint It, Black.m4a
+558:Mix Metal/oen3-gC-paI -- Sonata Arctica - Ecliptica.ogg
+559:Mix Metal/OhT0g9jULpw -- Metallica - Ride The Lightning.opus
+560:Mix Metal/oNZO5muOKas -- Epsilon - Dreamtale.ogg
+561:Mix Metal/pJaJ8G2xEHw -- Helloween - Keeper Of The Seven Keys Part II.ogg
+562:Mix Metal/pPQxLRv8owM -- Nightwish - Wishmaster.opus
+563:Mix Metal/q2I0ulTZWXA -- Bullet For My Valentine - Waking The Demon.m4a
+564:Mix Metal/qmxCy0NH-eM -- Rhapsody - Legendary Tales.opus
+565:Mix Metal/qsRVl1CfN9Q -- Amon Amarth  - Jomsviking FULL ALBUM.opus
+566:Mix Metal/qw2LU1yS7aw -- Slipknot - Before I Forget.opus
+567:Mix Metal/R38UVw7xOcU -- Children of Bodom - Bed Of Razors.ogg
+568:Mix Metal/Rbm6GXllBiw -- Guns N' Roses - Paradise City.opus
+569:Mix Metal/RoVAUUFjl0I -- Dream Theater - The Enemy Inside.ogg
+570:Mix Metal/SBjQ9tuuTJQ -- Foo Fighters - The Pretender.opus
+571:Mix Metal/SejsRiaVRqI -- Rhapsody Of Fire - Symphony Of Enchanted Lands II - The Dark Secret.opus
+572:Mix Metal/SGd1AzGaA3s -- Dream Evil - The Book of Heavy Metal.ogg
+573:Mix Metal/SN_bWCsGKE0 -- Timo Tolkki's Avalon - The Land Of New Hope.ogg
+574:Mix Metal/Soa3gO7tL-c -- Green Day - 'Boulevard Of Broken Dreams'.opus
+575:Mix Metal/sp24seA2UzE -- Helloween.ogg
+576:Mix Metal/TXbbkV3LQJc -- Avenged Sevenfold - Nightmare - Entire Awesome Album.opus
+577:Mix Metal/TY6CbRJlfho -- Helloween - Time Of The Oath.opus
+578:Mix Metal/u_WHqkYefU0 -- Avenged Sevenfold - Hail to the King.opus
+579:Mix Metal/uGcsIdGOuZY -- Skillet - Hero.ogg
+580:Mix Metal/v2AC41dglnM -- AC_DC - Thunderstruck (Official Video).opus
+581:Mix Metal/v6oNE2lT8R4 -- Blind Guardian - Fly.opus
+582:Mix Metal/vx2u5uUu3DE -- Bon Jovi - It's My Life.opus
+583:Mix Metal/w1tuPc2FGvs -- Dreamtale - Beyond Reality.opus
+584:Mix Metal/xnKhsTXoKCI -- Metallica - Master Of Puppets.opus
+585:Mix Metal/XpASSx0ecTU -- Dragon Force - Through the Fire and Flames - Tina S Cover.opus
+586:Mix Metal/xPU8OAjjS4k -- 3 Doors Down - Kryptonite.opus
+587:Mix Metal/xqds0B_meys -- Three Days Grace - Animal I Have Become.opus
+588:Mix Metal/XTKzdnZ9F4s -- Heavenly - Virus.opus
+589:Mix Metal/YlUKcNNmywk -- Red Hot Chili Peppers - Californication.opus
+590:Mix Metal/YRKI2Nu7oJ8 -- Stratovarius - Episode.opus
+591:Mix Metal/YWu7Orf97bE -- Dark Moor - The Hall Of Olden Dreams FULL ALBUM.ogg
+592:Mix Metal/zkc-HW2IN2g -- Dragonland - Holy War.ogg
+593:Mix Metal/zUzd9KyIDrM -- System Of A Down - B.Y.O.B..ogg
+594:DragonForce/cp/DragonForce - Through The Fire And Flames (Live)-rK_d5g3pBb8.ogg
+595:DragonForce/cp/DragonForce - Trail of Broken Hearts-xS62zFXDLzw.opus
+596:DragonForce/cp/DragonForce - Valley Of The Damned (Bonus Track) (Full Album)-TqU_Ujkp3u0.ogg
+597:DragonForce/GFZNKevXJLo - DragonForce - Inhuman Rampage.opus
+598:Mix01/gYX3jRbNZh8 - Dark Dramatic Soundtracks - Darkness of Light.opus
+599:Mix01/VCLT0HNJLWw - Epic Build Up Music - The Storm.ogg
+600:Mix01/U5u9glfqDsc - Lords of Iron (Celtic metal).opus
+601:Mix01/YqVRcFQagtI - Schindler's list - John Williams - NL orchestra.opus
+602:pl1/Fantasy Music - The Hunt.mp3
+603:pl1/Fantasy Music - The Hunt.mp3
 playlist_end

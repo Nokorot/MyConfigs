@@ -6,6 +6,13 @@ alias la='ls -A'
 alias lc='ls --color=always'
 alias l='ls -CF'
 
+# Propmpt if overiding
+alias mv="mv -i"
+alias cp="cp -i"
+
+
+alias rn="bulkrename"
+
 # cd + clear
 function c() { [ ! -z "$1" ] && cd "$1"; clear && pp && ls; }
 
@@ -32,9 +39,10 @@ alias mount="sudo mount"
 alias umount="sudo umount"
 alias shutdown="sudo shutdown" 
 
-##
+#
+alias s="samedir"
 alias vi3="nvim ~/.config/i3/config"
 
+function dm-wlist() { echo "$@" >> ~/.config/dmenu_run.wlist; } 
 
-alias vt="history | grep vlc | tail"
 

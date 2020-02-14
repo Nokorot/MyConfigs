@@ -1,0 +1,18 @@
+{
+    "schemes": {
+        "www.example.com": "normal",
+        "www.messenger.com": "delumine-noimg",
+        "duckduckgo.com": "delumine-noimg",
+        "www.w3schools.com": "delumine-smart",
+        "github.com": "normal",
+        "www.twitch.tv": "normal",
+        "www.json.org": "normal",
+        "wiki.archlinux.org": "delumine-all"
+    },
+    "modifiers": {
+        "www.example.com": "low-contrast",
+        "www.messenger.com": {
+            "low-contrast": true
+        }
+    }
+}

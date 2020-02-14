@@ -1,2 +1,33 @@
 #!/bin/sh
-< ~/.config/dmenu_run.wlist dmenu "$@" | ${SHELL:-"/bin/sh"} &
+
+# TODO bmdir="$HOME/.config/dmenu_run.wlist.d"
+# brfile="$HOME/.config/gg-bookmarks"
+
+bmfile="$HOME/.config/dmenu_run.wlist"
+
+run() {
+    [ -z $1 ] && exit
+    
+    l=$(sed "s/\s*#.*$//;/^\s*$/d" $bmfile | \
+            grep "^$1$\|^$1 ")
+    [ -z $l ] && notify-send "keyword '$1' was not found"
+
+    c=$(echo $l | cut -d' ' -f2- )
+    
+    [ -z $c ] && c=$1
+    echo $c | ${SHELL:-"/bin/sh"} &
+}
+
+dmenu_search() {
+  sed "s/\s*#.*$//;/^\s*$/d" $bmfile | \
+        cut -d' ' -f1 | dmenu 
+}
+
+if [ -z $1 ]; then 
+    run $(dmenu_search) 
+else
+    run "$1"
+fi
+
+
+# < ~/.config/dmenu_run.wlist dmenu "$@" | ${SHELL:-"/bin/sh"} &

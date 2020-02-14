@@ -1,22 +1,63 @@
-atom
-zathura
-zathura2
-zathura-tabbed
+# This file list all the keywords that apear when runding dmenu_run
+#
+# TODO:
+# Divide this into a directory
+# 
+# Basics
+shutdown        prompt "Shutdown computer?" "sudo shutdown now"
+reboot          prompt "Reboot computer?" "sudo reboot"
+hibernate 	    prompt "Reboot computer?" "sudo -A systemctl suspend"
+exit            prompt "Exit i3?" "i3-msg exit"
+lock            xset dpms force off; i3lock-fancy
+browser         $BROWSER 
+# Browsers
+brave-browser
 google-chrome
-thunderbird
-eclipse 
-ranger
+zathura
 sxiv
-st
+# terms
+st 
 urxvt
 xterm
-okularrc
-discord
+# editors
+emacs
 gedit
-gimp
+atom
+eclipse 
+# ws spesific
+music 			i3-msg "workspace $WSmusic";    $TERMINAL -e ncmpcpp
+thunderbird     i3-msg "workspace $WS10";          thunderbird
+gimp            i3-msg "workspace $WSgimp";     gimp
+okular          i3-msg "workspace $WS7; layout tabbed"; okular
+discord
+# Games
 minecraft
-factorio
+minetest
 2048-qt
-nudoku
 snake
 mc4d
+# calcurse        $TERMINAL -e calcurse
+nudoku          $TERMINAL -e nudoku
+ranger          $TERMINAL -e ranger
+pulsemixer      $TERMINAL -e pulsemixer     # used by i3 
+nmtui           $TERMINAL -e nmtui          # used by i3 
+htop            $TERMINAL -e htop           # used by i3 
+joplin          i3 workspace "0: Jop"; $TERMINAL -e joplin
+trans-qt        transmission-qt
+#
+# Print Screen
+screen-print    gnome-screenshoot
+a-screen-print  gnome-screenshot -a
+w-screen-print  gnome-screenshot -w
+c-screen-print  gnome-screenshot -c
+ac-screen-print  gnome-screenshot -a -c
+#
+## Web sites
+# incognito       $BROWSER --incognito
+incognito       google-chrome --incognito
+netflix         i3-msg "workspace $WSmovie"; $BROWSER --app="https://www.netflix.com"; i3-msg "border pixel 0; gaps inner current set 0"; 
+calendar        $BROWSER --app="https://calendar.google.com/calendar" # used by i3
+youtube         $BROWSER www.youtube.com/feed/subscriptions
+learn           $BROWSER www.learn.ed.ac.uk
+messenger       $BROWSER --app="https://www.messenger.com"
+twitch          $BROWSER --app="https://www.twitch.com"

@@ -1,23 +1,23 @@
-" nnoremap <C-j> 		:tabprevious<CR>
-" nnoremap <C-k> 		:tabnext<CR>
-
-nnoremap <C-M>	 	:!./.compile.sh <CR>
-nnoremap \\s	 	:!./.compile.sh silent<CR>
-nnoremap \\o	 	:!zathura-tabbed main.pdf<CR>
+nnoremap <M-PageUp> 	:tabprevious<CR>
+nnoremap <M-h>      	:tabprevious<CR>
+nnoremap <M-PageDown> 	:tabnext<CR>
+nnoremap <M-l>      	:tabnext<CR>
+nnoremap <M-t> 		    :tabnew 
 
 nnoremap <C-N>	 	?<<.*>><CR>
 nnoremap <M-n> 		/<<.*>><CR>
 
-inoremap jj <ESC>
-
 set tabstop=4
+set shiftwidth=4
+set expandtab
 
+set nofoldenable
 
 
 """"""""""""""""""""""""
 "" latex-suite """""""""
 """"""""""""""""""""""""
-filetype plugin on
+" filetype plugin on
 filetype indent on
 let g:tex_flavor='latex'
 

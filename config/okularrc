@@ -1,22 +1,38 @@
+Height 900=854
+State=AAAA/wAAAAD9AAAAAAAAAw0AAANCAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Width 1600=781
+
 [Desktop Entry]
 FullScreen=false
 
 [MainWindow]
-Height 900=838
-State=AAAA/wAAAAD9AAAAAAAABigAAAMyAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Height 900=854
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAw0AAANWAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1600=1576
 
 [Recent Files]
-File1[$e]=$HOME/Documents/Books/Brandon Sanderson - Mistborn Series 1-6/Brandon Sanderson - [Mistborn 04] - The Alloy of Law (v5).epub
-File2[$e]=$HOME/Downloads/9709233.ps
-File3[$e]=$HOME/Dissertation/A-Infinity algebras.pdf
-File4[$e]=$HOME/Downloads/Problems_I.pdf
-File5[$e]=$HOME/Downloads/Problems_V_Solution.pdf
-File6[$e]=$HOME/Downloads/2019245_MATH10047.pdf
-Name1[$e]=Brandon Sanderson - [Mistborn 04] - The Alloy of Law (v5).epub
-Name2[$e]=9709233.ps
-Name3[$e]=A-Infinity algebras.pdf
-Name4[$e]=Problems_I.pdf
-Name5[$e]=Problems_V_Solution.pdf
-Name6[$e]=2019245_MATH10047.pdf
+File1[$e]=$HOME/UniEdin/.y3s2 19V/DMan/Hand-In 3/main.pdf
+File10[$e]=$HOME/UniEdin/TRRT/Hand-in1/Hand-in1.pdf
+File2[$e]=$HOME/UniEdin/TMP/Hand-in1/Hand-in1.pdf
+File3[$e]=$HOME/Notes/TMP/hm1.pdf
+File4[$e]=$HOME/Notes/Galois/wsheet2.pdf
+File5[$e]=$HOME/Documents/Personal/Personal Statement/tors-statement.pdf
+File6[$e]=$HOME/Dissertation/Refs/chekanov-differential-algebra-of-legendrian-links.pdf
+File7[$e]=$HOME/Dissertation/Refs/A-Infinity algebras.pdf
+File8[$e]=$HOME/Downloads/8453-2010_chen-m-x-MC_elements.pdf
+File9[$e]=$HOME/Dissertation/Paper/Paper.pdf
+Name1[$e]=main.pdf
+Name10[$e]=Hand-in1.pdf
+Name2[$e]=Hand-in1.pdf
+Name3[$e]=hm1.pdf
+Name4[$e]=wsheet2.pdf
+Name5[$e]=tors-statement.pdf
+Name6[$e]=chekanov-differential-algebra-of-legendrian-links.pdf
+Name7[$e]=A-Infinity algebras.pdf
+Name8[$e]=8453-2010_chen-m-x-MC_elements.pdf
+Name9[$e]=Paper.pdf
+
+[Shortcut Schemes]
+Current Scheme=Default

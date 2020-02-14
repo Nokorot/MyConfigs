@@ -1085,4 +1085,5 @@ endfunction " }}}
 
 com! -nargs=0 TClearCiteHist unlet! s:citeSearchHistory
 
+
 " vim:fdm=marker:nowrap:noet:ff=unix:ts=4:sw=4
