@@ -14,8 +14,8 @@ then
 else
 	echo "Window not detected... spawning."
 	case $TERMINAL in 
-		"st") i3 "exec --no-startup-id st -n dropdown_$1 -e $@";;
-		"urxvt") i3 "exec --no-startup-id urxvt -name dropdown_$1 -e $@" ;;
+		"st") echo "st -n dropdown_$1 -e $@" | ${SHELL:-"/bin/sh"} ;;
+		"urxvt") echo "urxvt -name dropdown_$1 -e $@" | ${SHELL:-"/bin/sh"} ;;
 		*) notify-send "$TERMINAL is not suported!"
 	esac
 fi

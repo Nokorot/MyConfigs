@@ -20,7 +20,8 @@ nnoremap \\s	 	:!./.compile.sh silent<CR>
 nnoremap \\o	 	:!./.compile.sh open<CR>
 nnoremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 
-
+imap \[             \[  \]<Esc>2hi
+imap \{             \{  \}<Esc>2hi
 
 
 

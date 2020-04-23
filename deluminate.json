@@ -7,11 +7,15 @@
         "github.com": "normal",
         "www.twitch.tv": "normal",
         "www.json.org": "normal",
-        "wiki.archlinux.org": "delumine-all"
+        "wiki.archlinux.org": "delumine-all",
+        "calendar.google.com": "delumine-noimg"
     },
     "modifiers": {
         "www.example.com": "low-contrast",
         "www.messenger.com": {
+            "low-contrast": true
+        },
+        "calendar.google.com": {
             "low-contrast": true
         }
     }

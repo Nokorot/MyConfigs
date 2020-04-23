@@ -38,6 +38,8 @@ bindsym $mod+Mod1+e 	layout toggle split
 
 bindsym $mod+t			split toggle
 
+bindsym $mod+Shift+a    $dd click_script
+bindsym Mod5+F1         $dd click_script
 
 ## #---Letter Key Bindings---# #
 bindsym $mod+oslash 	$exec dmenuunicode
@@ -55,12 +57,12 @@ bindsym $mod+c			$exec ddspawn dd-calc
 bindsym $mod+d			$exec dmenu_run2
 bindsym $mod+Shift+d	$exec dmenu_run
 
-bindsym $mod+a			$exec dmenu-gg-bookmarks
+# bindsym $mod+a			$exec dmenu-gg-bookmarks
 
 bindsym $mod+o 			$exec echo "tmp.sh" | $SHELL
 bindsym $mod+m 			$dd music
 bindsym $mod+w	        $dd browser 
-bindsym $mod+Shift+a	$dd pulsemixer
+#bindsym $mod+Shift+a	$dd pulsemixer
 
 ## #---Media Keys---# #
 # Volume keys

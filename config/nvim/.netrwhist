@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/usr/share/tilix/resources'
-let g:netrw_dirhist_2='/usr/share/tilix/schemes'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/usr/share/nvim'
+let g:netrw_dirhist_2='/usr/share/nvim/runtime'
+let g:netrw_dirhist_3='/usr/share/nvim/runtime/keymap'
+let g:netrw_dirhist_4='/usr/share/vlc'
+let g:netrw_dirhist_5='/usr/share/numpy'
+let g:netrw_dirhist_6='/home/noko/Downloads/idea-IC-201.6668.121/bin'
+let g:netrw_dirhist_7='/home/noko/Downloads/idea-IC-201.6668.121/lib'
+let g:netrw_dirhist_8='/home/noko/.myconf/home/.scripts/statusbar'

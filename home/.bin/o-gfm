@@ -6,5 +6,5 @@ tmpfile=$(mktemp /tmp/XXXXX.html)
 
 pandoc -f gfm -t html "$@" -o "$tmpfile" >"$tmpfile"
 google-chrome --app="file://$tmpfile" > /dev/null
-(sleep .05; rm "$tmpfile") &
+(sleep 2; rm "$tmpfile") &
 

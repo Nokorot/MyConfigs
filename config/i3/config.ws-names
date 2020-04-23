@@ -7,10 +7,10 @@
 # The file is mainly indended for defining the workspace names. 
 # However, it may be used for other variavles as well.
 #
-WS0 	"0" 	#% "0: "
-WS1 	"1" 	#% "1: "
-WS2 	"2" 	#% "2: "
-WS3 	"3" 	#% "3: "
+WS0 	"0: 📒" 	#% "0: "
+WS1 	"1: " 	#% "1: "
+WS2 	"2: " 	#% "2: "
+WS3 	"3: " 	#% "3: "
 WS4 	"4" 	#% "4: Ⅰ"
 WS5 	"5" 	#% "5: ⅠⅠ"
 WS6 	"6" 	#% "6: ⅠⅠⅠ"

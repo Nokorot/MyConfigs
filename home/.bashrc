@@ -19,3 +19,5 @@ export TERMIANL_BG=#222222
 
 ###
 
+
+source /home/noko/.config/broot/launcher/bash/br

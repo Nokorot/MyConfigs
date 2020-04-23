@@ -19,10 +19,10 @@ bar {
         inactive_workspace #020202 #020202 #888888
     }
 }
-set $WS0 "0"
-set $WS1 "1"
-set $WS2 "2"
-set $WS3 "3"
+set $WS0 "0: 📒"
+set $WS1 "1: "
+set $WS2 "2: "
+set $WS3 "3: "
 set $WS4 "4"
 set $WS5 "5"
 set $WS6 "6"
@@ -73,8 +73,8 @@ bindsym $mod+Ctrl+Right		$exec i3resize right  "50px or 3ppt"
 set $move move container to workspace
 set $endws workspace 0; workspace prev
 set $movetoendws $move 0; workspace 0; $move prev; workspace prev
-bindsym $mod+Home			workspace $ws1
-bindsym $mod+Shift+Home		$move $ws1
+bindsym $mod+Home			workspace $WS1
+bindsym $mod+Shift+Home		$move $WS1
 bindsym $mod+End			$endws
 bindsym $mod+Shift+End		$movetoendws
 bindsym $mod+aring			$endws
@@ -85,38 +85,39 @@ bindsym $mod+Ctrl+Prior	    $move prev
 bindsym $mod+Next			workspace next
 bindsym $mod+Shift+Next		$move next; workspace next;
 bindsym $mod+Ctrl+Next		$move next
-bindsym $mod+|		workspace $ws0
-bindsym $mod+1		workspace $ws1
-bindsym $mod+2		workspace $ws2
-bindsym $mod+3		workspace $ws3
-bindsym $mod+4		workspace $ws4
-bindsym $mod+5		workspace $ws5
-bindsym $mod+6		workspace $ws6
-bindsym $mod+7		workspace $ws7
-bindsym $mod+8		workspace $ws8
-bindsym $mod+9		workspace $ws9
-bindsym $mod+0		workspace $ws10
-bindsym $mod+Control+|	$move $ws0
-bindsym $mod+Control+1	$move $ws1
-bindsym $mod+Control+2	$move $ws2
-bindsym $mod+Control+3	$move $ws3
-bindsym $mod+Control+4	$move $ws4
-bindsym $mod+Control+5	$move $ws5
-bindsym $mod+Control+6	$move $ws6
-bindsym $mod+Control+7	$move $ws7
-bindsym $mod+Control+8	$move $ws8
-bindsym $mod+Control+9	$move $ws9
-bindsym $mod+Control+0	$move $ws10
-bindsym $mod+Shift+|	$move $ws0;  workspace $ws0
-bindsym $mod+Shift+2	$move $ws2;  workspace $ws2
-bindsym $mod+Shift+3	$move $ws3;  workspace $ws3
-bindsym $mod+Shift+4	$move $ws4;  workspace $ws4
-bindsym $mod+Shift+5	$move $ws5;  workspace $ws5
-bindsym $mod+Shift+6	$move $ws6;  workspace $ws6
-bindsym $mod+Shift+7	$move $ws7;  workspace $ws7
-bindsym $mod+Shift+8	$move $ws8;  workspace $ws8
-bindsym $mod+Shift+9	$move $ws9;  workspace $ws9
-bindsym $mod+Shift+0	$move $ws10; workspace $ws10
+bindsym $mod+bar	workspace $WS0
+bindsym $mod+1		workspace $WS1
+bindsym $mod+2		workspace $WS2
+bindsym $mod+3		workspace $WS3
+bindsym $mod+4		workspace $WS4
+bindsym $mod+5		workspace $WS5
+bindsym $mod+6		workspace $WS6
+bindsym $mod+7		workspace $WS7
+bindsym $mod+8		workspace $WS8
+bindsym $mod+9		workspace $WS9
+bindsym $mod+0		workspace $WS10
+bindsym $mod+Control+bar    $move $WS0
+bindsym $mod+Control+1	    $move $WS1
+bindsym $mod+Control+2	    $move $WS2
+bindsym $mod+Control+3	    $move $WS3
+bindsym $mod+Control+4	    $move $WS4
+bindsym $mod+Control+5	    $move $WS5
+bindsym $mod+Control+6	    $move $WS6
+bindsym $mod+Control+7	    $move $WS7
+bindsym $mod+Control+8	    $move $WS8
+bindsym $mod+Control+9	    $move $WS9
+bindsym $mod+Control+0	    $move $WS10
+bindsym $mod+Shift+bar	    $move $WS0;  workspace $WS0
+bindsym $mod+Shift+1	    $move $WS1;  workspace $WS1
+bindsym $mod+Shift+2	    $move $WS2;  workspace $WS2
+bindsym $mod+Shift+3	    $move $WS3;  workspace $WS3
+bindsym $mod+Shift+4	    $move $WS4;  workspace $WS4
+bindsym $mod+Shift+5	    $move $WS5;  workspace $WS5
+bindsym $mod+Shift+6	    $move $WS6;  workspace $WS6
+bindsym $mod+Shift+7	    $move $WS7;  workspace $WS7
+bindsym $mod+Shift+8	    $move $WS8;  workspace $WS8
+bindsym $mod+Shift+9	    $move $WS9;  workspace $WS9
+bindsym $mod+Shift+0	    $move $WS10; workspace $WS10
 set $term $TERMINAL
 set $mod Mod4
 set $mod2 Shift
@@ -140,6 +141,8 @@ bindsym $mod+Shift+b	border toggle
 bindsym $mod+Mod1+w 	layout tabbed
 bindsym $mod+Mod1+e 	layout toggle split
 bindsym $mod+t			split toggle
+bindsym $mod+Shift+a    $dd click_script
+bindsym Mod5+F1         $dd click_script
 bindsym $mod+oslash 	$exec dmenuunicode
 bindsym $mod+Shift+w	$dd nmtui
 bindsym $mod+i 			$dd htop
@@ -150,11 +153,9 @@ bindsym $mod+n 			$exec ddspawn dd-r-notes
 bindsym $mod+c			$exec ddspawn dd-calc
 bindsym $mod+d			$exec dmenu_run2
 bindsym $mod+Shift+d	$exec dmenu_run
-bindsym $mod+a			$exec dmenu-gg-bookmarks
 bindsym $mod+o 			$exec echo "tmp.sh" | $SHELL
 bindsym $mod+m 			$dd music
 bindsym $mod+w	        $dd browser
-bindsym $mod+Shift+a	$dd pulsemixer
 bindsym $mod+plus				$exec lmc up 5
 bindsym $mod+Shift+plus			$exec lmc up 1
 bindsym $mod+minus 				$exec lmc down 5
@@ -181,7 +182,8 @@ bindsym Print 				$exec gnome-screenshot
 bindsym Shift+Print 		$exec gnome-screenshot -a
 bindsym Control+Print 		$exec gnome-screenshot -w
 bindsym $mod+Scroll_Lock	$exec "killall screenkey || screenkey"
-for_window 	[instance="chrome"] 	border pixel 3
+assign [class="vlc"] $WSmovie
+for_window 	[class="chrome"] 	border pixel 3
 for_window 	[class="Pinentry"] 		sticky enable
 for_window 	[class="sent"] 			border pixel 0px
 for_window 	[title="GIMP Startup"] 	move workspace $WSgimp

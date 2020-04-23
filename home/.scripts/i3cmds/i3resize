@@ -12,9 +12,9 @@ moveChoice() {
 }
 
 case $1 in
-  up) moveChoice grow up shrink down ;;
-  down) moveChoice shrink up grow down ;;
-  left) moveChoice shrink right grow left ;;
-  right) moveChoice grow right shrink left ;;
+  up)    moveChoice grow   up   shrink down  ;;
+  down)  moveChoice shrink up   grow   down  ;;
+  left)  moveChoice grow   left shrink right ;;
+  right) moveChoice shrink left grow   right ;;
 esac
 

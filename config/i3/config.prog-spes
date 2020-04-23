@@ -2,9 +2,9 @@
 
 ## #---Program spesifics---# #
 #
-# assign [class="chrome"] $ws2
+assign [class="vlc"] $WSmovie
 # for_window 	[class="chrome"] 		move workspace $WS2
-for_window 	[instance="chrome"] 	border pixel 3
+for_window 	[class="chrome"] 	border pixel 3
 
 # for_window 	[instance="netflix"] 	move workspace $WSmovie; move workspace $WSmovie
 # for_window 	[instance="netflix"] 	border pixel 0; $igaps set 0

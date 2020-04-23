@@ -34,7 +34,7 @@ $mod+Ctrl+Prior
 $mod+Next
 $mod+Shift+Next
 $mod+Ctrl+Next
-$mod+|
+$mod+bar
 $mod+1
 $mod+2
 $mod+3
@@ -45,7 +45,7 @@ $mod+7
 $mod+8
 $mod+9
 $mod+0
-$mod+Control+|
+$mod+Control+bar
 $mod+Control+1
 $mod+Control+2
 $mod+Control+3
@@ -56,7 +56,8 @@ $mod+Control+7
 $mod+Control+8
 $mod+Control+9
 $mod+Control+0
-$mod+Shift+|
+$mod+Shift+bar
+$mod+Shift+1
 $mod+Shift+2
 $mod+Shift+3
 $mod+Shift+4
@@ -82,6 +83,8 @@ $mod+Shift+b
 $mod+Mod1+w
 $mod+Mod1+e
 $mod+t
+$mod+Shift+a
+Mod5+F1
 $mod+oslash
 $mod+Shift+w
 $mod+i
@@ -92,11 +95,9 @@ $mod+n
 $mod+c
 $mod+d
 $mod+Shift+d
-$mod+a
 $mod+o
 $mod+m
 $mod+w
-$mod+Shift+a
 $mod+plus
 $mod+Shift+plus
 $mod+minus

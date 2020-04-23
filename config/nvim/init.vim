@@ -4,8 +4,8 @@ nnoremap <M-PageDown> 	:tabnext<CR>
 nnoremap <M-l>      	:tabnext<CR>
 nnoremap <M-t> 		    :tabnew 
 
-nnoremap <C-N>	 	?<<.*>><CR>
-nnoremap <M-n> 		/<<.*>><CR>
+nnoremap <C-N>	 	?<++><CR>vf>
+nnoremap <M-n> 		/<++><CR>vf>
 
 set tabstop=4
 set shiftwidth=4
