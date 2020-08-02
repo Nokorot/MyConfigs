@@ -31,9 +31,9 @@ bindsym $mod+x			$lock
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+q			kill
 
-bindsym $mod+s			$igaps plus 5
-bindsym $mod+Shift+s	$igaps minus 5
-bindsym $mod+Shift+d	$igaps set 0
+bindsym $mod+s			gaps inner current plus 5
+bindsym $mod+Shift+S	gaps inner current minus 5
+# bindsym $mod+Shift+d	gaps inner current set 0
 
 bindsym $mod+b			bar mode toggle
 bindsym $mod+Shift+b	border toggle
@@ -60,7 +60,8 @@ bindsym $mod+n 			$exec $term -e ranger ~/Notes
 
 bindsym $mod+c			$exec ddspawn dropdowncalc 
 
-bindsym $mod+d			$exec dmenu_run
+bindsym $mod+d			$exec dmenu_run2
+bindsym $mod+Shift+d	$exec dmenu_run
 
 bindsym $mod+a			$exec dmenu-gg-bookmarks
 bindsym $mod+Shift+g	$exec google-chrome; workspace G

@@ -16,6 +16,12 @@ keycode  66 = Escape	 	# The Caps_Lock key
 keycode 135 = Super_R	 	# The Menu key
 keycode 248 = Caps_Lock		# Fn + f11
 
+! keycode  37 = Escape		# The Control_L key
+! keycode  66 = Control_L	 	# The Caps_Lock key
+
+keycode  37 = Control_L	 	# The Control_L key
+keycode  66 = Escape		# The Caps_Lock key
+
 ! <no mod> <Shift> <Mode_switch> <Shift+Mode_switch> <ISO_Level3_Shift> <ISO_Level3_Shift+Shift> 
 keycode  21 = backslash grave backslash dead_grave acute notsign 
 keycode  35 = asciitilde asciicircum dead_tilde dead_circumflex diaeresis dead_diaeresis # tilde key

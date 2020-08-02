@@ -3,7 +3,7 @@
 # sudo apt update -y
 # sudo apt --fix-broken install
 # 
-# sudo apt install -y neovim urxvt
+# sudo apt install -y neovim rxvt-unicode
 # sudo apt install -y dunst unclutter libnotify-bin
 # sudo apt install -y suckless-tools feh 
 # sudo apt install -y sxiv
@@ -13,10 +13,10 @@
 
 source .essence_func
 # [ -f /etc/sudoers.d/np-pass ] sudoers_nopass
-install_i3_gaps
+# install_i3_gaps
 # install_google_chorme
 
-# Axilary
-[ -f ~/.config/wall.png ] || setbg ~/.myconf/wall.jpg;
-[ -a ~/.trash ] || ln -s ~/.local/share/Trash/files/ ~/.trash;
+# # Axilary
+# # [ -f ~/.config/wall.png ] || setbg ~/.myconf/wall.jpg;
+# [ -a ~/.trash ] || ln -s ~/.local/share/Trash/files/ ~/.trash;
 

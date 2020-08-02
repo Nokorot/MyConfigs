@@ -72,8 +72,7 @@ $mod+x
 $mod+f
 $mod+q
 $mod+s
-$mod+Shift+s
-$mod+Shift+d
+$mod+Shift+S
 $mod+b
 $mod+Shift+b
 $mod+Mod1+w
@@ -89,6 +88,7 @@ $mod+i
 $mod+n
 $mod+c
 $mod+d
+$mod+Shift+d
 $mod+a
 $mod+Shift+g
 $mod+plus
