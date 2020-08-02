@@ -1,22 +1,38 @@
+Height 900=854
+State=AAAA/wAAAAD9AAAAAAAAAw0AAANCAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Width 1600=781
+
 [Desktop Entry]
 FullScreen=false
 
 [MainWindow]
-Height 900=838
-State=AAAA/wAAAAD9AAAAAAAABigAAAMyAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Height 900=420
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAw0AAANWAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-Width 1600=1576
+Width 1600=973
 
 [Recent Files]
-File1[$e]=$HOME/Documents/Books/Brandon Sanderson - Mistborn Series 1-6/Brandon Sanderson - [Mistborn 04] - The Alloy of Law (v5).epub
-File2[$e]=$HOME/Downloads/9709233.ps
-File3[$e]=$HOME/Dissertation/A-Infinity algebras.pdf
-File4[$e]=$HOME/Downloads/Problems_I.pdf
-File5[$e]=$HOME/Downloads/Problems_V_Solution.pdf
-File6[$e]=$HOME/Downloads/2019245_MATH10047.pdf
-Name1[$e]=Brandon Sanderson - [Mistborn 04] - The Alloy of Law (v5).epub
-Name2[$e]=9709233.ps
-Name3[$e]=A-Infinity algebras.pdf
-Name4[$e]=Problems_I.pdf
-Name5[$e]=Problems_V_Solution.pdf
-Name6[$e]=2019245_MATH10047.pdf
+File1[$e]=$HOME/Dropbox/UniEdin/Dissertation/Refs/src/Legendrian and Transversal Knots/fig/grading.eps
+File10[$e]=/usr/share/fonts/svg/font-awesome/
+File2[$e]=$HOME/Dropbox/UniEdin/Dissertation/Refs/src/Legendrian and Transversal Knots/fig/sigmai.eps
+File3[$e]=$HOME/Dropbox/UniEdin/Dissertation/Refs/src/Legendrian and Transversal Knots/fig/cornerasy.eps
+File4[$e]=$HOME/Dropbox/UniEdin/Dissertation/Refs/src/Legendrian and Transversal Knots/fig/orintsigns.eps
+File5[$e]=$HOME/Downloads/2020-03-31-Note-15-33.pdf
+File6[$e]=$HOME/Dissertation/Refs/A-Infinity algebras.pdf
+File7[$e]=$HOME/Dissertation/Paper/Paper.pdf
+File8[$e]=$HOME/Dissertation/Refs/chekanov-differential-algebra-of-legendrian-links.pdf
+File9[$e]=$HOME/Downloads/0401007.pdf
+Name1[$e]=grading.eps
+Name10[$e]=
+Name2[$e]=sigmai.eps
+Name3[$e]=cornerasy.eps
+Name4[$e]=orintsigns.eps
+Name5[$e]=2020-03-31-Note-15-33.pdf
+Name6[$e]=A-Infinity algebras.pdf
+Name7[$e]=Paper.pdf
+Name8[$e]=chekanov-differential-algebra-of-legendrian-links.pdf
+Name9[$e]=0401007.pdf
+
+[Shortcut Schemes]
+Current Scheme=Default

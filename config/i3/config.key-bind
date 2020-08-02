@@ -7,25 +7,19 @@ set $mod2 Shift
 set $mod3 Control
 
 set $exec exec --no-startup-id
-set $shutdown 	sudo -A shutdown -h now
-set $reboot 	sudo -A reboot
-set $hibernate 	sudo -A systemctl suspend
-set $netrefresh sudo -A systemctl restart NetworkManager
-#set $lock 		$exec mpc -p 6000 pause; $exec pauseallmpv ; $exec i3lock -e -f -c 1d2021 ; $exec xset dpms force off
-set $lock 	 	exec i3lock-fancy
+set $dd   exec --no-startup-id dmenu_run2
 
 
 ## #---Basic Bindings---# #
 bindsym $mod+Return 		$exec $term
-bindsym $mod+Shift+Return	$exec samedir
 
 bindsym $mod+Shift+space 	floating toggle
 
-bindsym $mod+Shift+Escape 	$exec prompt "Exit i3?" "i3-msg exit"
-bindsym $mod+Shift+BackSpace	$exec prompt "Shutdown computer?" "$shutdown"
+bindsym $mod+Shift+Escape 	    $dd exit
+bindsym $mod+Shift+BackSpace	$dd shutdown
  
-bindsym Mod1+Ctrl+l		$lock 
-bindsym $mod+x			$lock
+bindsym Mod1+Ctrl+l		$dd lock 
+bindsym $mod+x			$dd lock
 
 # i3 commands
 bindsym $mod+f			fullscreen toggle
@@ -44,35 +38,38 @@ bindsym $mod+Mod1+e 	layout toggle split
 
 bindsym $mod+t			split toggle
 
+bindsym $mod+Shift+a    $dd click_script
+bindsym Mod5+F1         $dd click_script
 
 ## #---Letter Key Bindings---# #
 bindsym $mod+oslash 	$exec dmenuunicode
 
-bindsym $mod+w			$exec $term -e nmtui
-bindsym $mod+Shift+w	$exec $BROWSER
+bindsym $mod+Shift+w	$dd nmtui
+bindsym $mod+i 			$dd htop
 
-bindsym $mod+r 			$exec $term -e ranger 
-bindsym $mod+y			$exec $term -e calcurse -D ~/.config/calcurse
-bindsym $mod+u			$exec ddspawn tmuxdd
-bindsym $mod+i 			$exec $term -e htop
-bindsym $mod+n 			$exec $term -e ranger ~/Notes 
-# Change the ranger notes to be a dropdown
+bindsym $mod+r 			$dd ranger 
+bindsym $mod+y			$dd calendar # calcurse
+bindsym $mod+u			$exec ddspawn dd-tmux
+bindsym $mod+n 			$exec ddspawn dd-r-notes
 
-bindsym $mod+c			$exec ddspawn dropdowncalc 
+bindsym $mod+c			$exec ddspawn dd-calc 
 
 bindsym $mod+d			$exec dmenu_run2
 bindsym $mod+Shift+d	$exec dmenu_run
 
-bindsym $mod+a			$exec dmenu-gg-bookmarks
-bindsym $mod+Shift+g	$exec google-chrome; workspace G
+# bindsym $mod+a			$exec dmenu-gg-bookmarks
 
+bindsym $mod+o 			$exec echo "tmp.sh" | $SHELL
+bindsym $mod+m 			$dd music
+bindsym $mod+w	        $dd browser 
+#bindsym $mod+Shift+a	$dd pulsemixer
 
 ## #---Media Keys---# #
 # Volume keys
 bindsym $mod+plus				$exec lmc up 5
-bindsym $mod+Shift+plus			$exec lmc up 15
+bindsym $mod+Shift+plus			$exec lmc up 1
 bindsym $mod+minus 				$exec lmc down 5
-bindsym $mod+Shift+minus		$exec lmc down 15
+bindsym $mod+Shift+minus		$exec lmc down 1
 bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
 bindsym $mod+greater			$exec lmc next
@@ -80,7 +77,6 @@ bindsym $mod+Shift+greater		$exec lmc next
 
 bindsym $mod+p					$exec lmc toggle
 bindsym $mod+Shift+p			$exec lmc pause
-bindsym $mod+Shift+a			$exec $term -e pulsemixer
 
 # For advancing forward/backward in an mpd song
 bindsym $mod+bracketleft 		$exec lmc back 10
@@ -88,13 +84,12 @@ bindsym $mod+Shift+bracketleft 	$exec lmc back 120
 bindsym $mod+bracketright 		$exec lmc forward 10
 bindsym $mod+Shift+bracketright $exec lmc forward 120
 
-bindsym $mod+m 					workspace $musicWS; $exec $term -e ncmpcpp
 bindsym $mod+Shift+m			$exec lmc mute
 
 
 ## #---Function Buttons---# #
 # bindsym $mod+F1		
-bindsym $mod+F2		$exec ~/.config/i3/gen_conf_file; restart
+bindsym $mod+F2		$exec ~/.config/i3/gen_conf; restart
 # bindsym $mod+F3	
 # bindsym $mod+F4		
 # bindsym $mod+F5		
@@ -104,11 +99,11 @@ bindsym $mod+F7		$exec td-toggle		#% transmition tool
 bindsym $mod+F9		$exec dmenumount
 bindsym $mod+F10	$exec dmenuumount
 bindsym $mod+F11	$exec ducksearch
-bindsym $mod+F12	$exec $term -e nmtui
+bindsym $mod+F12	$dd nmtui
 
 # For screenshots
 # maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
 bindsym Print 				$exec gnome-screenshot
 bindsym Shift+Print 		$exec gnome-screenshot -a
-bindsym Control+Print 		$exec gnome-screenshot -a
+bindsym Control+Print 		$exec gnome-screenshot -w
 bindsym $mod+Scroll_Lock	$exec "killall screenkey || screenkey"

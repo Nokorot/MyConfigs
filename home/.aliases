@@ -6,8 +6,20 @@ alias la='ls -A'
 alias lc='ls --color=always'
 alias l='ls -CF'
 
+# Propmpt if overiding
+alias mv="mv -i"
+alias cp="cp -i"
+
+alias rn="bulkrename"
+
 # cd + clear
 function c() { [ ! -z "$1" ] && cd "$1"; clear && pp && ls; }
+
+function cpp() {
+    # TODO: Might want to allow $1 "the source" to consist of mutliple files, 
+    rsync -hr --info=progress2 "$1" "$2"
+}
+
 
 alias v="nvim"
 alias r="ranger"
@@ -22,19 +34,19 @@ alias uniPrint="~/.bin/uniPrint"
 alias xc="xclip -selection clipboard"
 alias hl="/usr/share/vim/vim81/macros/less.sh"
 
-alias urxvt="urxvt -perl-lib ~/.config/urxvt/ext"
 
 alias gg="google-chrome-stable >/dev/null 2>&1 & disown"
 function ga() { google-chrome --app="http://$1" 2>&1 & disown; }
 function ee() { emacs "$@" > /dev/null & disown; }
 
+# Default to sudo
 alias mount="sudo mount"
 alias umount="sudo umount"
 alias shutdown="sudo shutdown" 
 
-##
-alias vi3="nvim ~/.config/i3/config"
+#
+alias vi3="nvim ~/.config/i3"
 
+function dm-wlist() { echo "$@" >> ~/.config/dmenu_run.wlist; } 
 
-alias vt="history | grep vlc | tail"
 

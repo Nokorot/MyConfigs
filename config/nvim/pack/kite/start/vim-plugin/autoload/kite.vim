@@ -87,24 +87,28 @@ endfunction
 
 
 function! kite#bufenter()
-  if s:supported_language()
+  if kite#languages#supported_by_plugin()
     call s:launch_kited()
 
-    call s:disable_completion_plugins()
-    call s:setup_options()
-    call s:setup_events()
-    call s:setup_mappings()
+    if kite#languages#supported_by_kited()
+      call s:disable_completion_plugins()
+      call s:setup_options()
+      call s:setup_events()
+      call s:setup_mappings()
 
-    setlocal completefunc=kite#completion#complete
+      setlocal completefunc=kite#completion#complete
 
-    call kite#events#event('focus')
-    call kite#status#status()
-    call s:start_status_timer()
+      call kite#events#event('focus')
+      call kite#status#status()
+      call s:start_status_timer()
 
-  else
-    call s:restore_options()
-    call s:stop_status_timer()
-  endif
+      return
+    end
+  end
+
+  " Buffer is not a supported language.
+  call s:restore_options()
+  call s:stop_status_timer()
 endfunction
 
 
@@ -112,12 +116,14 @@ function s:setup_events()
   augroup KiteEvents
     autocmd! * <buffer>
 
-    autocmd CursorHold               <buffer> call kite#events#event('selection')
+    autocmd CursorHold,CursorHoldI   <buffer> call kite#events#event('selection')
     autocmd TextChanged,TextChangedI <buffer> call kite#events#event('edit')
     autocmd FocusGained              <buffer> call kite#events#event('focus')
 
     autocmd InsertCharPre            <buffer> call kite#completion#insertcharpre()
     autocmd TextChangedI             <buffer> call kite#completion#autocomplete()
+
+    autocmd CompleteDone             <buffer> call kite#completion#replace_range()
 
     if &ft == 'go'
       autocmd CompleteDone           <buffer> call kite#completion#expand_newlines()
@@ -218,10 +224,5 @@ function! s:disable_completion_plugins()
     call deoplete#disable()
     call kite#utils#warn("disabling deoplete's completions")
   endif
-endfunction
-
-
-function! s:supported_language()
-  return (&filetype == 'python' && expand('%:e') != 'pyi') || &filetype == 'go'
 endfunction
 

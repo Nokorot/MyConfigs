@@ -1,22 +1,91 @@
-atom
+# This file list all the keywords that apear when runding dmenu_run
+#
+# TODO:
+# Divide this into a directory
+# 
+# Basics
+shutdown        prompt "Shutdown computer?" "sudo shutdown now"
+reboot          prompt "Reboot computer?" "sudo reboot"
+hibernate 	    prompt "Reboot computer?" "sudo -A systemctl suspend"
+exit            prompt "Exit i3?" "i3-msg exit"
+lock            xset dpms force off; i3lock-fancy
+browser         $BROWSER 
+# Browsers
+# brave-browser
+# google-chrome
+chrome
 zathura
-zathura2
-zathura-tabbed
-google-chrome
-thunderbird
-eclipse 
-ranger
 sxiv
-st
+# terms
+st 
 urxvt
 xterm
-okularrc
-discord
+tilix
+# editors
+emacs
 gedit
-gimp
+idea            idea
+eclipse 
+# ws spesific
+music 			i3-msg "workspace $WSmusic";    $TERMINAL -e ncmpcpp
+thunderbird     i3-msg "workspace $WS10";          thunderbird
+gimp            i3-msg "workspace $WSgimp";     gimp
+okular          i3-msg "workspace $WS7; layout tabbed"; okular
+discord
+skype           skypeforlinux
+tc              tc.app
+# Games
 minecraft
-factorio
+minetest
 2048-qt
-nudoku
 snake
 mc4d
+#
+# Games
+# 
+xpyraminx
+xbarrel
+xmlink
+xmball          xmball -bg "#111111" -fg "#111111" -bd "#0f0f0f"
+xoct            xoct   -bg "#111111" -fg "#111111" -bd "#0f0f0f"
+xpanex          xpanex -bg "#111111" -fg "#111111" -bd "#0f0f0f"
+# Slides
+xtriangles      xtriangles  -bg "#111111" -fg "#111111" -tile  "#55aaaa"
+xcubes          xcubes      -bg "#111111" -fg "#111111" -block "#55aaaa"
+xhexagons       xhexagons   -bg "#111111" -fg "#111111" -tile  "#55aaaa"
+# Ribix's
+xdino
+xrubik          cd ~/Games/Xrubik && xrubik -bg "#ff00ff" -face0 white -face1 blue -face2 red -face3 green -face4 yellow -face5 orange
+xskewb          xskewb -face0 white -face1 blue -face2 red -face3 green -face4 yellow -face5 orange
+
+#
+# calcurse        $TERMINAL -e calcurse
+nudoku          $TERMINAL -e nudoku
+sudoku          $TERMINAL -e sudoku
+ranger          $TERMINAL -e ranger
+pulsemixer      $TERMINAL -e pulsemixer     # used by i3 
+nmtui           $TERMINAL -e nmtui          # used by i3 
+htop            $TERMINAL -e htop           # used by i3 
+joplin          i3 workspace $WS0; $TERMINAL -e joplin
+trans-qt        transmission-qt
+#
+# Print Screen
+screen-print    gnome-screenshoot
+a-screen-print  gnome-screenshot -a
+w-screen-print  gnome-screenshot -w
+c-screen-print  gnome-screenshot -c
+ac-screen-print  gnome-screenshot -a -c
+#
+#
+click_script    alpha_click_script
+#
+## Web sites
+# incognito       $BROWSER --incognito
+incognito       google-chrome --incognito
+netflix         i3-msg "workspace $WSmovie; gaps inner current set 0"; $BROWSER --app="https://www.netflix.com" & (sleep 2;  i3-msg "border pixel 0")
+calendar        $BROWSER --app="https://calendar.google.com/calendar" # used by i3
+youtube         $BROWSER www.youtube.com/feed/subscriptions
+learn           $BROWSER www.learn.ed.ac.uk
+messenger       i3 workspace $WS8; $BROWSER --app="https://www.messenger.com"
+twitch          $BROWSER --app="https://www.twitch.com"
+porn            i3-msg "workspace PP; gaps inner current set 0"; google-chrome --new-window --incognito https://www.pornhub.com & (sleep 1;  i3-msg "border pixel 0")

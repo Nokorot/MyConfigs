@@ -1,0 +1,25 @@
+[
+	{ "keys": ["ESCAPE"], "type": "function", "command": "hide_console" },
+	{ "keys": [":"], "type": "function", "command": "enter_command_line_mode" },
+	{ "keys": [" "], "command": "todo toggle $n" },
+	{ "keys": ["cc"], "command": "todo clear $n" },
+	{ "keys": ["tc"], "type": "function", "command": "toggle_console" },
+	{ "keys": ["tm"], "type": "function", "command": "toggle_metadata" },
+	{ "keys": ["/"], "type": "prompt", "command": "search \"\"", "cursorPosition": -2 },
+	{ "keys": ["mn"], "type": "prompt", "command": "mknote \"\"", "cursorPosition": -2 },
+	{ "keys": ["mt"], "type": "prompt", "command": "mktodo \"\"", "cursorPosition": -2 },
+	{ "keys": ["mb"], "type": "prompt", "command": "mkbook \"\"", "cursorPosition": -2 },
+	{ "keys": ["yn"], "type": "prompt", "command": "cp $n \"\"", "cursorPosition": -2 },
+	{ "keys": ["dn"], "type": "prompt", "command": "mv $n \"\"", "cursorPosition": -2 },
+    
+	{ "keys": ["dd", "DELETE"], "type": "function", "command": "delete" },
+    { "keys": ["qq"], "type": "prompt", "command":"exit"},
+
+	{ "keys": ["h"], "type": "function", "command": "focus_previous" },
+	{ "keys": ["k", "UP"], "type": "function", "command": "move_up" },
+	{ "keys": ["j", "DOWN"], "type": "function", "command": "move_down" },
+	{ "keys": ["PAGE_UP"], "type": "function", "command": "page_up" },
+	{ "keys": ["PAGE_DOWN"], "type": "function", "command": "page_down" },
+
+	{ "keys": ["ENTER", "l"], "type": "function", "command": "activate" }
+]

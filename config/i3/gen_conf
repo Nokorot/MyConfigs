@@ -1,0 +1,31 @@
+#!/bin/sh
+
+cdir=$HOME/.config/i3/
+gdir=$HOME/.config/i3/gen-files/
+
+# sed command, which removes comments and white spaces
+rmc='{/^[ \t]*#/d;/^$/d; s/[ \t]*#%.*$//; s/[ \t]*$//}'
+
+sed -e "$rmc" $cdir/config.ws-names \
+    | awk '{ printf "set $"$1; $1="";  printf $0"\n"}' \
+    > $gdir/ws-names.i3
+
+cat $cdir/config.base 	    \
+    $gdir/ws-names.i3       \
+	$cdir/config.nav-keys 	\
+	$cdir/config.key-bind 	\
+	$cdir/config.prog-spes 	\
+	$cdir/config.xf86-keys  \
+	$cdir/config.footer 	\
+	| sed -e "$rmc"         \
+	> $cdir/config
+
+sed -e "$rmc" $cdir/config.ws-names \
+    | awk '{frt=$1;$1=""; printf "export "frt"="substr($0, 2)"\n"}' \
+    > $gdir/ws-names.sh
+
+# TODO: Look for conflicts
+cat $cdir/config | grep ^bindsym | sed 's/\t/ /' | cut -d' ' -f 2 > $gdir/keybindings
+
+
+

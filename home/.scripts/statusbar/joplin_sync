@@ -1,0 +1,5 @@
+#!/bin/sh
+
+v=$(joplin sync | grep "Updated local items")
+[ -z $v ] || notify-send "New joplin content"
+echo ""

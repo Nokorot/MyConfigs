@@ -2,58 +2,35 @@ command=~/.scripts/statusbar/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-#[record]
-#command=cat /tmp/recordingicon
-#interval=once
-#signal=9
-
-#[music]
-#label=🎼
-#interval=once
-#signal=11
-
-#[news]
-#label=📰
-#interval=once
-#signal=6
-
-#[iplocate]
-#interval=30
-
-#[pacpackages]
-#label=📦
-#interval=once
-#signal=8
-
-#[torrent]
-#interval=20
-#signal=7
+[joplin_sync]
+interval=300
 
 #[weather]
 #interval=18000
 #signal=5
+
+#[covid]
+#interval=60
+#command=covid_status
 
 [screen_brightness]
 label=💡
 interval=once
 signal=5
 
-#[mailbox]
-#label=📬
-#interval=180
-#signal=12
-
 [memory]
 interval=30
 label=🧠
 
-# [cpu]
-# interval=15
-# label=💻
-
 [volume]
 interval=once
 signal=10
+
+[music]
+#label=🎼
+interval=once
+signal=11
+
 
 [disk]
 interval=60
@@ -77,6 +54,8 @@ interval=10
 #[help]
 #interval=once
 
+
+# This is to add and extra separater before the end
 [end]
 command=echo " "
 interval=once

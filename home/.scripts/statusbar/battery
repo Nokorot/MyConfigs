@@ -3,15 +3,12 @@
 
 low_battery_audio_file="$HOME/.config/low_battery.wav"
 
-varfile="$VARS"battery
-if [ -f "$varfile" ]; then 
-	. "$varfile"
-fi
-
-[ -x $lowpwr_note ] && lowpwr_note=0;
+# varfile="$VARS"battery
+# if [ -f "$varfile" ]; then 
+# 	. "$varfile"
+# fi
 [ -x $play_low_battery_sound ] && play_low_battery_sound=1;
 
-[ -x $sound ] && lowpwr_note=0; "Off, auto,"
 
 case $BLOCK_BUTTON in
     3) pgrep -x dunst >/dev/null && notify-send "🔋 Battery module" "🔋: discharging
@@ -23,40 +20,36 @@ case $BLOCK_BUTTON in
 - Text color reflects charge left" ;;
 esac
 
+## Get info
 capacity=$(cat "/sys/class/power_supply/$1/capacity") || exit
 status=$(cat "/sys/class/power_supply/"$1"/status")
 
-if [ "$capacity" -ge 75 ]; then
-	color="#00ff00"
-	lowpwr_note=0;
-elif [ "$capacity" -ge 50 ]; then
-	color="#ffffff"
-	lowpwr_note=0;
-elif [ "$capacity" -ge 20 ]; then
-	color="#ffff00"
-	lowpwr_note=0;
-else
-	color="#ff0000"
-	[ $lowpwr_note -le 0 ] && [ $status != "Charging"]  && notify-send "❗ Battery is low $capacity" 
-	lowpwr_note=1;
-	warn="❗"
-fi
-
-if [ "$capacity" -le 5 ] && [ "$status" != "Charging" ]; then
+## Play warning sound
+if [ "$capacity" -le 25 ] && [ "$status" != "Charging" ]; then
 	[ $play_low_battery_sound -ge 1 ] && \ 
 		ffplay -nodisp -autoexit -t 2 $low_battery_audio_file \
 				> /dev/null 2>&1 &
 	notify-send "❗ Battery is low $capacity"
-else 
-	low_battery_audio_file=1
+else
+	play_low_battery_sound=1
 fi
 
-echo $(date) "$capacity" >> $HOME/.config/battery.txt
-echo "lowpwr_note=\"$lowpwr_note\""> $varfile
-echo "play_low_battery_sound=\"$play_low_battery_sound\"">> $varfile
+# echo "play_low_battery_sound=\"$play_low_battery_sound\"">> $varfile
 
-[ -z $warn ] && warn=" "
-[ "$status" = "Charging" ] && color="#ffffff"
+## Status bar info
+
+warn=""
+if   [ "$status" = "Charging" ]; then color="#ffffff"
+elif [ "$capacity" -ge 75 ]; then color="#00ff00";
+elif [ "$capacity" -ge 50 ]; then color="#ffffff";
+elif [ "$capacity" -ge 30 ]; then color="#ffff00";
+else
+    color="#ff0000"; warn="❗"
+fi
+
+symbol="$(echo "$status" | sed -e "s/,//;s/Discharging/🔋/;s/Not Charging/🛑/;s/Charging/🔌 /;s/Unknown/♻️/;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g")"
+printf "<span color='%s'>%s%s%s</span>\n" "$color" "$symbol" "$warn" "$capacity%"
+
 #     🔋
-#  🔌
-printf "<span color='%s'>%s%s%s</span>\n" "$color" "$(echo "$status" | sed -e "s/,//;s/Discharging/🔋/;s/Not Charging/🛑/;s/Charging/ /;s/Unknown/♻️/;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+#  🔌 
+#

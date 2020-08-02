@@ -1,7 +1,6 @@
 #!/bin/bash 
 
 
-
 mk_ply_list() {
 	for vf in "$@"; do 
 		file --mime-type "$vf" | grep "video/" >/dev/null \
@@ -12,7 +11,7 @@ mk_ply_list() {
 ply_list() {
 	v=$( grep -v "^#" "$1" | sed 1q )
 	while [ -n "$v" ]; do
-		i3 workspace "*: 📽"
+		i3-msh "workspace $WSmovie; sleep 1 && border pixel 0;"
 		vlc "$v"
 
 		[ "$(printf "next\\nquit" | dmenu -i)" = "quit" ] && break;

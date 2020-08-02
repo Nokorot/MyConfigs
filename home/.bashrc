@@ -14,10 +14,10 @@ if [ -d ~/.bashrc.d ]; then
   unset i
 fi
 
-# This is for esting
-
-alias mv="mv -i"
+export TERMIANL_BG=#222222
 
 
 ###
 
+
+source /home/noko/.config/broot/launcher/bash/br

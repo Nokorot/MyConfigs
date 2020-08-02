@@ -1,32 +1,8 @@
-set $base00 #101218
-set $base01 #1f222d
-set $base02 #252936
-set $base03 #7780a1
-set $base04 #C0C5CE
-set $base05 #d1d4e0
-set $base06 #C9CCDB
-set $base07 #ffffff
-set $base08 #ee829f
-set $base09 #f99170
-set $base0A #ffefcc
-set $base0B #a5ffe1
-set $base0C #97e0ff
-set $base0D #97bbf7
-set $base0E #c0b7f9
-set $base0F #fcc09e
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-set $gimpWS 	"-: 🖌"
-set $musicWS    "-: 🎵"
-set $movieWS 	"-: 📽"
+default_border pixel 2
+gaps inner 10
+gaps outer 0
+floating_modifier $mod
+popup_during_fullscreen smart
 font pango:DejaVu Sans Mono 8
 bar {
     font pango:System San Francisco Display, FontAwesome 11
@@ -41,40 +17,20 @@ bar {
         inactive_workspace #020202 #020202 #888888
     }
 }
-default_border pixel 2
-gaps inner 10
-gaps outer 0
-floating_modifier $mod
-popup_during_fullscreen smart
-set $igaps gaps inner current
-set $ugaps gaps outer current
-for_window 	[class="chrome"] 		border pixel 3
-for_window 	[class="thunderbird"] 	move workspace $ws10
-for_window 	[class="zathura"] 		move workspace $ws7
-for_window 	[class="zathura"] 		workspace $ws7; layout tabbed
-for_window 	[instance="netflix"] 	move workspace $movieWS
-for_window 	[instance="netflix"] 	workspace $movieWS
-for_window 	[instance="netflix"] 	border pixel 0; $igaps set 0
-for_window 	[class="Pinentry"] 		sticky enable
-for_window 	[class="sent"] 			border pixel 0px
-for_window 	[title="GIMP Startup"] 	move workspace $gimpWS
-for_window 	[class="Gimp"] 			move workspace $gimpWS
-for_window 	[window_role="GtkFileChooserDialog"] resize set 800 600
-for_window 	[window_role="GtkFileChooserDialog"] move position center
-for_window 	[title="Default - Wine desktop"] 	 floating enable
-for_window 	[title="mpvfloat"] floating enable
-for_window 	[title="mpvfloat"] sticky enable
-for_window 	[title="mpvfloat"] border pixel 0
-no_focus 	[title="mpvfloat"]
-for_window [instance="dropdown_*"] floating enable
-for_window [instance="dropdown_*"] move scratchpad
-for_window [instance="dropdown_*"] sticky enable
-for_window [instance="dropdown_*"] scratchpad show
-for_window [instance="dropdown_tmuxdd"] resize set 625 450
-for_window [instance="dropdown_dropdowncalc"] resize set 800 600
-for_window [instance="dropdown_tmuxdd"] border pixel 3
-for_window [instance="dropdown_dropdowncalc"] border pixel 2
-for_window [instance="dropdown_*"] move position center
+set $WS0 "0: 📒"
+set $WS1 "1: "
+set $WS2 "2: "
+set $WS3 "3: "
+set $WS4 "4"
+set $WS5 "5"
+set $WS6 "6"
+set $WS7 "7"
+set $WS8 "8"
+set $WS9 "9"
+set $WS10 "10: 📧"
+set $WSgimp "🖌"
+set $WSmusic "🎵"
+set $WSmovie "📽"
 set $movestep 50
 mode "resize" {
 	bindsym h	$exec i3resize left   "50px or 3ppt"
@@ -115,64 +71,64 @@ bindsym $mod+Ctrl+Right		$exec i3resize right  "50px or 3ppt"
 set $move move container to workspace
 set $endws workspace 0; workspace prev
 set $movetoendws $move 0; workspace 0; $move prev; workspace prev
-bindsym $mod+Home			workspace $ws1
-bindsym $mod+Shift+Home		$move $ws1
+bindsym $mod+Home			workspace $WS1
+bindsym $mod+Shift+Home		$move $WS1
 bindsym $mod+End			$endws
 bindsym $mod+Shift+End		$movetoendws
 bindsym $mod+aring			$endws
 bindsym $mod+Shift+aring	$movetoendws
 bindsym $mod+Prior			workspace prev
 bindsym $mod+Shift+Prior	$move prev; workspace prev;
+bindsym $mod+Ctrl+Prior	    $move prev
 bindsym $mod+Next			workspace next
 bindsym $mod+Shift+Next		$move next; workspace next;
-bindsym $mod+1		workspace $ws1
-bindsym $mod+2		workspace $ws2
-bindsym $mod+3		workspace $ws3
-bindsym $mod+4		workspace $ws4
-bindsym $mod+5		workspace $ws5
-bindsym $mod+6		workspace $ws6
-bindsym $mod+7		workspace $ws7
-bindsym $mod+8		workspace $ws8
-bindsym $mod+9		workspace $ws9
-bindsym $mod+0		workspace $ws10
-bindsym $mod+Control+1	$move $ws1
-bindsym $mod+Control+2	$move $ws2
-bindsym $mod+Control+3	$move $ws3
-bindsym $mod+Control+4	$move $ws4
-bindsym $mod+Control+5	$move $ws5
-bindsym $mod+Control+6	$move $ws6
-bindsym $mod+Control+7	$move $ws7
-bindsym $mod+Control+8	$move $ws8
-bindsym $mod+Control+9	$move $ws9
-bindsym $mod+Control+0	$move $ws10
-bindsym $mod+Shift+1	$move $ws1;  workspace $ws1
-bindsym $mod+Shift+2	$move $ws2;  workspace $ws2
-bindsym $mod+Shift+3	$move $ws3;  workspace $ws3
-bindsym $mod+Shift+4	$move $ws4;  workspace $ws4
-bindsym $mod+Shift+5	$move $ws5;  workspace $ws5
-bindsym $mod+Shift+6	$move $ws6;  workspace $ws6
-bindsym $mod+Shift+7	$move $ws7;  workspace $ws7
-bindsym $mod+Shift+8	$move $ws8;  workspace $ws8
-bindsym $mod+Shift+9	$move $ws9;  workspace $ws9
-bindsym $mod+Shift+0	$move $ws10; workspace $ws10
+bindsym $mod+Ctrl+Next		$move next
+bindsym $mod+bar	workspace $WS0
+bindsym $mod+1		workspace $WS1
+bindsym $mod+2		workspace $WS2
+bindsym $mod+3		workspace $WS3
+bindsym $mod+4		workspace $WS4
+bindsym $mod+5		workspace $WS5
+bindsym $mod+6		workspace $WS6
+bindsym $mod+7		workspace $WS7
+bindsym $mod+8		workspace $WS8
+bindsym $mod+9		workspace $WS9
+bindsym $mod+0		workspace $WS10
+bindsym $mod+Control+bar    $move $WS0
+bindsym $mod+Control+1	    $move $WS1
+bindsym $mod+Control+2	    $move $WS2
+bindsym $mod+Control+3	    $move $WS3
+bindsym $mod+Control+4	    $move $WS4
+bindsym $mod+Control+5	    $move $WS5
+bindsym $mod+Control+6	    $move $WS6
+bindsym $mod+Control+7	    $move $WS7
+bindsym $mod+Control+8	    $move $WS8
+bindsym $mod+Control+9	    $move $WS9
+bindsym $mod+Control+0	    $move $WS10
+bindsym $mod+Shift+bar	    $move $WS0;  workspace $WS0
+bindsym $mod+Shift+1	    $move $WS1;  workspace $WS1
+bindsym $mod+Shift+2	    $move $WS2;  workspace $WS2
+bindsym $mod+Shift+3	    $move $WS3;  workspace $WS3
+bindsym $mod+Shift+4	    $move $WS4;  workspace $WS4
+bindsym $mod+Shift+5	    $move $WS5;  workspace $WS5
+bindsym $mod+Shift+6	    $move $WS6;  workspace $WS6
+bindsym $mod+Shift+7	    $move $WS7;  workspace $WS7
+bindsym $mod+Shift+8	    $move $WS8;  workspace $WS8
+bindsym $mod+Shift+9	    $move $WS9;  workspace $WS9
+bindsym $mod+Shift+0	    $move $WS10; workspace $WS10
 set $term $TERMINAL
 set $mod Mod4
 set $mod2 Shift
 set $mod3 Control
 set $exec exec --no-startup-id
-set $shutdown 	sudo -A shutdown -h now
-set $reboot 	sudo -A reboot
-set $hibernate 	sudo -A systemctl suspend
-set $netrefresh sudo -A systemctl restart NetworkManager
-set $lock 	 	exec i3lock-fancy
+set $dd   exec --no-startup-id dmenu_run2
 bindsym $mod+Return 		$exec $term
-bindsym $mod+Shift+Return	$exec samedir
 bindsym $mod+Shift+space 	floating toggle
-bindsym $mod+Shift+Escape 	$exec prompt "Exit i3?" "i3-msg exit"
-bindsym $mod+Shift+BackSpace	$exec prompt "Shutdown computer?" "$shutdown"
+bindsym $mod+Shift+Escape 	    $dd exit
+bindsym $mod+Shift+BackSpace	$dd shutdown
 
-bindsym Mod1+Ctrl+l		$lock
-bindsym $mod+x			$lock
+bindsym Mod1+Ctrl+l		$dd lock
+bindsym $mod+x			$dd lock
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+q			kill
 bindsym $mod+s			gaps inner current plus 5
@@ -182,54 +138,75 @@ bindsym $mod+Shift+b	border toggle
 bindsym $mod+Mod1+w 	layout tabbed
 bindsym $mod+Mod1+e 	layout toggle split
 bindsym $mod+t			split toggle
+bindsym $mod+Shift+a    $dd click_script
+bindsym Mod5+F1         $dd click_script
 bindsym $mod+oslash 	$exec dmenuunicode
-bindsym $mod+w			$exec $term -e nmtui
-bindsym $mod+Shift+w	$exec $BROWSER
-bindsym $mod+r 			$exec $term -e ranger
-bindsym $mod+y			$exec $term -e calcurse -D ~/.config/calcurse
-bindsym $mod+u			$exec ddspawn tmuxdd
-bindsym $mod+i 			$exec $term -e htop
-bindsym $mod+n 			$exec $term -e ranger ~/Notes
-bindsym $mod+c			$exec ddspawn dropdowncalc
+bindsym $mod+Shift+w	$dd nmtui
+bindsym $mod+i 			$dd htop
+bindsym $mod+r 			$dd ranger
+bindsym $mod+y			$dd calendar # calcurse
+bindsym $mod+u			$exec ddspawn dd-tmux
+bindsym $mod+n 			$exec ddspawn dd-r-notes
+bindsym $mod+c			$exec ddspawn dd-calc
 bindsym $mod+d			$exec dmenu_run2
-bindsym $mod+Shift+d			$exec dmenu_run
-bindsym $mod+a			$exec dmenu-gg-bookmarks
-bindsym $mod+Shift+g	$exec google-chrome; workspace G
+bindsym $mod+Shift+d	$exec dmenu_run
+bindsym $mod+o 			$exec echo "tmp.sh" | $SHELL
+bindsym $mod+m 			$dd music
+bindsym $mod+w	        $dd browser
 bindsym $mod+plus				$exec lmc up 5
-bindsym $mod+Shift+plus			$exec lmc up 15
+bindsym $mod+Shift+plus			$exec lmc up 1
 bindsym $mod+minus 				$exec lmc down 5
-bindsym $mod+Shift+minus		$exec lmc down 15
+bindsym $mod+Shift+minus		$exec lmc down 1
 bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
 bindsym $mod+greater			$exec lmc next
 bindsym $mod+Shift+greater		$exec lmc next
 bindsym $mod+p					$exec lmc toggle
 bindsym $mod+Shift+p			$exec lmc pause
-bindsym $mod+Shift+a			$exec $term -e pulsemixer
 bindsym $mod+bracketleft 		$exec lmc back 10
 bindsym $mod+Shift+bracketleft 	$exec lmc back 120
 bindsym $mod+bracketright 		$exec lmc forward 10
 bindsym $mod+Shift+bracketright $exec lmc forward 120
-bindsym $mod+m 					workspace $musicWS; $exec $term -e ncmpcpp
 bindsym $mod+Shift+m			$exec lmc mute
-bindsym $mod+F2		$exec ~/.config/i3/gen_conf_file; restart
+bindsym $mod+F2		$exec ~/.config/i3/gen_conf; restart
 bindsym $mod+F6		$exec torwrap
 bindsym $mod+F7		$exec td-toggle
 bindsym $mod+F9		$exec dmenumount
 bindsym $mod+F10	$exec dmenuumount
 bindsym $mod+F11	$exec ducksearch
-bindsym $mod+F12	$exec $term -e nmtui
+bindsym $mod+F12	$dd nmtui
 bindsym Print 				$exec gnome-screenshot
 bindsym Shift+Print 		$exec gnome-screenshot -a
-bindsym Control+Print 		$exec gnome-screenshot -a
+bindsym Control+Print 		$exec gnome-screenshot -w
 bindsym $mod+Scroll_Lock	$exec "killall screenkey || screenkey"
+assign [class="vlc"] $WSmovie
+for_window 	[class="chrome"] 	border pixel 3
+for_window 	[class="Pinentry"] 		sticky enable
+for_window 	[class="sent"] 			border pixel 0px
+for_window 	[title="GIMP Startup"] 	move workspace $WSgimp
+for_window 	[class="Gimp"] 			move workspace $WSgimp
+for_window 	[window_role="GtkFileChooserDialog"] resize set 800 600
+for_window 	[window_role="GtkFileChooserDialog"] move position center
+for_window 	[title="Default - Wine desktop"] 	 floating enable
+for_window 	[title="mpvfloat"] floating enable
+for_window 	[title="mpvfloat"] sticky enable
+for_window 	[title="mpvfloat"] border pixel 0
+no_focus 	[title="mpvfloat"]
+for_window [instance="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_*"] resize set 1400 800
+for_window [instance="dropdown_tmuxdd"] resize set 625 450
+for_window [instance="dropdown_dropdowncalc"] resize set 800 600
+for_window [instance="dropdown_tmuxdd"] border pixel 3
+for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_*"] move position center
 bindsym XF86AudioMute					$exec lmc mute
-bindsym XF86AudioLowerVolume			$exec lmc down 5
+bindsym XF86AudioLowerVolume			$exec lmc down 1
 bindsym Shift+XF86AudioLowerVolume		$exec lmc down 10
-bindsym Control+XF86AudioLowerVolume	$exec lmc down 1
-bindsym XF86AudioRaiseVolume			$exec lmc up 5
+bindsym XF86AudioRaiseVolume			$exec lmc up 1
 bindsym Shift+XF86AudioRaiseVolume		$exec lmc up 10
-bindsym Control+XF86AudioRaiseVolume	$exec lmc up 1
 bindsym XF86PowerOff					$exec prompt "Shutdown computer?" "$shutdown"
 bindsym XF86Calculator					$exec ddspawn dropdowncalc -f mono:pixelsize=24
 bindsym XF86Explorer					$exec $term -e $FILE

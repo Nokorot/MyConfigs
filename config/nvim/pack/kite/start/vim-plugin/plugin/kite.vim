@@ -1,11 +1,29 @@
-if exists('g:loaded_kite') || &cp || v:version < 700
+if exists('g:loaded_kite') || &cp
   finish
 endif
+
+if has('nvim')
+  if !has('nvim-0.2')
+    echoerr 'Kite requires Neovim 0.2 or greater'
+    finish
+  endif
+else
+  if v:version < 800 || !has('patch-8.0.0027')
+    echoerr 'Kite requires Vim 8.0.0027 or greater'
+    finish
+  endif
+endif
+
+
 let g:loaded_kite = 1
 
 
 filetype on
 
+
+if !exists('g:kite_supported_languages')
+  let g:kite_supported_languages = ['python']
+endif
 
 if !exists('g:kite_auto_complete')
   let g:kite_auto_complete = 1

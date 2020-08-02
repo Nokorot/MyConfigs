@@ -2,12 +2,10 @@
 
 ## #---Extra XF86 Keys---# #
 bindsym XF86AudioMute					$exec lmc mute
-bindsym XF86AudioLowerVolume			$exec lmc down 5
+bindsym XF86AudioLowerVolume			$exec lmc down 1
 bindsym Shift+XF86AudioLowerVolume		$exec lmc down 10
-bindsym Control+XF86AudioLowerVolume	$exec lmc down 1
-bindsym XF86AudioRaiseVolume			$exec lmc up 5
+bindsym XF86AudioRaiseVolume			$exec lmc up 1
 bindsym Shift+XF86AudioRaiseVolume		$exec lmc up 10
-bindsym Control+XF86AudioRaiseVolume	$exec lmc up 1
 bindsym XF86PowerOff					$exec prompt "Shutdown computer?" "$shutdown"
 bindsym XF86Calculator					$exec ddspawn dropdowncalc -f mono:pixelsize=24
 ##bindsym XF86Sleep		This binding is typically mapped by systemd automatically.

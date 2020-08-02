@@ -1,5 +1,4 @@
 /* st */
-st.alpha: 0.8
 st.font: Monospace-12;
 
 /* URxvt */
@@ -10,7 +9,7 @@ URxvt.font:    xft:DejaVu Sans Mono-12
 URxvt.scrollBar: false
 
 URxvt.depth: 32
-URxvt.background: rgba:2800/2800/2800/c500
+URxvt.background:#202020
 
 URxvt.perl-ext-common: resize-font,fullscreen,keyboard-select,clipboard
 URxvt.keysym.F11: perl:fullscreen:switch
@@ -27,9 +26,11 @@ URxvt.keysym.M-v: perl:clipboard:paste
 
 /* Sxiv */
 Sxiv.background: #202020
- 
+
+/* *.font:    xft:DejaVu Sans Mono-12 */
 
 /* General */
+*.background: #202020
 *.foreground: #ecdcc2
 *.color0:  #1d2021  
 *.color1:  #cc241d  

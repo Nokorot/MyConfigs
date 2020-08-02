@@ -38,9 +38,9 @@ function! kite#snippet#complete_done()
   call s:setup_stack()
 
   if has_key(v:completed_item, 'user_data') && !empty(v:completed_item.user_data)
-    let placeholders = json_decode(v:completed_item.user_data)
+    let placeholders = json_decode(v:completed_item.user_data).placeholders
   elseif exists('b:kite_completions') && has_key(b:kite_completions, v:completed_item.word)
-    let placeholders = json_decode(b:kite_completions[v:completed_item.word])
+    let placeholders = json_decode(b:kite_completions[v:completed_item.word]).placeholders
     let b:kite_completions = {}
   else
     return
@@ -386,7 +386,7 @@ endfunction
 
 function! s:insertleave()
   " Modes established by experimentation.
-  if mode(1) !=# 's' && mode(1) !=# (has('patch-8.1.0225') ? 'niI' : 'n')
+  if mode(1) !=# 's' && mode(1) !=# ((has('patch-8.1.0225') || has('nvim-0.4.0')) ? 'niI' : 'n')
     call s:teardown()
   endif
 endfunction

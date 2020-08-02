@@ -1,48 +1,13 @@
 #- nvim: filetype=i3
 
-set $base00 #101218
-set $base01 #1f222d
-set $base02 #252936
-set $base03 #7780a1
-set $base04 #C0C5CE
-set $base05 #d1d4e0
-set $base06 #C9CCDB
-set $base07 #ffffff
-set $base08 #ee829f
-set $base09 #f99170
-set $base0A #ffefcc
-set $base0B #a5ffe1
-set $base0C #97e0ff
-set $base0D #97bbf7
-set $base0E #c0b7f9
-set $base0F #fcc09e
+## #---Window borders---# #
+default_border pixel 2
+gaps inner 10
+gaps outer 0
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-# set $ws1 "1: "
-# set $ws2 "2: "
-# set $ws3 "3: "
-# set $ws4 "4: Ⅰ"
-# set $ws5 "5: ⅠⅠ"
-# set $ws6 "6: ⅠⅠⅠ"
-# set $ws7 "7: 📖"
-# set $ws8 "8: Ⅳ"
-# set $ws9 "9: Ⅴ"
-# set $ws10 "10: 📧"
-
-# move this to .profile, so that I have acses to them everywhere
-set $gimpWS 	"-: 🖌"
-set $musicWS    "-: 🎵"
-set $movieWS 	"-: 📽"
-
+## #---Other settings---# #
+floating_modifier $mod
+popup_during_fullscreen smart
 
 font pango:DejaVu Sans Mono 8
 
@@ -52,6 +17,7 @@ bar {
     # DejaVu Sans Mono 10
     status_command i3blocks
     position top
+    # strip_workspace_numbers yes
     separator_symbol "║"
     colors {
         background #020202
@@ -62,6 +28,31 @@ bar {
         inactive_workspace #020202 #020202 #888888
     }
 }
+
+
+# set $base00 #101218
+# set $base01 #1f222d
+# set $base02 #252936
+# set $base03 #7780a1
+# set $base04 #C0C5CE
+# set $base05 #d1d4e0
+# set $base06 #C9CCDB
+# set $base07 #ffffff
+# set $base08 #ee829f
+# set $base09 #f99170
+# set $base0A #ffefcc
+# set $base0B #a5ffe1
+# set $base0C #97e0ff
+# set $base0D #97bbf7
+# set $base0E #c0b7f9
+# set $base0F #fcc09e
+
+# Widow Colours
+#                       border  background text    indicator
+# client.focused          $base01 $base01    $base07 $base0F
+# client.focused_inactive $base02 $base02    $base03 $base0F
+# client.unfocused        $base02 $base02    $base03 $base0F
+# client.urgent           $base02 $base08    $base00 $base0F
 
 # Bar
 # bar {
@@ -83,60 +74,4 @@ bar {
 #     urgent_workspace   $base01 $base01    $base08
 #   }
 # }
-
-# Widow Colours
-#                       border  background text    indicator
-# client.focused          $base01 $base01    $base07 $base0F
-# client.focused_inactive $base02 $base02    $base03 $base0F
-# client.unfocused        $base02 $base02    $base03 $base0F
-# client.urgent           $base02 $base08    $base00 $base0F
-
-## #---Window borders---# #
-default_border pixel 2
-gaps inner 10
-gaps outer 0
-
-## #---Other settings---# #
-floating_modifier $mod
-popup_during_fullscreen smart
-
-set $igaps gaps inner current
-set $ugaps gaps outer current
-## #---Program spesifics---# #
-#
-# Maybe move the workspace assignment and naiming to .profile
-#
-for_window 	[class="chrome"] 		border pixel 3
-# for_window 	[class="chrome"] 		move workspace $ws2	
-for_window 	[class="thunderbird"] 	move workspace $ws10
-for_window 	[class="zathura"] 		move workspace $ws7
-for_window 	[class="zathura"] 		workspace $ws7; layout tabbed
-for_window 	[instance="netflix"] 	move workspace $movieWS
-for_window 	[instance="netflix"] 	workspace $movieWS
-for_window 	[instance="netflix"] 	border pixel 0; $igaps set 0
-for_window 	[class="Pinentry"] 		sticky enable
-for_window 	[class="sent"] 			border pixel 0px
-for_window 	[title="GIMP Startup"] 	move workspace $gimpWS
-for_window 	[class="Gimp"] 			move workspace $gimpWS
-for_window 	[window_role="GtkFileChooserDialog"] resize set 800 600
-for_window 	[window_role="GtkFileChooserDialog"] move position center
-for_window 	[title="Default - Wine desktop"] 	 floating enable
-
-# Bindings to make the webcam float and stick.
-for_window 	[title="mpvfloat"] floating enable
-for_window 	[title="mpvfloat"] sticky enable
-for_window 	[title="mpvfloat"] border pixel 0
-no_focus 	[title="mpvfloat"]
-
-## #---Dropdown Windows---# #
-# General dropdown window traits. The order can matter.
-for_window [instance="dropdown_*"] floating enable
-for_window [instance="dropdown_*"] move scratchpad
-for_window [instance="dropdown_*"] sticky enable
-for_window [instance="dropdown_*"] scratchpad show
-for_window [instance="dropdown_tmuxdd"] resize set 625 450
-for_window [instance="dropdown_dropdowncalc"] resize set 800 600
-for_window [instance="dropdown_tmuxdd"] border pixel 3
-for_window [instance="dropdown_dropdowncalc"] border pixel 2
-for_window [instance="dropdown_*"] move position center
 

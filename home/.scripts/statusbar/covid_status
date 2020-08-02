@@ -1,0 +1,19 @@
+#/bin/sh
+
+tmp_file='/tmp/covid_stats'
+covid19-cli.sh -n | sed "s/\x1b\\[[0-9;]*[a-zA-Z]//g;s/\x1b(B//g"  > $tmp_file
+
+
+# printf "%s," \
+#     $( grep "Cases"  $tmp_file | sed 's/.*:[ \t\n]*//' )
+# printf "%s," \
+#     $( grep "Deaths" $tmp_file | sed 's/.*:[ \t\n]*//' ) 
+# printf "%s\n" \
+#     $( grep "Recove" $tmp_file | sed 's/.*:[ \t\n]*//' )
+# 
+printf "<span color='yellow'>%s</span>," \
+    $( grep "Cases"  $tmp_file | sed 's/.*:[ \t\n]*//' )
+printf "<span color='red'>%s</span>," \
+    $( grep "Deaths" $tmp_file | sed 's/.*:[ \t\n]*//' ) 
+printf "<span color='green'>%s</span>\n" \
+    $( grep "Recove" $tmp_file | sed 's/.*:[ \t\n]*//' )
