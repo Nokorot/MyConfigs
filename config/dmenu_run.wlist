@@ -12,7 +12,7 @@ lock            xset dpms force off; i3lock-fancy
 browser         $BROWSER 
 # Browsers
 # brave-browser
-# google-chrome
+google-chrome
 chrome
 zathura
 sxiv
@@ -27,7 +27,7 @@ gedit
 idea            idea
 eclipse 
 # ws spesific
-music 			i3-msg "workspace $WSmusic";    $TERMINAL -e ncmpcpp
+music 			i3-msg "workspace $WSmusic";    $TERMINAL -e ncmpcpp -p 6000
 thunderbird     i3-msg "workspace $WS10";          thunderbird
 gimp            i3-msg "workspace $WSgimp";     gimp
 okular          i3-msg "workspace $WS7; layout tabbed"; okular
@@ -57,6 +57,9 @@ xhexagons       xhexagons   -bg "#111111" -fg "#111111" -tile  "#55aaaa"
 xdino
 xrubik          cd ~/Games/Xrubik && xrubik -bg "#ff00ff" -face0 white -face1 blue -face2 red -face3 green -face4 yellow -face5 orange
 xskewb          xskewb -face0 white -face1 blue -face2 red -face3 green -face4 yellow -face5 orange
+
+scratch         i3-msg move scratchpad
+scratch_show    i3-msg scratchpad show
 
 #
 # calcurse        $TERMINAL -e calcurse

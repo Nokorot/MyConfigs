@@ -49,4 +49,5 @@ alias vi3="nvim ~/.config/i3"
 
 function dm-wlist() { echo "$@" >> ~/.config/dmenu_run.wlist; } 
 
+TODO() { [ -z $1 ] && cat ~/NoteBook/TODO.md || echo $@ >> ~/NoteBook/TODO.md; }
 

@@ -2,6 +2,7 @@
 
 ## #---Window borders---# #
 default_border pixel 2
+default_border_radius 15
 gaps inner 10
 gaps outer 0
 

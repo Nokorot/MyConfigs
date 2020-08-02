@@ -5,7 +5,8 @@ remaps
 [ -f "$HOME/.Xresources" ] && xrdb $HOME/.Xresources
 unclutter &		# Remove mouse when idle
 compton --backend glx --force-win-blend \
-    --glx-fshader-win "$(cat ~/.config/compton/fshader-win.glsl)" &
+    --glx-fshader-win "$(cat ~/.config/compton/fshader.glsl)" &
 dunst &			# dunst for notifications
+mpd &
 mpdupdate &
 dropbox start &

@@ -13,6 +13,8 @@ export XAUTHORTY="$XDG_RUNTIME_DIR/Xauthority"
 export LESSHISTFILE="-"
 export SPACEMACSDIR="$HOME/.local/share/spacemacs"
 
+# TODO: Move
+export backlight_screen='acpi_video0'
 
 # Spesial i3 workspace names
 source ~/.config/i3/gen-files/ws-names.sh

@@ -1,7 +1,11 @@
 #!/bin/sh
 
-level="$( cat '/sys/class/backlight/intel_backlight/brightness' )"
-maxlevel="$( cat '/sys/class/backlight/intel_backlight/max_brightness' )"
+# Change to be an environment variable or someting
+backlight_screen='acpi_video0'
+
+
+level="$( cat "/sys/class/backlight/$backlight_screen/brightness" )"
+maxlevel="$( cat "/sys/class/backlight/$backlight_screen/max_brightness" )"
 
 xlevel=100
 [ -f "/tmp/xbrightness" ] && xlevel="$( cat /tmp/xbrightness )";
@@ -10,31 +14,30 @@ helpMsg="usage: $0 [-s|c] <value> [-z|x] <xvalue> \n\t-s:\tSet the backlight bri
 
 while getopts "s:z:x:c:" opt; do case ${opt} in
   s ) level=$(( OPTARG )); change="true" ;;
-	z ) xlevel=$(( OPTARG )); xchange="true" ;;
-	c ) level=$(( $level + $OPTARG )); change="true" ;;
-	x ) xlevel=$(( $xlevel + $OPTARG )); xchange="true" ;;
-	\? ) echo "$helpMsg" && exit 0 ;;
+  z ) xlevel=$(( OPTARG )); xchange="true" ;;
+  c ) level=$(( $level + $OPTARG )); change="true" ;;
+  x ) xlevel=$(( $xlevel + $OPTARG )); xchange="true" ;;
+  \? ) echo "$helpMsg" && exit 0 ;;
 esac done
 
 abrightness() {
-    [ $level -gt $maxlevel ] && level=$maxlevel;
-    [ $level -lt         0 ] && level=0;
+  [ $level -gt $maxlevel ] && level=$maxlevel;
+  [ $level -lt         0 ] && level=0;
 
-    echo $level | tee /sys/class/backlight/intel_backlight/brightness > /dev/null
-    echo "Level: $level"
+  echo $level | tee /sys/class/backlight/$backlight_screen/brightness > /dev/null
+  echo "Level: $level"
 }
 [ -z $change ] || abrightness;
 
 xbrightness() {
-    [ $xlevel -gt 250 ] && xlevel=250;
-    [ $xlevel -lt  10 ] && xlevel=10;
+  [ $xlevel -gt 250 ] && xlevel=250;
+  [ $xlevel -lt  10 ] && xlevel=10;
 
-    echo $xlevel > "/tmp/xbrightness";
-    screenname=$(xrandr | grep " connected" | cut -f1 -d" ")
-    xrandr --output $screenname --brightness "$( printf %.2f\\n $(( $xlevel  ))e-2 )";
-    [ $xlevel -ne "100" ] && echo "Xlevel: $xlevel%"
+  echo $xlevel > "/tmp/xbrightness";
+  screenname=$(xrandr | grep " connected" | cut -f1 -d" ")
+  xrandr --output $screenname --brightness "$( printf %.2f\\n $(( $xlevel  ))e-2 )";
+  [ $xlevel -ne "100" ] && echo "Xlevel: $xlevel%"
 }
 [ -z $xchange] || xbrightness;
-
 
 pkill -RTMIN+5 i3blocks
