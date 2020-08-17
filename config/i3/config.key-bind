@@ -29,6 +29,9 @@ bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+S	gaps inner current minus 5
 # bindsym $mod+Shift+d	gaps inner current set 0
 
+bindsym $mod+o          border radius plus 5
+bindsym $mod+Shift+o    border radius minus 5
+
 bindsym $mod+b			bar mode toggle
 bindsym $mod+Shift+b	border toggle
 
@@ -42,7 +45,7 @@ bindsym $mod+Shift+a    $dd click_script
 bindsym Mod5+F1         $dd click_script
 
 ## #---Letter Key Bindings---# #
-bindsym $mod+oslash 	$exec dmenuunicode
+bindsym $Mod+oslash 	$exec dmenuunicode
 
 bindsym $mod+Shift+w	$dd nmtui
 bindsym $mod+i 			$dd htop
@@ -59,7 +62,6 @@ bindsym $mod+Shift+d	$exec dmenu_run
 
 # bindsym $mod+a			$exec dmenu-gg-bookmarks
 
-bindsym $mod+o 			$exec echo "tmp.sh" | $SHELL
 bindsym $mod+m 			$dd music
 bindsym $mod+w	        $dd browser 
 #bindsym $mod+Shift+a	$dd pulsemixer

@@ -134,6 +134,8 @@ bindsym $mod+f			fullscreen toggle
 bindsym $mod+q			kill
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+S	gaps inner current minus 5
+bindsym $mod+o          border radius plus 5
+bindsym $mod+Shift+o    border radius minus 5
 bindsym $mod+b			bar mode toggle
 bindsym $mod+Shift+b	border toggle
 bindsym $mod+Mod1+w 	layout tabbed
@@ -141,7 +143,7 @@ bindsym $mod+Mod1+e 	layout toggle split
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+a    $dd click_script
 bindsym Mod5+F1         $dd click_script
-bindsym $mod+oslash 	$exec dmenuunicode
+bindsym $Mod+oslash 	$exec dmenuunicode
 bindsym $mod+Shift+w	$dd nmtui
 bindsym $mod+i 			$dd htop
 bindsym $mod+r 			$dd ranger
@@ -151,7 +153,6 @@ bindsym $mod+n 			$exec ddspawn dd-r-notes
 bindsym $mod+c			$exec ddspawn dd-calc
 bindsym $mod+d			$exec dmenu_run2
 bindsym $mod+Shift+d	$exec dmenu_run
-bindsym $mod+o 			$exec echo "tmp.sh" | $SHELL
 bindsym $mod+m 			$dd music
 bindsym $mod+w	        $dd browser
 bindsym $mod+plus				$exec lmc up 5
@@ -182,6 +183,8 @@ bindsym Control+Print 		$exec gnome-screenshot -w
 bindsym $mod+Scroll_Lock	$exec "killall screenkey || screenkey"
 assign [class="vlc"] $WSmovie
 for_window 	[class="chrome"] 	border pixel 3
+for_window 	[instance="netflix"] 	move workspace $WSmovie; move workspace $WSmovie
+for_window 	[instance="netflix"] 	border pixel 0; border radius 0
 for_window 	[class="Pinentry"] 		sticky enable
 for_window 	[class="sent"] 			border pixel 0px
 for_window 	[title="GIMP Startup"] 	move workspace $WSgimp

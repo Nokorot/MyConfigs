@@ -3,14 +3,15 @@
 ## #---Program spesifics---# #
 #
 assign [class="vlc"] $WSmovie
-# for_window 	[class="chrome"] 		move workspace $WS2
+
 for_window 	[class="chrome"] 	border pixel 3
 
-# for_window 	[instance="netflix"] 	move workspace $WSmovie; move workspace $WSmovie
-# for_window 	[instance="netflix"] 	border pixel 0; $igaps set 0
+assign [instance="netflix"] $WSmovie
+for_window 	[instance="netflix"] 	border pixel 0
+for_window 	[instance="netflix"] 	border radius 0
 
-# for_window 	[class="chrome"] 		move workspace $WS2
-# for_window 	[class="thunderbird"] 	move workspace $WS10
+assign [class="thunderbird"] $WS10
+
 # for_window 	[class="okular"] 	    move workspace $WS7
 # for_window 	[class="okular"] 		workspace $ws7; layout tabbed
 for_window 	[class="Pinentry"] 		sticky enable
