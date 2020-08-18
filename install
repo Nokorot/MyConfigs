@@ -1,6 +1,62 @@
 #!/bin/sh
 
 myconf=$HOME/.myconf
+git_clone_dir=$HOME/Source
+
+main() {
+
+    # TODO: --clone-git-dir = /tmp ( default $HOME/Source ), 
+
+    for v in $@; do case $v in
+        symlinks)   symlinks ;;
+        sudoers)    sudoers_nopass ;;
+        chorme)     google_chorme ;;
+        apt_update) apt_update ;;
+        fonts)      fonts ;;
+        basics)     basics ;;
+        sxiv)       sxiv ;;
+    
+        tmp_bg)     tmp_bg ;;
+        dot_trash)  dot_trash ;;
+
+        all) symlinks sudoers dot_trash tmp_bg apt_update basics chrome sxiv ;;
+    esac; done
+
+    echo $@
+}
+
+apt_update() {
+    sudo apt update -y
+    sudo apt --fix-broken install
+}
+
+fonts() {
+    sudo apt install -y fonts-dejavu fonts-font-awesome fonts-emojione 
+}
+
+basics() {
+    sudo apt install -y neovim rxvt-unicode
+    sudo apt install -y dunst unclutter libnotify-bin
+    sudo apt install -y feh gnome-screenshots
+
+    fonts
+}
+
+tmp_bg() { [ -f ~/.config/wall.png ] || setbg ~/.myconf/wall.jpg; }
+dot_trash() { [ -a ~/.trash ] || ln -s ~/.local/share/Trash/files/ ~/.trash; }
+
+git_clone() {
+    mkdir -p $git_clone_dir && cd $git_clone_dir
+    git clone $1 $2
+}
+
+sxiv() {
+    # install dependencies
+    sudo apt install -y libimlib2-dev libexif-dev
+
+    git_clone "https://github.com/Nokorot/sxiv" sxiv || exit 1
+    
+}
 
 gen_symlinks() 
 {
@@ -16,8 +72,49 @@ gen_symlinks()
     done
 }
 
-gen_symlinks home		$HOME;
-gen_symlinks config		$HOME/.config;
-gen_symlinks share		$HOME/.local/share;
+# Generate symlinks to .myconf
+symlinks() {
+    gen_symlinks home		$HOME;
+    gen_symlinks config		$HOME/.config;
+    gen_symlinks share		$HOME/.local/share;
+    
+    gen_symlinks bin	/usr/local/bin;
+}
 
-gen_symlinks bin	/usr/local/bin;
+# install i3
+install_i3_gaps() { 
+  # install dependencies
+  sudo apt install -y \
+		libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
+		libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \
+		libstartup-notification0-dev libxcb-randr0-dev \
+		libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
+		libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
+		autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
+
+  mkdir -p $HOME/Source
+  mkdir $HOME/Source/i3 || exit 1
+
+  git clone https://www.github.com/Nokorot/i3 i3
+  cd i3
+  autoreconf --force --install
+  rm -rf build/ && mkdir -p build && cd build/
+  ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+  make && sudo make install
+}
+
+## Install google-crome
+install_google_chorme() {
+  cd /tmp
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  sudo dpkg -i google-chrome-stable_current_amd64.deb
+}
+
+## Set sudoers no-pass premition 
+sudoers_nopass() {
+ echo "%sudo ALL=NOPASSWD: /usr/bin/mount, /urs/bin/umount, /usr/local/bin/brightness, /usr/sbin/shutdown" \
+		| sudo tee /etc/sudoers.d/no-pass
+}
+
+main "$@"
+
