@@ -9,10 +9,6 @@ interval=300
 #interval=18000
 #signal=5
 
-#[covid]
-#interval=60
-#command=covid_status
-
 [screen_brightness]
 label=💡
 interval=once

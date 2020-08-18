@@ -3,7 +3,7 @@
 setbg &		# Set the background
 remaps
 [ -f "$HOME/.Xresources" ] && xrdb $HOME/.Xresources
-unclutter &		# Remove mouse when idle
+unclutter -idle 2 &		# Remove mouse when idle
 compton --backend glx --force-win-blend \
     --glx-fshader-win "$(cat ~/.config/compton/fshader.glsl)" &
 dunst &			# dunst for notifications

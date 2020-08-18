@@ -13,6 +13,7 @@ set $dd   exec --no-startup-id dmenu_run2
 ## #---Basic Bindings---# #
 bindsym $mod+Return 		$exec $term
 
+bindsym $mod+Shift+f    	focus mode_toggle
 bindsym $mod+Shift+space 	floating toggle
 
 bindsym $mod+Shift+Escape 	    $dd exit
@@ -60,33 +61,30 @@ bindsym $mod+c			$exec ddspawn dd-calc
 bindsym $mod+d			$exec dmenu_run2
 bindsym $mod+Shift+d	$exec dmenu_run
 
-# bindsym $mod+a			$exec dmenu-gg-bookmarks
-
 bindsym $mod+m 			$dd music
 bindsym $mod+w	        $dd browser 
 #bindsym $mod+Shift+a	$dd pulsemixer
 
 ## #---Media Keys---# #
 # Volume keys
+bindsym $mod+Shift+m			$exec lmc mute
 bindsym $mod+plus				$exec lmc up 5
 bindsym $mod+Shift+plus			$exec lmc up 1
 bindsym $mod+minus 				$exec lmc down 5
 bindsym $mod+Shift+minus		$exec lmc down 1
+
+# mpd keys
 bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
 bindsym $mod+greater			$exec lmc next
 bindsym $mod+Shift+greater		$exec lmc next
-
 bindsym $mod+p					$exec lmc toggle
 bindsym $mod+Shift+p			$exec lmc pause
-
 # For advancing forward/backward in an mpd song
 bindsym $mod+bracketleft 		$exec lmc back 10
 bindsym $mod+Shift+bracketleft 	$exec lmc back 120
 bindsym $mod+bracketright 		$exec lmc forward 10
 bindsym $mod+Shift+bracketright $exec lmc forward 120
-
-bindsym $mod+Shift+m			$exec lmc mute
 
 
 ## #---Function Buttons---# #

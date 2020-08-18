@@ -1,23 +1,23 @@
 #- nvim: filetype=i3
 
-set $movestep 50
+set $movestep "50px or 3ppt"
 
 mode "resize" {
-	bindsym h	$exec i3resize left   "50px or 3ppt"
-	bindsym j	$exec i3resize down   "50px or 3ppt"
-	bindsym k	$exec i3resize up     "50px or 3ppt"
-	bindsym l	$exec i3resize right  "50px or 3ppt"
+	bindsym h	    $exec i3resize left   $movestep
+	bindsym j	    $exec i3resize down   $movestep
+	bindsym k	    $exec i3resize up     $movestep
+	bindsym l	    $exec i3resize right  $movestep
 
-	bindsym Left	$exec i3resize left   "50px or 3ppt"
-	bindsym Down	$exec i3resize down   "50px or 3ppt"
-	bindsym Up 		$exec i3resize up     "50px or 3ppt"
-	bindsym Rgiht	$exec i3resize right  "50px or 3ppt"
+	bindsym Left	$exec i3resize left   $movestep
+	bindsym Down	$exec i3resize down   $movestep
+	bindsym Up 		$exec i3resize up     $movestep
+	bindsym Rgiht	$exec i3resize right  $movestep
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
-# bindsym $mod+Ctrl+r mode "resize"
+bindsym $mod+Ctrl+r mode "resize"
 
 # Navigate
 bindsym $mod+h				focus left
@@ -30,10 +30,10 @@ bindsym $mod+Shift+j		move down  $movestep
 bindsym $mod+Shift+k		move up    $movestep
 bindsym $mod+Shift+l		move right $movestep
 
-bindsym $mod+Ctrl+h			$exec i3resize left   "50px or 3ppt"
-bindsym $mod+Ctrl+j			$exec i3resize down   "50px or 3ppt"
-bindsym $mod+Ctrl+k			$exec i3resize up     "50px or 3ppt"
-bindsym $mod+Ctrl+l			$exec i3resize right  "50px or 3ppt"
+bindsym $mod+Ctrl+h			$exec i3resize left   $movestep
+bindsym $mod+Ctrl+j			$exec i3resize down   $movestep
+bindsym $mod+Ctrl+k			$exec i3resize up     $movestep
+bindsym $mod+Ctrl+l			$exec i3resize right  $movestep
 
 # #---Arrow Keys---# #
 bindsym $mod+Left			focus left
@@ -46,30 +46,12 @@ bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
 bindsym $mod+Shift+Right 	move right
 
-bindsym $mod+Ctrl+Left		$exec i3resize left   "50px or 3ppt"
-bindsym $mod+Ctrl+Down		$exec i3resize down   "50px or 3ppt"
-bindsym $mod+Ctrl+Up		$exec i3resize up     "50px or 3ppt"
-bindsym $mod+Ctrl+Right		$exec i3resize right  "50px or 3ppt"
-
+bindsym $mod+Ctrl+Left		$exec i3resize left   $movestep
+bindsym $mod+Ctrl+Down		$exec i3resize down   $movestep
+bindsym $mod+Ctrl+Up		$exec i3resize up     $movestep
+bindsym $mod+Ctrl+Right		$exec i3resize right  $movestep
 
 # #---Workspace Bindings---# #
-set $move move container to workspace
-set $endws workspace 0; workspace prev
-set $movetoendws $move 0; workspace 0; $move prev; workspace prev
-
-bindsym $mod+Home			workspace $WS1
-bindsym $mod+Shift+Home		$move $WS1
-bindsym $mod+End			$endws
-bindsym $mod+Shift+End		$movetoendws
-bindsym $mod+aring			$endws
-bindsym $mod+Shift+aring	$movetoendws
-# bindsym $mod+Ctrl+aring		$move 0; workspace 0; $move prev; workspace back_and_forth
-bindsym $mod+Prior			workspace prev
-bindsym $mod+Shift+Prior	$move prev; workspace prev;
-bindsym $mod+Ctrl+Prior	    $move prev
-bindsym $mod+Next			workspace next
-bindsym $mod+Shift+Next		$move next; workspace next;
-bindsym $mod+Ctrl+Next		$move next
 
 # switch to workspace
 bindsym $mod+bar	workspace $WS0
@@ -85,27 +67,45 @@ bindsym $mod+9		workspace $WS9
 bindsym $mod+0		workspace $WS10
 
 # move focused container to workspace
-bindsym $mod+Control+bar    $move $WS0
-bindsym $mod+Control+1	    $move $WS1
-bindsym $mod+Control+2	    $move $WS2
-bindsym $mod+Control+3	    $move $WS3
-bindsym $mod+Control+4	    $move $WS4
-bindsym $mod+Control+5	    $move $WS5
-bindsym $mod+Control+6	    $move $WS6
-bindsym $mod+Control+7	    $move $WS7
-bindsym $mod+Control+8	    $move $WS8
-bindsym $mod+Control+9	    $move $WS9
-bindsym $mod+Control+0	    $move $WS10
+bindsym $mod+Control+bar    move workspace $WS0
+bindsym $mod+Control+1	    move workspace $WS1
+bindsym $mod+Control+2	    move workspace $WS2
+bindsym $mod+Control+3	    move workspace $WS3
+bindsym $mod+Control+4	    move workspace $WS4
+bindsym $mod+Control+5	    move workspace $WS5
+bindsym $mod+Control+6	    move workspace $WS6
+bindsym $mod+Control+7	    move workspace $WS7
+bindsym $mod+Control+8	    move workspace $WS8
+bindsym $mod+Control+9	    move workspace $WS9
+bindsym $mod+Control+0	    move workspace $WS10
 
 # move focused container to workspace and go there
-bindsym $mod+Shift+bar	    $move $WS0;  workspace $WS0
-bindsym $mod+Shift+1	    $move $WS1;  workspace $WS1
-bindsym $mod+Shift+2	    $move $WS2;  workspace $WS2
-bindsym $mod+Shift+3	    $move $WS3;  workspace $WS3
-bindsym $mod+Shift+4	    $move $WS4;  workspace $WS4
-bindsym $mod+Shift+5	    $move $WS5;  workspace $WS5
-bindsym $mod+Shift+6	    $move $WS6;  workspace $WS6
-bindsym $mod+Shift+7	    $move $WS7;  workspace $WS7
-bindsym $mod+Shift+8	    $move $WS8;  workspace $WS8
-bindsym $mod+Shift+9	    $move $WS9;  workspace $WS9
-bindsym $mod+Shift+0	    $move $WS10; workspace $WS10
+bindsym $mod+Shift+bar	    move workspace $WS0;  workspace $WS0
+bindsym $mod+Shift+1	    move workspace $WS1;  workspace $WS1
+bindsym $mod+Shift+2	    move workspace $WS2;  workspace $WS2
+bindsym $mod+Shift+3	    move workspace $WS3;  workspace $WS3
+bindsym $mod+Shift+4	    move workspace $WS4;  workspace $WS4
+bindsym $mod+Shift+5	    move workspace $WS5;  workspace $WS5
+bindsym $mod+Shift+6	    move workspace $WS6;  workspace $WS6
+bindsym $mod+Shift+7	    move workspace $WS7;  workspace $WS7
+bindsym $mod+Shift+8	    move workspace $WS8;  workspace $WS8
+bindsym $mod+Shift+9	    move workspace $WS9;  workspace $WS9
+bindsym $mod+Shift+0	    move workspace $WS10; workspace $WS10
+
+
+bindsym $mod+Home			workspace first 
+bindsym $mod+Ctrl+Home		move workspace first
+bindsym $mod+Shift+Home		move workspace first; workspace last 
+bindsym $mod+End			workspace last
+bindsym $mod+Ctrl+End		move workspace last
+bindsym $mod+Shift+End		move workspace last; 
+bindsym $mod+aring			workspace last
+bindsym $mod+Ctrl+aring	    move workspace last; workspace last
+bindsym $mod+Shift+aring	move workspace last; workspace last
+
+bindsym $mod+Prior			workspace prev
+bindsym $mod+Shift+Prior	move workspace prev; workspace prev;
+bindsym $mod+Ctrl+Prior	    move workspace prev
+bindsym $mod+Next			workspace next
+bindsym $mod+Shift+Next		move workspace next; workspace next;
+bindsym $mod+Ctrl+Next		move workspace next
