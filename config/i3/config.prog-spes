@@ -12,6 +12,12 @@ for_window 	[instance="netflix"] 	border radius 0
 
 assign [class="thunderbird"] $WS10
 
+assign [class="discord"] $WS6
+for_window [class="discord"]    floating enable
+for_window [class="discord"]    resize set 1200 800
+for_window [class="discord"]    move position center
+
+
 # for_window 	[class="okular"] 	    move workspace $WS7
 # for_window 	[class="okular"] 		workspace $ws7; layout tabbed
 for_window 	[class="Pinentry"] 		sticky enable

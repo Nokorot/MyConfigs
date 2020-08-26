@@ -25,10 +25,10 @@ bindsym $mod+j				focus down
 bindsym $mod+k				focus up
 bindsym $mod+l				focus right
 
-bindsym $mod+Shift+h		move left  $movestep
-bindsym $mod+Shift+j		move down  $movestep
-bindsym $mod+Shift+k		move up    $movestep
-bindsym $mod+Shift+l		move right $movestep
+bindsym $mod+Shift+h		move left  50px
+bindsym $mod+Shift+j		move down  50px
+bindsym $mod+Shift+k		move up    50px
+bindsym $mod+Shift+l		move right 50px
 
 bindsym $mod+Ctrl+h			$exec i3resize left   $movestep
 bindsym $mod+Ctrl+j			$exec i3resize down   $movestep

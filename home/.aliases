@@ -22,6 +22,7 @@ function cpp() {
     rsync -hr --info=progress2 "$1" "$2"
 }
 
+alias sxiv="sxiv -oat"
 
 alias v="nvim"
 alias r="ranger"

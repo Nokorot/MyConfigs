@@ -50,10 +50,10 @@ bindsym $mod+h				focus left
 bindsym $mod+j				focus down
 bindsym $mod+k				focus up
 bindsym $mod+l				focus right
-bindsym $mod+Shift+h		move left  $movestep
-bindsym $mod+Shift+j		move down  $movestep
-bindsym $mod+Shift+k		move up    $movestep
-bindsym $mod+Shift+l		move right $movestep
+bindsym $mod+Shift+h		move left  50px
+bindsym $mod+Shift+j		move down  50px
+bindsym $mod+Shift+k		move up    50px
+bindsym $mod+Shift+l		move right 50px
 bindsym $mod+Ctrl+h			$exec i3resize left   $movestep
 bindsym $mod+Ctrl+j			$exec i3resize down   $movestep
 bindsym $mod+Ctrl+k			$exec i3resize up     $movestep
@@ -189,6 +189,10 @@ assign [instance="netflix"] $WSmovie
 for_window 	[instance="netflix"] 	border pixel 0
 for_window 	[instance="netflix"] 	border radius 0
 assign [class="thunderbird"] $WS10
+assign [class="discord"] $WS6
+for_window [class="discord"]    floating enable
+for_window [class="discord"]    resize set 1200 800
+for_window [class="discord"]    move position center
 for_window 	[class="Pinentry"] 		sticky enable
 for_window 	[class="sent"] 			border pixel 0px
 for_window 	[title="GIMP Startup"] 	move workspace $WSgimp

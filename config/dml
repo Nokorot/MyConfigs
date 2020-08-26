@@ -74,6 +74,11 @@ scratch         i3-msg move scratchpad
 scratch_show    i3-msg scratchpad show
 
 #
+# Background programs
+#
+compton         pkill compton; compton
+
+#
 # Terminal programs 
 #
 # calcurse        $TERMINAL -e calcurse
