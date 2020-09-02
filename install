@@ -17,14 +17,31 @@ main() {
         sxiv)       sxiv ;;
         i3)         install_i3 ;;
     
+        youtube_dl) youtube_dl ;;
+        mpd_music)  mpd_music ;;
+        dropbox)    dropbox ;;
+    
         tmp_bg)     tmp_bg ;;
         dot_trash)  dot_trash ;;
 
         all) symlinks sudoers basics dot_trash tmp_bg apt_update chrome sxiv ;;
+        *)  echo "Instalation '$d' not found!"
     esac; done
 
-    echo $@
 }
+
+mpd_music() {
+    sudo apt install -y mpd mpc ncmpcpp
+}
+
+youtube_dl() {
+    sudo apt install -y ffmpeg
+
+    sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+
+    sudo chmod a+rx /usr/local/bin/youtube-dl
+}
+
 
 discord() {
     # Some of these are probably quite basic
@@ -52,6 +69,12 @@ discord() {
         > discord.tar.gz
     sudo tar -C /opt/ -xf discord.tar.gz 
     sudo ln -s /opt/Discord/Discord /usr/bin/discord
+}
+
+dropbox() {
+    cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+    sudo mv .dropbox-dist /opt/dropbox
+    sudo ln -s /opt/dropbox/dropboxd /usr/bin/
 }
 
 joplin() {
@@ -160,7 +183,7 @@ install_google_chorme() {
 
 ## Set sudoers no-pass premition 
 sudoers_nopass() {
- echo "%sudo ALL=NOPASSWD: /usr/bin/mount, /urs/bin/umount, /usr/local/bin/brightness, /usr/sbin/shutdown" \
+    echo "%sudo ALL=NOPASSWD: $(which mount), $(which umount), /usr/local/bin/brightness, $(which shutdown)" \
 		| sudo tee /etc/sudoers.d/no-pass
 }
 

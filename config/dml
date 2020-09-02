@@ -72,11 +72,14 @@ xskewb          xskewb -face0 white -face1 blue -face2 red -face3 green -face4 y
 #
 scratch         i3-msg move scratchpad
 scratch_show    i3-msg scratchpad show
-
+get_winID       id=$(get_winId); \
+                notify-send "$id" "$(xwininfo -id $id)"; \
+                prompt "Copy to Clipboard?" "echo $id | xc"
 #
 # Background programs
 #
 compton         pkill compton; compton
+dropboxd
 
 #
 # Terminal programs 

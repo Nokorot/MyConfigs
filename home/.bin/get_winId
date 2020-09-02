@@ -1,0 +1,4 @@
+#!/bin/sh
+
+id="$(i3-msg -t get_focused | jq '.window')"
+printf "0x%x\n" "$id"

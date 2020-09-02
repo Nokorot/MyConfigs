@@ -14,7 +14,7 @@ export LESSHISTFILE="-"
 export SPACEMACSDIR="$HOME/.local/share/spacemacs"
 
 # TODO: Move
-export backlight_screen='acpi_video0'
+export backlight_screen='intel_backlight'
 
 # Spesial i3 workspace names
 source ~/.config/i3/gen-files/ws-names.sh
