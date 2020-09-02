@@ -1,198 +1,330 @@
+#- nvim: filetype=i3
+
+## #---Window borders---# #
 default_border pixel 2
 default_border_radius 15
 gaps inner 10
 gaps outer 0
+
+## #---Other settings---# #
 floating_modifier $mod
 popup_during_fullscreen smart
+
 font pango:DejaVu Sans Mono 8
+
+## #---Status Bar---# #
 bar {
     font pango:System San Francisco Display, FontAwesome 11
+    # DejaVu Sans Mono 10
     status_command i3blocks
     position top
+    # strip_workspace_numbers yes
     separator_symbol "║"
     colors {
         background #020202
         statusline #ffffff
         separator #666666
+                #             ol     bg     fg
         focused_workspace  #020202 #020202 #ffffff
         inactive_workspace #020202 #020202 #888888
     }
 }
-set $WS0 "0: 📒"
-set $WS1 "1: "
-set $WS2 "2: "
-set $WS3 "3: "
-set $WS4 "4: ⅠⅤ"
-set $WS5 "5: Ⅴ"
-set $WS6 "6: ⅤⅠ"
-set $WS7 "7: ⅤⅠⅠ"
-set $WS8 "8: ⅤⅠⅠⅠ"
-set $WS9 "9: ⅠX"
-set $WS10 "10: 📧"
-set $WSgimp "🖌"
-set $WSmusic "🎵"
-set $WSmovie "📽"
+
+
+# set $base00 #101218
+# set $base01 #1f222d
+# set $base02 #252936
+# set $base03 #7780a1
+# set $base04 #C0C5CE
+# set $base05 #d1d4e0
+# set $base06 #C9CCDB
+# set $base07 #ffffff
+# set $base08 #ee829f
+# set $base09 #f99170
+# set $base0A #ffefcc
+# set $base0B #a5ffe1
+# set $base0C #97e0ff
+# set $base0D #97bbf7
+# set $base0E #c0b7f9
+# set $base0F #fcc09e
+
+# Widow Colours
+#                       border  background text    indicator
+# client.focused          $base01 $base01    $base07 $base0F
+# client.focused_inactive $base02 $base02    $base03 $base0F
+# client.unfocused        $base02 $base02    $base03 $base0F
+# client.urgent           $base02 $base08    $base00 $base0F
+
+# Bar
+# bar {
+#   font pango: System San Francisco Display, FontAwesome 11
+#   status_command i3blocks
+#   position top 
+#   strip_workspace_numbers yes
+#   height 25
+#   bindsym button4 nop
+#   bindsym button5 nop
+#   colors {
+#     separator $base03
+#     background $base01
+#     statusline $base05
+# #                      border  background text
+#     focused_workspace  $base01 $base01    $base07
+#     active_workspace   $base01 $base02    $base03
+#     inactive_workspace $base01 $base01    $base03
+#     urgent_workspace   $base01 $base01    $base08
+#   }
+# }
+
+set $WS1	"1: "
+set $WS2	"2: "
+set $WS3	"3: "
+set $WS4	"4: ⅠⅤ"
+set $WS5	"5: Ⅴ"
+set $WS6	"6: ⅤⅠ"
+set $WS7	"7: ⅤⅠⅠ"
+set $WS8	"8: ⅤⅠⅠⅠ"
+set $WS9	"9: ⅠX"
+set $WS10	"10: 📧"
+set $WS0	"0: 📒"
+set $WSgimp	"🖌"
+set $WSmusic	"🎵"
+set $WSmovie	"📽"
+bindsym $mod+1  		workspace $WS1
+bindsym $mod+Ctrl+1 	move workspace $WS1
+bindsym $mod+Shift+1 	move workspace $WS1; workspace $WS1
+bindsym $mod+2  		workspace $WS2
+bindsym $mod+Ctrl+2 	move workspace $WS2
+bindsym $mod+Shift+2 	move workspace $WS2; workspace $WS2
+bindsym $mod+3  		workspace $WS3
+bindsym $mod+Ctrl+3 	move workspace $WS3
+bindsym $mod+Shift+3 	move workspace $WS3; workspace $WS3
+bindsym $mod+4  		workspace $WS4
+bindsym $mod+Ctrl+4 	move workspace $WS4
+bindsym $mod+Shift+4 	move workspace $WS4; workspace $WS4
+bindsym $mod+5  		workspace $WS5
+bindsym $mod+Ctrl+5 	move workspace $WS5
+bindsym $mod+Shift+5 	move workspace $WS5; workspace $WS5
+bindsym $mod+6  		workspace $WS6
+bindsym $mod+Ctrl+6 	move workspace $WS6
+bindsym $mod+Shift+6 	move workspace $WS6; workspace $WS6
+bindsym $mod+7  		workspace $WS7
+bindsym $mod+Ctrl+7 	move workspace $WS7
+bindsym $mod+Shift+7 	move workspace $WS7; workspace $WS7
+bindsym $mod+8  		workspace $WS8
+bindsym $mod+Ctrl+8 	move workspace $WS8
+bindsym $mod+Shift+8 	move workspace $WS8; workspace $WS8
+bindsym $mod+9  		workspace $WS9
+bindsym $mod+Ctrl+9 	move workspace $WS9
+bindsym $mod+Shift+9 	move workspace $WS9; workspace $WS9
+bindsym $mod+0  		workspace $WS10
+bindsym $mod+Ctrl+0 	move workspace $WS10
+bindsym $mod+Shift+0 	move workspace $WS10; workspace $WS10
+bindsym $mod+bar  		workspace $WS0
+bindsym $mod+Ctrl+bar 	move workspace $WS0
+bindsym $mod+Shift+bar 	move workspace $WS0; workspace $WS0
+#- nvim: filetype=i3
+
 set $movestep "50px or 3ppt"
+
 mode "resize" {
 	bindsym h	    $exec i3resize left   $movestep
 	bindsym j	    $exec i3resize down   $movestep
 	bindsym k	    $exec i3resize up     $movestep
 	bindsym l	    $exec i3resize right  $movestep
+
 	bindsym Left	$exec i3resize left   $movestep
 	bindsym Down	$exec i3resize down   $movestep
 	bindsym Up 		$exec i3resize up     $movestep
 	bindsym Rgiht	$exec i3resize right  $movestep
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $mod+Ctrl+r mode "resize"
+
+# Navigate
 bindsym $mod+h				focus left
 bindsym $mod+j				focus down
 bindsym $mod+k				focus up
 bindsym $mod+l				focus right
+
 bindsym $mod+Shift+h		move left  50px
 bindsym $mod+Shift+j		move down  50px
 bindsym $mod+Shift+k		move up    50px
 bindsym $mod+Shift+l		move right 50px
+
 bindsym $mod+Ctrl+h			$exec i3resize left   $movestep
 bindsym $mod+Ctrl+j			$exec i3resize down   $movestep
 bindsym $mod+Ctrl+k			$exec i3resize up     $movestep
 bindsym $mod+Ctrl+l			$exec i3resize right  $movestep
+
+# #---Arrow Keys---# #
 bindsym $mod+Left			focus left
 bindsym $mod+Down			focus down
 bindsym $mod+Up				focus up
 bindsym $mod+Right 			focus right
+
 bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
 bindsym $mod+Shift+Right 	move right
+
 bindsym $mod+Ctrl+Left		$exec i3resize left   $movestep
 bindsym $mod+Ctrl+Down		$exec i3resize down   $movestep
 bindsym $mod+Ctrl+Up		$exec i3resize up     $movestep
 bindsym $mod+Ctrl+Right		$exec i3resize right  $movestep
-bindsym $mod+bar	workspace $WS0
-bindsym $mod+1		workspace $WS1
-bindsym $mod+2		workspace $WS2
-bindsym $mod+3		workspace $WS3
-bindsym $mod+4		workspace $WS4
-bindsym $mod+5		workspace $WS5
-bindsym $mod+6		workspace $WS6
-bindsym $mod+7		workspace $WS7
-bindsym $mod+8		workspace $WS8
-bindsym $mod+9		workspace $WS9
-bindsym $mod+0		workspace $WS10
-bindsym $mod+Control+bar    move workspace $WS0
-bindsym $mod+Control+1	    move workspace $WS1
-bindsym $mod+Control+2	    move workspace $WS2
-bindsym $mod+Control+3	    move workspace $WS3
-bindsym $mod+Control+4	    move workspace $WS4
-bindsym $mod+Control+5	    move workspace $WS5
-bindsym $mod+Control+6	    move workspace $WS6
-bindsym $mod+Control+7	    move workspace $WS7
-bindsym $mod+Control+8	    move workspace $WS8
-bindsym $mod+Control+9	    move workspace $WS9
-bindsym $mod+Control+0	    move workspace $WS10
-bindsym $mod+Shift+bar	    move workspace $WS0;  workspace $WS0
-bindsym $mod+Shift+1	    move workspace $WS1;  workspace $WS1
-bindsym $mod+Shift+2	    move workspace $WS2;  workspace $WS2
-bindsym $mod+Shift+3	    move workspace $WS3;  workspace $WS3
-bindsym $mod+Shift+4	    move workspace $WS4;  workspace $WS4
-bindsym $mod+Shift+5	    move workspace $WS5;  workspace $WS5
-bindsym $mod+Shift+6	    move workspace $WS6;  workspace $WS6
-bindsym $mod+Shift+7	    move workspace $WS7;  workspace $WS7
-bindsym $mod+Shift+8	    move workspace $WS8;  workspace $WS8
-bindsym $mod+Shift+9	    move workspace $WS9;  workspace $WS9
-bindsym $mod+Shift+0	    move workspace $WS10; workspace $WS10
-bindsym $mod+Home			workspace first
+
+# #---Workspace Bindings---# #
+
+bindsym $mod+Home			workspace first 
 bindsym $mod+Ctrl+Home		move workspace first
-bindsym $mod+Shift+Home		move workspace first; workspace last
+bindsym $mod+Shift+Home		move workspace first; workspace last 
 bindsym $mod+End			workspace last
 bindsym $mod+Ctrl+End		move workspace last
-bindsym $mod+Shift+End		move workspace last;
+bindsym $mod+Shift+End		move workspace last; 
 bindsym $mod+aring			workspace last
 bindsym $mod+Ctrl+aring	    move workspace last; workspace last
 bindsym $mod+Shift+aring	move workspace last; workspace last
+
 bindsym $mod+Prior			workspace prev
 bindsym $mod+Shift+Prior	move workspace prev; workspace prev;
 bindsym $mod+Ctrl+Prior	    move workspace prev
 bindsym $mod+Next			workspace next
 bindsym $mod+Shift+Next		move workspace next; workspace next;
 bindsym $mod+Ctrl+Next		move workspace next
-set $term $TERMINAL
+#- nvim: filetype=i3
+
+# #---Basic Definitions---# #
+set $term $TERMINAL 	#% Set $TERMIAL in .profile
 set $mod Mod4
-set $mod2 Shift
+set $mod2 Shift 
 set $mod3 Control
+
 set $exec exec --no-startup-id
 set $dd   exec --no-startup-id dmenu_run2
+
+
+## #---Basic Bindings---# #
 bindsym $mod+Return 		$exec $term
+
 bindsym $mod+Shift+f    	focus mode_toggle
 bindsym $mod+Shift+space 	floating toggle
+
 bindsym $mod+Shift+Escape 	    $dd exit
 bindsym $mod+Shift+BackSpace	$dd shutdown
-
-bindsym Mod1+Ctrl+l		$dd lock
+ 
+bindsym Mod1+Ctrl+l		$dd lock 
 bindsym $mod+x			$dd lock
+
+# i3 commands
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+q			kill
+
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+S	gaps inner current minus 5
+# bindsym $mod+Shift+d	gaps inner current set 0
+
 bindsym $mod+o          border radius plus 5
 bindsym $mod+Shift+o    border radius minus 5
+
 bindsym $mod+b			bar mode toggle
 bindsym $mod+Shift+b	border toggle
+
+# bindsym $mod+Mod1+s 	layout stacking
 bindsym $mod+Mod1+w 	layout tabbed
 bindsym $mod+Mod1+e 	layout toggle split
+
 bindsym $mod+t			split toggle
+
 bindsym $mod+Shift+a    $dd click_script
 bindsym Mod5+F1         $dd click_script
+
+## #---Letter Key Bindings---# #
 bindsym $Mod+oslash 	$exec dmenuunicode
+
 bindsym $mod+Shift+w	$dd nmtui
 bindsym $mod+i 			$dd htop
-bindsym $mod+r 			$dd ranger
+
+bindsym $mod+r 			$dd ranger 
 bindsym $mod+y			$dd calendar # calcurse
 bindsym $mod+u			$exec ddspawn dd-tmux
 bindsym $mod+n 			$exec ddspawn dd-r-notes
-bindsym $mod+c			$exec ddspawn dd-calc
+
+bindsym $mod+c			$exec ddspawn dd-calc 
+
 bindsym $mod+d			$exec dmenu_run2
 bindsym $mod+Shift+d	$exec dmenu_run
+
 bindsym $mod+m 			$dd music
-bindsym $mod+w	        $dd browser
+bindsym $mod+w	        $dd browser 
+#bindsym $mod+Shift+a	$dd pulsemixer
+
+## #---Media Keys---# #
+# Volume keys
 bindsym $mod+Shift+m			$exec lmc mute
 bindsym $mod+plus				$exec lmc up 5
 bindsym $mod+Shift+plus			$exec lmc up 1
 bindsym $mod+minus 				$exec lmc down 5
 bindsym $mod+Shift+minus		$exec lmc down 1
+
+# mpd keys
 bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
 bindsym $mod+greater			$exec lmc next
 bindsym $mod+Shift+greater		$exec lmc next
 bindsym $mod+p					$exec lmc toggle
 bindsym $mod+Shift+p			$exec lmc pause
+# For advancing forward/backward in an mpd song
 bindsym $mod+bracketleft 		$exec lmc back 10
 bindsym $mod+Shift+bracketleft 	$exec lmc back 120
 bindsym $mod+bracketright 		$exec lmc forward 10
 bindsym $mod+Shift+bracketright $exec lmc forward 120
+
+
+## #---Function Buttons---# #
+# bindsym $mod+F1		
 bindsym $mod+F2		$exec ~/.config/i3/gen_conf; restart
-bindsym $mod+F6		$exec torwrap
-bindsym $mod+F7		$exec td-toggle
+# bindsym $mod+F3	
+# bindsym $mod+F4		
+# bindsym $mod+F5		
+bindsym $mod+F6		$exec torwrap 		#% transmition tool
+bindsym $mod+F7		$exec td-toggle		#% transmition tool
+# bindsym $mod+F8		
 bindsym $mod+F9		$exec dmenumount
 bindsym $mod+F10	$exec dmenuumount
 bindsym $mod+F11	$exec ducksearch
 bindsym $mod+F12	$dd nmtui
+
+# For screenshots
+# maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
 bindsym Print 				$exec gnome-screenshot
 bindsym Shift+Print 		$exec gnome-screenshot -a
 bindsym Control+Print 		$exec gnome-screenshot -w
 bindsym $mod+Scroll_Lock	$exec "killall screenkey || screenkey"
+#- nvim: filetype=i3
+
+## #---Program spesifics---# #
+#
 assign [class="vlc"] $WSmovie
+
 for_window 	[class="chrome"] 	border pixel 3
+
 assign [instance="netflix"] $WSmovie
 for_window 	[instance="netflix"] 	border pixel 0
 for_window 	[instance="netflix"] 	border radius 0
+
 assign [class="thunderbird"] $WS10
+
 assign [class="discord"] $WS6
 for_window [class="discord"]    floating enable
 for_window [class="discord"]    resize set 1200 800
 for_window [class="discord"]    move position center
+
+
+# for_window 	[class="okular"] 	    move workspace $WS7
+# for_window 	[class="okular"] 		workspace $ws7; layout tabbed
 for_window 	[class="Pinentry"] 		sticky enable
 for_window 	[class="sent"] 			border pixel 0px
 for_window 	[title="GIMP Startup"] 	move workspace $WSgimp
@@ -200,10 +332,17 @@ for_window 	[class="Gimp"] 			move workspace $WSgimp
 for_window 	[window_role="GtkFileChooserDialog"] resize set 800 600
 for_window 	[window_role="GtkFileChooserDialog"] move position center
 for_window 	[title="Default - Wine desktop"] 	 floating enable
+
+
+# Bindings to make the webcam float and stick.
 for_window 	[title="mpvfloat"] floating enable
 for_window 	[title="mpvfloat"] sticky enable
 for_window 	[title="mpvfloat"] border pixel 0
 no_focus 	[title="mpvfloat"]
+
+
+## #---Dropdown Windows---# #
+# General dropdown window traits. The order can matter.
 for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
@@ -214,6 +353,10 @@ for_window [instance="dropdown_dropdowncalc"] resize set 800 600
 for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
+
+#- nvim: filetype=i3
+
+## #---Extra XF86 Keys---# #
 bindsym XF86AudioMute					$exec lmc mute
 bindsym XF86AudioLowerVolume			$exec lmc down 1
 bindsym Shift+XF86AudioLowerVolume		$exec lmc down 10
@@ -221,6 +364,7 @@ bindsym XF86AudioRaiseVolume			$exec lmc up 1
 bindsym Shift+XF86AudioRaiseVolume		$exec lmc up 10
 bindsym XF86PowerOff					$exec prompt "Shutdown computer?" "$shutdown"
 bindsym XF86Calculator					$exec ddspawn dropdowncalc -f mono:pixelsize=24
+##bindsym XF86Sleep		This binding is typically mapped by systemd automatically.
 bindsym XF86Explorer					$exec $term -e $FILE
 bindsym XF86WWW							$exec $BROWSER
 bindsym XF86ScreenSaver					$exec lockscreen
@@ -247,7 +391,16 @@ bindsym XF86MonBrightnessUp				$exec sudo brightness -c 15%
 bindsym XF86AudioMedia					$exec $term -e ncmpcpp
 bindsym XF86Display						$exec displayselect
 bindsym XF86Documents					$exec $term -e $FILE ~/Documents
+# bindsym XF86Battery					$exec Dissplay remainding time (use the log files to calculate this) Or toggle/disable battery low sound.
+#- nvim: filetype=i3
+
+
+## Freece mode
 set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
 mode "$freeze" { bindsym $mod+Shift+f mode "default"
 }
+
+# bindsym $mod+Shift+f		mode "$freeze" ;; $exec --no-startup-id notify-send "Distraction-free mode activated." "Press Super+Shift+f to return."
+
+# Source .xprofile
 exec $HOME/.xprofile

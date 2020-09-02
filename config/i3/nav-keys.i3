@@ -53,46 +53,6 @@ bindsym $mod+Ctrl+Right		$exec i3resize right  $movestep
 
 # #---Workspace Bindings---# #
 
-# switch to workspace
-bindsym $mod+bar	workspace $WS0
-bindsym $mod+1		workspace $WS1
-bindsym $mod+2		workspace $WS2
-bindsym $mod+3		workspace $WS3
-bindsym $mod+4		workspace $WS4
-bindsym $mod+5		workspace $WS5
-bindsym $mod+6		workspace $WS6
-bindsym $mod+7		workspace $WS7
-bindsym $mod+8		workspace $WS8
-bindsym $mod+9		workspace $WS9
-bindsym $mod+0		workspace $WS10
-
-# move focused container to workspace
-bindsym $mod+Control+bar    move workspace $WS0
-bindsym $mod+Control+1	    move workspace $WS1
-bindsym $mod+Control+2	    move workspace $WS2
-bindsym $mod+Control+3	    move workspace $WS3
-bindsym $mod+Control+4	    move workspace $WS4
-bindsym $mod+Control+5	    move workspace $WS5
-bindsym $mod+Control+6	    move workspace $WS6
-bindsym $mod+Control+7	    move workspace $WS7
-bindsym $mod+Control+8	    move workspace $WS8
-bindsym $mod+Control+9	    move workspace $WS9
-bindsym $mod+Control+0	    move workspace $WS10
-
-# move focused container to workspace and go there
-bindsym $mod+Shift+bar	    move workspace $WS0;  workspace $WS0
-bindsym $mod+Shift+1	    move workspace $WS1;  workspace $WS1
-bindsym $mod+Shift+2	    move workspace $WS2;  workspace $WS2
-bindsym $mod+Shift+3	    move workspace $WS3;  workspace $WS3
-bindsym $mod+Shift+4	    move workspace $WS4;  workspace $WS4
-bindsym $mod+Shift+5	    move workspace $WS5;  workspace $WS5
-bindsym $mod+Shift+6	    move workspace $WS6;  workspace $WS6
-bindsym $mod+Shift+7	    move workspace $WS7;  workspace $WS7
-bindsym $mod+Shift+8	    move workspace $WS8;  workspace $WS8
-bindsym $mod+Shift+9	    move workspace $WS9;  workspace $WS9
-bindsym $mod+Shift+0	    move workspace $WS10; workspace $WS10
-
-
 bindsym $mod+Home			workspace first 
 bindsym $mod+Ctrl+Home		move workspace first
 bindsym $mod+Shift+Home		move workspace first; workspace last 
