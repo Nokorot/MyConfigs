@@ -7,14 +7,11 @@ set $mod2 Shift
 set $mod3 Control
 
 set $exec exec --no-startup-id
-set $dd   exec --no-startup-id dmenu_run2
+set $dd   exec --no-startup-id dml
 
 
 ## #---Basic Bindings---# #
 bindsym $mod+Return 		$exec $term
-
-bindsym $mod+Shift+f    	focus mode_toggle
-bindsym $mod+Shift+space 	floating toggle
 
 bindsym $mod+Shift+Escape 	    $dd exit
 bindsym $mod+Shift+BackSpace	$dd shutdown
@@ -22,7 +19,7 @@ bindsym $mod+Shift+BackSpace	$dd shutdown
 bindsym Mod1+Ctrl+l		$dd lock 
 bindsym $mod+x			$dd lock
 
-# i3 commands
+## i3 commands
 bindsym $mod+f			fullscreen toggle
 bindsym $mod+q			kill
 
@@ -36,29 +33,22 @@ bindsym $mod+Shift+o    border radius minus 5
 bindsym $mod+b			bar mode toggle
 bindsym $mod+Shift+b	border toggle
 
-# bindsym $mod+Mod1+s 	layout stacking
 bindsym $mod+Mod1+w 	layout tabbed
 bindsym $mod+Mod1+e 	layout toggle split
 
 bindsym $mod+t			split toggle
 
-bindsym $mod+Shift+a    $dd click_script
-bindsym Mod5+F1         $dd click_script
+bindsym $mod+Shift+f    	focus mode_toggle
+bindsym $mod+Shift+space 	floating toggle
 
 ## #---Letter Key Bindings---# #
 bindsym $Mod+oslash 	$exec dmenuunicode
 
-bindsym $mod+Shift+w	$dd nmtui
-bindsym $mod+i 			$dd htop
-
-bindsym $mod+r 			$dd ranger 
-bindsym $mod+y			$dd calendar # calcurse
-bindsym $mod+u			$exec ddspawn dd-tmux
-bindsym $mod+n 			$exec ddspawn dd-r-notes
+bindsym $mod+n 		    $exec nn --browse
 
 bindsym $mod+c			$exec ddspawn dd-calc 
 
-bindsym $mod+d			$exec dmenu_run2
+bindsym $mod+d			$exec dml 
 bindsym $mod+Shift+d	$exec dmenu_run
 
 bindsym $mod+m 			$dd music
@@ -74,6 +64,9 @@ bindsym $mod+minus 				$exec lmc down 5
 bindsym $mod+Shift+minus		$exec lmc down 1
 
 # mpd keys
+bindsym $mod+comma 				$exec lmc prev
+bindsym $mod+period 				$exec lmc next
+
 bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
 bindsym $mod+greater			$exec lmc next

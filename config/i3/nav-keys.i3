@@ -58,9 +58,9 @@ bindsym $mod+Ctrl+Home		move workspace first
 bindsym $mod+Shift+Home		move workspace first; workspace last 
 bindsym $mod+End			workspace last
 bindsym $mod+Ctrl+End		move workspace last
-bindsym $mod+Shift+End		move workspace last; 
+bindsym $mod+Shift+End		move workspace last; workspace last
 bindsym $mod+aring			workspace last
-bindsym $mod+Ctrl+aring	    move workspace last; workspace last
+bindsym $mod+Ctrl+aring	    move workspace last
 bindsym $mod+Shift+aring	move workspace last; workspace last
 
 bindsym $mod+Prior			workspace prev

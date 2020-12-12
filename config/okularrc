@@ -1,38 +1,38 @@
 Height 900=854
-State=AAAA/wAAAAD9AAAAAAAAAw0AAANCAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
-Width 1600=781
+State=AAAA/wAAAAD9AAAAAAAABigAAANCAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Width 1600=1576
 
 [Desktop Entry]
 FullScreen=false
 
 [MainWindow]
-Height 900=420
-MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAAw0AAANWAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+Height 900=854
+MenuBar=Enabled
+State=AAAA/wAAAAD9AAAAAAAABigAAANCAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-Width 1600=973
+Width 1600=1576
 
 [Recent Files]
-File1[$e]=$HOME/Dropbox/UniEdin/Dissertation/Refs/src/Legendrian and Transversal Knots/fig/grading.eps
-File10[$e]=/usr/share/fonts/svg/font-awesome/
-File2[$e]=$HOME/Dropbox/UniEdin/Dissertation/Refs/src/Legendrian and Transversal Knots/fig/sigmai.eps
-File3[$e]=$HOME/Dropbox/UniEdin/Dissertation/Refs/src/Legendrian and Transversal Knots/fig/cornerasy.eps
-File4[$e]=$HOME/Dropbox/UniEdin/Dissertation/Refs/src/Legendrian and Transversal Knots/fig/orintsigns.eps
-File5[$e]=$HOME/Downloads/2020-03-31-Note-15-33.pdf
-File6[$e]=$HOME/Dissertation/Refs/A-Infinity algebras.pdf
-File7[$e]=$HOME/Dissertation/Paper/Paper.pdf
-File8[$e]=$HOME/Dissertation/Refs/chekanov-differential-algebra-of-legendrian-links.pdf
-File9[$e]=$HOME/Downloads/0401007.pdf
-Name1[$e]=grading.eps
-Name10[$e]=
-Name2[$e]=sigmai.eps
-Name3[$e]=cornerasy.eps
-Name4[$e]=orintsigns.eps
-Name5[$e]=2020-03-31-Note-15-33.pdf
-Name6[$e]=A-Infinity algebras.pdf
-Name7[$e]=Paper.pdf
-Name8[$e]=chekanov-differential-algebra-of-legendrian-links.pdf
-Name9[$e]=0401007.pdf
+File1[$e]=$HOME/Documents/Personal/HEAR Transcript_new.pdf
+File10[$e]=$HOME/Documents/Personal/CV/CV.pdf
+File2[$e]=$HOME/Documents/Personal/ETH_eApply_ApplicationFile_86209.pdf
+File3[$e]=https://torh-gjone.herokuapp.com/papers/legendrian_knots.pdf
+File4[$e]=$HOME/Documents/Notes/pyknotic.pdf
+File5[$e]=$HOME/Documents/Notes/2019_Book_IntersectionHomologyPerverseSh.pdf
+File6[$e]=$HOME/Documents/Notes/Homotopy Theory/context.pdf
+File7[$e]=$HOME/Documents/Personal/CV_stuff/m/main.pdf
+File8[$e]=$HOME/Documents/Personal/CV/main_en.pdf
+File9[$e]=$HOME/Documents/Personal/CV/torhgjone_cv_en.pdf
+Name1[$e]=HEAR Transcript_new.pdf
+Name10[$e]=CV.pdf
+Name2[$e]=ETH_eApply_ApplicationFile_86209.pdf
+Name3[$e]=legendrian_knots.pdf
+Name4[$e]=pyknotic.pdf
+Name5[$e]=2019_Book_IntersectionHomologyPerverseSh.pdf
+Name6[$e]=context.pdf
+Name7[$e]=main.pdf
+Name8[$e]=main_en.pdf
+Name9[$e]=torhgjone_cv_en.pdf
 
 [Shortcut Schemes]
-Current Scheme=Default
+Current Scheme=New Scheme

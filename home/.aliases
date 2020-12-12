@@ -26,12 +26,15 @@ function cpp() {
 
 
 alias yt_x='youtube-dl -xi --download-archive ./list' # ~/.config/youtube-dl/music.txt'
-alias yt_v='youtube-dl --download-archive ./list' # ~/.config/youtube-dl/video.txt'
+alias yt_v='youtube-dl --download-archive ./list' # ~/.config/youtube-dl/video.txt
 
+yt_ply() { mpv "$(youtube-dl -xg "$1")"; }
 
 alias sxiv="sxiv -oat"
 
-alias v="nvim"
+# alias v="nvim"
+function v() { realpath "$@" | xargs nvim -p; }
+
 alias r="ranger"
 
 alias o="gio open"
@@ -59,5 +62,8 @@ alias vi3="nvim ~/.config/i3"
 
 function dm-wlist() { echo "$@" >> ~/.config/dmenu_run.wlist; } 
 
-TODO() { [ -z $1 ] && cat ~/NoteBook/TODO.md || echo $@ >> ~/NoteBook/TODO.md; }
+
+# TODO() { [ -z $1 ] && cat ~/NoteBook/TODO.md || echo $@ >> ~/NoteBook/TODO.md; }
+alias TODO='nb TODO'
+#alias TODOp='nb -p TODO'
 

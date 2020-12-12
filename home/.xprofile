@@ -8,5 +8,4 @@ compton --backend glx --force-win-blend \
     --glx-fshader-win "$(cat ~/.config/compton/fshader.glsl)" &
 dunst &			# dunst for notifications
 mpd &
-mpdupdate &
-dropbox start &
+dropboxd &

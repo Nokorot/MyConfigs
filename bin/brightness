@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Change to be an environment variable or someting
 backlight_screen='intel_backlight'
@@ -12,11 +12,16 @@ xlevel=100
 
 helpMsg="usage: $0 [-s|c] <value> [-z|x] <xvalue> \n\t-s:\tSet the backlight brightness to <value> \n\t-c:\tChange the backlight brightness by <value> \n\t-z:\tSet the xrandr brightness to <xvalue> \n\t-x:\tChange the xrandr brightness by <xvalue>"
 
+getv() {
+    [[ $1 =~ ^.*% ]] && echo "$(( ${1: :-1} * $maxlevel / 100 ))" \
+        || echo "$1"
+}
+
 while getopts "s:z:x:c:" opt; do case ${opt} in
-  s ) level=$(( OPTARG )); change="true" ;;
-  z ) xlevel=$(( OPTARG )); xchange="true" ;;
-  c ) level=$(( $level + $OPTARG )); change="true" ;;
-  x ) xlevel=$(( $xlevel + $OPTARG )); xchange="true" ;;
+    s ) level=$( getv "$OPTARG" ); change="true" ;;
+    z ) xlevel=$(( getv $OPTARG )); xchange="true" ;;
+  c ) level=$(( $level + $(getv $OPTARG))); change="true" ;;
+  x ) xlevel=$(( $xlevel + $(getv $OPTARG) )); xchange="true" ;;
   \? ) echo "$helpMsg" && exit 0 ;;
 esac done
 

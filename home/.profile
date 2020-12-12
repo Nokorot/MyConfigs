@@ -6,6 +6,9 @@ export TERMINAL="urxvt"  # "tilix" # "urxvt" # "st"
 export BROWSER="google-chrome" # "chrome" # "brave-browser"
 export EDITOR="nvim"
 
+export NOTEBOOK_DIR="$HOME/Sync/Dropbox/Apps/torhgjone.no/notes"
+export NOTES="$HOME/Documents/Notes"
+
 
 # ~/ Clean-up:
 export URXVT_PERL_LIB=$HOME/.config/urxvt/ext

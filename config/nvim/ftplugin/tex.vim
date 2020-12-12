@@ -1,4 +1,4 @@
-" this is mostly a matter of taste. but LaTeX looks good with just a bit
+" this is mostly a matter of taste. But LaTeX looks good with just a bit
 " of indentation.
 set sw=0
 " TIP: if you write your \label's as \label{fig:something}, then if you
@@ -14,11 +14,15 @@ command! -nargs=1 Texenv call TexEnv("<args>")
 
 nnoremap <C-e> :call TexEnv(input("TeX environment name: "))<CR>
 
-nnoremap <M-CR>	 	:!./.compile.sh <CR>
+nnoremap <M-CR>	 	:!./.compile.sh  <CR>
 nnoremap \\s	 	:!./.compile.sh silent<CR>
 " nnoremap \\o	 	:!zathura-tabbed main.pdf<CR>
 nnoremap \\o	 	:!./.compile.sh open<CR>
 nnoremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
+
+
+let g:Tex_SmartKeyQuote=0
+
 
 imap \[             \[  \]<Esc>2hi
 imap \{             \{  \}<Esc>2hi

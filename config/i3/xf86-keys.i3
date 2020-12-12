@@ -29,9 +29,9 @@ bindsym XF86Mail						$exec $term -e neomutt && pkill -RTMIN+12 i3blocks
 bindsym XF86Messenger					$exec $term -e weechat
 bindsym XF86Search						$exec $BROWSER https://duckduckgo.com
 bindsym Shift+XF86MonBrightnessDown		$exec sudo brightness -x -10
-bindsym XF86MonBrightnessDown			$exec sudo brightness -c -15%
+bindsym XF86MonBrightnessDown			$exec sudo brightness -c -10%
 bindsym Shift+XF86MonBrightnessUp		$exec sudo brightness -x 10
-bindsym XF86MonBrightnessUp				$exec sudo brightness -c 15%
+bindsym XF86MonBrightnessUp				$exec sudo brightness -c 10%
 bindsym XF86AudioMedia					$exec $term -e ncmpcpp
 bindsym XF86Display						$exec displayselect
 bindsym XF86Documents					$exec $term -e $FILE ~/Documents

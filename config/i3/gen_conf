@@ -15,7 +15,7 @@ ws_names_i3() {
 ws_names_sh() {
     awk '{
         split($0, a, "\"")
-        printf "export "$1"="$2"\n"
+        printf "export "$1"=\""a[2]"\"\n"
     }' > $gdir/ws-names.sh
 }
 
