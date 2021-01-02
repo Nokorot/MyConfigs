@@ -54,7 +54,6 @@ bindsym $mod+Ctrl+Right		$exec i3resize right  $movestep
 # #---Workspace Bindings---# #
 
 # switch to workspace
-bindsym $mod+bar	workspace $WS0
 bindsym $mod+1		workspace $WS1
 bindsym $mod+2		workspace $WS2
 bindsym $mod+3		workspace $WS3
@@ -65,9 +64,9 @@ bindsym $mod+7		workspace $WS7
 bindsym $mod+8		workspace $WS8
 bindsym $mod+9		workspace $WS9
 bindsym $mod+0		workspace $WS10
+bindsym $mod+bar	workspace $WS0
 
 # move focused container to workspace
-bindsym $mod+Control+bar    move workspace $WS0
 bindsym $mod+Control+1	    move workspace $WS1
 bindsym $mod+Control+2	    move workspace $WS2
 bindsym $mod+Control+3	    move workspace $WS3
@@ -78,9 +77,9 @@ bindsym $mod+Control+7	    move workspace $WS7
 bindsym $mod+Control+8	    move workspace $WS8
 bindsym $mod+Control+9	    move workspace $WS9
 bindsym $mod+Control+0	    move workspace $WS10
+bindsym $mod+Control+bar    move workspace $WS0
 
 # move focused container to workspace and go there
-bindsym $mod+Shift+bar	    move workspace $WS0;  workspace $WS0
 bindsym $mod+Shift+1	    move workspace $WS1;  workspace $WS1
 bindsym $mod+Shift+2	    move workspace $WS2;  workspace $WS2
 bindsym $mod+Shift+3	    move workspace $WS3;  workspace $WS3
@@ -91,6 +90,7 @@ bindsym $mod+Shift+7	    move workspace $WS7;  workspace $WS7
 bindsym $mod+Shift+8	    move workspace $WS8;  workspace $WS8
 bindsym $mod+Shift+9	    move workspace $WS9;  workspace $WS9
 bindsym $mod+Shift+0	    move workspace $WS10; workspace $WS10
+bindsym $mod+Shift+bar	    move workspace $WS0;  workspace $WS0
 
 
 bindsym $mod+Home			workspace first 

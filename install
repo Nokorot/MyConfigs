@@ -5,7 +5,7 @@ git_clone_dir=$HOME/Source
 
 main() {
 
-    # TODO: --clone-git-dir = /tmp ( default $HOME/Source ), 
+    # TODO: --clone-git-dir = /tmp ( default $HOME/Source ),
 
     for v in $@; do case $v in
         symlinks)   symlinks ;;
@@ -15,7 +15,7 @@ main() {
         fonts)      fonts ;;
         basics)     basics ;;
         sxiv)       sxiv ;;
-    
+
         tmp_bg)     tmp_bg ;;
         dot_trash)  dot_trash ;;
 
@@ -31,7 +31,7 @@ apt_update() {
 }
 
 fonts() {
-    sudo apt install -y fonts-dejavu fonts-font-awesome fonts-emojione 
+    sudo apt install -y fonts-dejavu fonts-font-awesome fonts-emojione
 }
 
 basics() {
@@ -55,18 +55,18 @@ sxiv() {
     sudo apt install -y libimlib2-dev libexif-dev
 
     git_clone "https://github.com/Nokorot/sxiv" sxiv || exit 1
-    
+
 }
 
-gen_symlinks() 
+gen_symlinks()
 {
     for v in `ls -A $myconf/$1`; do
         vv="$2/$v";
         if [ -f $vv ]; then
-            [ -L $vv ] || echo "File $vv alredy exists!"; 
+            [ -L $vv ] || echo "File $vv alredy exists!";
         elif [ -d $vv ]; then
-            [ -L $vv ] || echo "Dir $vv alredy exists!"; 
-        else	
+            [ -L $vv ] || echo "Dir $vv alredy exists!";
+        else
             ln -fs "$myconf/$1/$v" $vv;
         fi;
     done
@@ -76,13 +76,15 @@ gen_symlinks()
 symlinks() {
     gen_symlinks home		$HOME;
     gen_symlinks config		$HOME/.config;
+    $HOME/.config/gen_conf;
+
     gen_symlinks share		$HOME/.local/share;
-    
+
     gen_symlinks bin	/usr/local/bin;
 }
 
 # install i3
-install_i3_gaps() { 
+install_i3_gaps() {
   # install dependencies
   sudo apt install -y \
 		libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
@@ -110,7 +112,17 @@ install_google_chorme() {
   sudo dpkg -i google-chrome-stable_current_amd64.deb
 }
 
-## Set sudoers no-pass premition 
+## Install dropbox
+install_dropboxd() {
+      wget "https://www.dropbox.com/download?plat=lnx.x86_64"
+    cd ~
+    wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
+    sudo mv .dropbox-dist /opt/dropbox
+    sudo ln -s /opt/dropbox/dropboxd /usr/bin/dropboxd
+}
+
+
+## Set sudoers no-pass premition
 sudoers_nopass() {
  echo "%sudo ALL=NOPASSWD: /usr/bin/mount, /urs/bin/umount, /usr/local/bin/brightness, /usr/sbin/shutdown" \
 		| sudo tee /etc/sudoers.d/no-pass

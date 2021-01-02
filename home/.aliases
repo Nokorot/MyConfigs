@@ -2,6 +2,8 @@
 
 GHclone() { git clone "https://github.com/Nokorot/$1"; } 
 
+vdl() { mpv "$(youtube-dl -g "$1")"; }
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'

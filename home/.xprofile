@@ -9,4 +9,4 @@ compton --backend glx --force-win-blend \
 dunst &			# dunst for notifications
 mpd &
 mpdupdate &
-dropbox start &
+dropboxd &   # dropbox start &

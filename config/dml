@@ -16,6 +16,8 @@ browser         $BROWSER
 # brave-browser
 google-chrome
 chrome
+vivaldi
+
 zathura
 sxiv
 #
@@ -74,6 +76,12 @@ scratch         i3-msg move scratchpad
 scratch_show    i3-msg scratchpad show
 
 #
+# Demonds
+#
+dropboxd
+compton 
+
+#
 # Terminal programs 
 #
 # calcurse        $TERMINAL -e calcurse
@@ -96,13 +104,13 @@ w-screen-print  gnome-screenshot -w
 c-screen-print  gnome-screenshot -c
 ac-screen-print  gnome-screenshot -a -c
  
-
 #
 ## Web sites
 #
 # incognito       $BROWSER --incognito
 incognito       google-chrome --incognito
-netflix         $BROWSER --app="https://www.netflix.com" & \
+# netflix         $BROWSER --app="https://www.netflix.com" & \
+netflix         vivaldi --app="https://www.netflix.com" & \
                 i3-msg "workspace $WSmovie"
 calendar        $BROWSER --app="https://calendar.google.com/calendar"
 youtube         $BROWSER www.youtube.com/feed/subscriptions
