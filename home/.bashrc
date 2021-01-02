@@ -19,3 +19,17 @@ export TERMIANL_BG=#222222
 
 ###
 
+_nn_complete() {
+    pushd $NOTES >/dev/null
+    _longopt $@
+    popd >/dev/null
+}
+complete -o filenames -F _nn_complete nn
+
+_nb_complete() {
+    local file; for file in $NOTEBOOK_DIR/"$2"*; do
+        COMPREPLY+=( $(basename "${file%.md}") )
+    done
+}
+complete -F _nb_complete nb
+

@@ -1,48 +1,52 @@
 #!/bin/bash
 
 latex_format=standalone
-file_format=png
+texfile="file.tex"
+
+# Argument Options:
 CONVERT=false
 ARTICLE=false
 NONSTOP=false
-POSITIONAL=()
-while [[ $# -gt 0 ]]
-do
-key="$1"
+OPEN=true
 
-case $key in
+# Read arguments
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+case $1 in
     -a|--article)
-    ARTICLE=true
-    format=article
-    shift # past argument
-    ;;
+        ARTICLE=true
+        format=article
+        shift ;;
     -f|--format)
-    CONVERT=true
-    format=$2
-    shift # past argument
-    shift # past vale
-    ;;
-   # -xc|--xclip)
-   # ARTICLE=true
-   # format=article
-   # shift # past argument
-   # ;;
-    -nsm|--nonstopmode)
-    NONSTOP=true
-    shift # past argument
-    ;;
-    --default)
-    DEFAULT=YES
-    shift # past argument
-    ;;
-    *)    # unknown option
-    POSITIONAL+=("$1") # save it in an array for later
-    shift # past argument
-    ;;
-esac
-done
+        CONVERT=true
+        format=$2
+        shift 2 ;;
+    -no|--not-open-pdf) 
+        OPEN=false
+        shift ;;
+    # -xc|--xclip)
+    #     CLIPBOARD=true
+    #     format=article
+    #     shift ;;
+    -nsm|--nonstopmode) 
+        NONSTOP=true
+        shift ;;
+    --default) 
+        DEFAULT=YES
+        shift ;;
+    *) POSITIONAL+=("$1") 
+        shift ;;
+esac; done
 set -- "${POSITIONAL[@]}" # restore positional parameters
 
+compile() { pdflatex $texfile; }
+convert() { magick -density 500 file.pdf -quality 90 file.$format; }
+open() { $OPEN && gio open "$1" & } 
+
+main() {
+    $CONVERT && { convert; open "file.$format"; } \
+    	|| open "file.pdf";
+}
 
 cd ~/.bin/tmp
 
@@ -57,15 +61,6 @@ echo "\documentclass[
 
 \begin{document}
   \$ $@ \$
-\end{document}" > file.tex
+\end{document}" > $texfile
 
-pdflatex file.tex
-
-if $CONVERT; then
-	magick -density 500 file.pdf -quality 90 file.$format
-	gio open file.$format &
-else
-	gio open file.pdf &
-fi
-
-
+main

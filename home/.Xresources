@@ -26,6 +26,7 @@ URxvt.keysym.M-v: perl:clipboard:paste
 
 /* Sxiv */
 Sxiv.background: #202020
+Sxiv.background: #ffffff
 
 /* *.font:    xft:DejaVu Sans Mono-12 */
 

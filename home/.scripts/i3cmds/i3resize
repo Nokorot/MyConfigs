@@ -1,5 +1,4 @@
 #!/bin/sh
-# This script was made by `goferito` on Github.
 
 [ -z "$1" ] && echo "No direction provided" && exit 1
 distanceStr=$( [ -z "$2"] && "50px or 2ppt" || echo "$2" )

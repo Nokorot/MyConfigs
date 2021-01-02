@@ -15,15 +15,80 @@ main() {
         fonts)      fonts ;;
         basics)     basics ;;
         sxiv)       sxiv ;;
-
+        i3)         install_i3 ;;
+    
+        youtube_dl) youtube_dl ;;
+        mpd_music)  mpd_music ;;
+        dropbox)    dropbox ;;
+    
         tmp_bg)     tmp_bg ;;
         dot_trash)  dot_trash ;;
 
-        all) symlinks sudoers dot_trash tmp_bg apt_update basics chrome sxiv ;;
+        all) symlinks sudoers basics dot_trash tmp_bg apt_update chrome sxiv ;;
+        *)  echo "Instalation '$d' not found!"
     esac; done
 
-    echo $@
 }
+
+mpd_music() {
+    sudo apt install -y mpd mpc ncmpcpp
+}
+
+youtube_dl() {
+    sudo apt install -y ffmpeg
+
+    sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+
+    sudo chmod a+rx /usr/local/bin/youtube-dl
+}
+
+
+discord() {
+    # Some of these are probably quite basic
+    sudo apt install -y \
+        gyp libc-ares2 libhttp-parser2.7.1 libjs-async libjs-inherits \
+        libjs-node-uuid libssl1.0-dev libuv1-dev node-abbrev node-ansi \
+        node-ansi-color-table node-archy node-async node-balanced-match \
+        node-block-stream node-brace-expansion node-builtin-modules \
+        node-combined-stream node-concat-map node-cookie-jar node-delayed-stream \
+        node-forever-agent node-form-data node-fs.realpath node-fstream \
+        node-fstream-ignore node-github-url-from-git node-glob node-graceful-fs \
+        node-gyp node-hosted-git-info node-inflight node-inherits node-ini \
+        node-is-builtin-module node-isexe node-json-stringify-safe node-lockfile \
+        node-lru-cache node-mime node-minimatch node-mkdirp node-mute-stream \
+        node-node-uuid node-nopt node-normalize-package-data node-npmlog \
+        node-once node-osenv node-path-is-absolute node-pseudomap node-qs \
+        node-read node-read-package-json node-request node-retry node-rimraf \
+        node-semver node-sha node-slide node-spdx-correct \
+        node-spdx-expression-parse node-spdx-license-ids node-tar \
+        node-tunnel-agent node-underscore node-validate-npm-package-license \
+        node-which node-wrappy node-yallist nodejs-doc python-pkg-resources
+
+    cd /tmp
+    curl 'https://dl.discordapp.net/apps/linux/0.0.11/discord-0.0.11.tar.gz' \
+        > discord.tar.gz
+    sudo tar -C /opt/ -xf discord.tar.gz 
+    sudo ln -s /opt/Discord/Discord /usr/bin/discord
+}
+
+dropbox() {
+    cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+    sudo mv .dropbox-dist /opt/dropbox
+    sudo ln -s /opt/dropbox/dropboxd /usr/bin/
+}
+
+joplin() {
+    sudo apt install -y curl
+
+    # Install Node.js v14.x
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+    NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin
+    
+    sudo ln -s ~/.joplin-bin/
+}
+
 
 apt_update() {
     sudo apt update -y
@@ -36,8 +101,10 @@ fonts() {
 
 basics() {
     sudo apt install -y neovim rxvt-unicode
-    sudo apt install -y dunst unclutter libnotify-bin
+    sudo apt install -y compton dunst unclutter libnotify-bin
+    sudo apt install -y pulsemixer
     sudo apt install -y feh gnome-screenshots
+    sudo apt install -y dmenu
 
     fonts
 }
@@ -84,7 +151,7 @@ symlinks() {
 }
 
 # install i3
-install_i3_gaps() {
+install_i3() { 
   # install dependencies
   sudo apt install -y \
 		libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
@@ -96,6 +163,7 @@ install_i3_gaps() {
 
   mkdir -p $HOME/Source
   mkdir $HOME/Source/i3 || exit 1
+  cd $HOME/Source/i3
 
   git clone https://www.github.com/Nokorot/i3 i3
   cd i3
@@ -103,6 +171,9 @@ install_i3_gaps() {
   rm -rf build/ && mkdir -p build && cd build/
   ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
   make && sudo make install
+
+
+  sudo apt install -y i3blocks
 }
 
 ## Install google-crome
@@ -124,7 +195,7 @@ install_dropboxd() {
 
 ## Set sudoers no-pass premition
 sudoers_nopass() {
- echo "%sudo ALL=NOPASSWD: /usr/bin/mount, /urs/bin/umount, /usr/local/bin/brightness, /usr/sbin/shutdown" \
+    echo "%sudo ALL=NOPASSWD: $(which mount), $(which umount), /usr/local/bin/brightness, $(which shutdown)" \
 		| sudo tee /etc/sudoers.d/no-pass
 }
 

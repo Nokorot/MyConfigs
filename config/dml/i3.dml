@@ -1,0 +1,12 @@
+
+# %define _WS_NAMES ~/.config/i3/ws-names
+
+workspace        i3-msg "workspace \"$(printenv | grep '^WS' | cut -d'=' -f2 | dmenu -p 'Go to WS: ')\""
+wce            printf "WS1|WS2|WS3|WS4|WS5|WS6|WS7|WS8|WS9|WS10|WS0|WSgimp|WSmusic|WSmovie" | tr '|' '\n' #| dmenu -p 'Go to WS: '
+
+
+
+# workspace       i3-msg "workspace \"$(cat ~/.config/i3/ws-names | sed '/^\s*\#.*/d' | cut -d' ' -f1 # | dmenu -p 'Go to WS: ')\"" # Note that the \ in front of # there to escape dml commenting
+# tmp       cat ~/.config/i3/ws-names | sed '/^\s*\#.*/d' | awk '{ \
+#        split($0, a, "\""); printf a[2]"\\\n"; }'
+

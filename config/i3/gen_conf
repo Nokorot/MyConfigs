@@ -1,31 +1,54 @@
-#!/bin/sh
+#!/bin/bash
 
 cdir=$HOME/.config/i3/
 gdir=$HOME/.config/i3/gen-files/
 
-# sed command, which removes comments and white spaces
-rmc='{/^[ \t]*#/d;/^$/d; s/[ \t]*#%.*$//; s/[ \t]*$//}'
+rmc() { sed -e '/^\s*$/d;s/\s*$//;/^\s*#/d;s/\s*#%.*$//'; }
 
-sed -e "$rmc" $cdir/config.ws-names \
-    | awk '{ printf "set $"$1; $1="";  printf $0"\n"}' \
-    > $gdir/ws-names.i3
+ws_names_i3() {
+    awk '{ 
+        split($0, a, "\"")
+        printf "set $"$1"\t\""a[2]"\"\n"
+    }' > $gdir/ws-names.i3
+}
 
-cat $cdir/config.base 	    \
-    $gdir/ws-names.i3       \
-	$cdir/config.nav-keys 	\
-	$cdir/config.key-bind 	\
-	$cdir/config.prog-spes 	\
-	$cdir/config.xf86-keys  \
-	$cdir/config.footer 	\
-	| sed -e "$rmc"         \
+ws_names_sh() {
+    awk '{
+        split($0, a, "\"")
+        printf "export "$1"=\""a[2]"\"\n"
+    }' > $gdir/ws-names.sh
+}
+
+ws_keys() {
+    sed '/"\s*$/d;s/\s*".*"\s*/ /' | awk '{ 
+        printf "bindsym $mod+"$2"  \t\tworkspace $"$1"\n"
+        printf "bindsym $mod+Ctrl+"$2" \tmove workspace $"$1"\n"
+        printf "bindsym $mod+Shift+"$2" \tmove workspace $"$1
+        printf "; workspace $"$1"\n"
+        }' > $gdir/ws-keys.i3
+}
+
+< $cdir/ws-names rmc \
+    | tee >(ws_names_i3) \
+    | tee >(ws_names_sh) \
+    | ws_keys
+
+cat $cdir/base.i3 	   \
+    $gdir/ws-names.i3  \
+    $gdir/ws-keys.i3   \
+	$cdir/nav-keys.i3  \
+	$cdir/key-bind.i3  \
+	$cdir/prog-spes.i3 \
+	$cdir/xf86-keys.i3 \
+	$cdir/footer.i3    \
+	| rmc    \
 	> $cdir/config
 
-sed -e "$rmc" $cdir/config.ws-names \
-    | awk '{frt=$1;$1=""; printf "export "frt"="substr($0, 2)"\n"}' \
-    > $gdir/ws-names.sh
 
 # TODO: Look for conflicts
-cat $cdir/config | grep ^bindsym | sed 's/\t/ /' | cut -d' ' -f 2 > $gdir/keybindings
-
-
+cat $cdir/config \
+    | grep ^bindsym \
+    | sed 's/\t/ /' \
+    | cut -d' ' -f 2 \
+    > $gdir/keybindings
 

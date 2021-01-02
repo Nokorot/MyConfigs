@@ -3,34 +3,45 @@
 # TODO bmdir="$HOME/.config/dmenu_run.wlist.d"
 # brfile="$HOME/.config/gg-bookmarks"
 
-bmfile="$HOME/.config/dml"
+bmfile="$HOME/.config/dml/main"
 
 cmt() {
-    sed 's/\s*[^"\]#.*$\|^#.*$//;/^\s*$/d' "$1" | \
+    sed 's/\s*[^"\]#.*$\|^#.*$//;s/\\#/#/g;/^\s*$/d' "$1" | \
         sed ':a;N;$!ba;s/\\\n\s*//g' 
 }
 
 run() {
-    [ -z $1 ] && exit
+    [ -z "$1" ] && exit
     
-    l=$(cmt $bmfile | grep "^$1$\|^$1 ")
-    [ -z $l ] && notify-send "keyword '$1' was not found"
+    # l=$(cmt $bmfile | grep "^$1$\|^$1 ")
+    # [ -z "$l" ] && notify-send "keyword '$1' was not found"
+    [ -z "$2" ] || \
+        c=$(cmt $bmfile | grep "^$1$\|^$1" | cut -d' ' -f2-)
 
-    c=$(echo $l | cut -d' ' -f2- )
-    
-    [ -z $c ] && c=$1
-    echo $c
+    [ -z "$c" ] && c="$@"
+    echo "$c"
 
     echo $c | ${SHELL:-"/bin/sh"} &
 }
 
 dmenu_search() {
   cmt $bmfile | \
-        cut -d' ' -f1 | dmenu 
+        cut -d' ' -f1 | dmenu -p "$prompt"
 }
 
+usage() { 
+    echo "Usage: $0 [-c <file>] <choose>\\n   -c: dml-file, default '$bmfile' \\n" 1>&2; exit 1;}
+
+while getopts "hc:p:" o; do case "${o}" in
+	c) bmfile=$OPTARG ;;
+    p) prompt=$OPTARG ;;
+	*) usage && exit ;;
+esac done
+
+shift $((OPTIND-1))
+
 if [ -z $1 ]; then 
-    run $(dmenu_search) 
+    run "$(dmenu_search)"
 else
     run "$1"
 fi

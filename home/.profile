@@ -6,6 +6,9 @@ export TERMINAL="urxvt"  # "tilix" # "urxvt" # "st"
 export BROWSER="google-chrome" # "chrome" # "brave-browser"
 export EDITOR="nvim"
 
+export NOTEBOOK_DIR="$HOME/Sync/Dropbox/Apps/torhgjone.no/notes"
+export NOTES="$HOME/Documents/Notes"
+
 
 # ~/ Clean-up:
 export URXVT_PERL_LIB=$HOME/.config/urxvt/ext
@@ -14,7 +17,7 @@ export LESSHISTFILE="-"
 export SPACEMACSDIR="$HOME/.local/share/spacemacs"
 
 # TODO: Move
-export backlight_screen='acpi_video0'
+export backlight_screen='intel_backlight'
 
 # Spesial i3 workspace names
 source ~/.config/i3/gen-files/ws-names.sh

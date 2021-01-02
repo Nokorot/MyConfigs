@@ -1,6 +1,0 @@
-#/bin/sh
-
-cd ~/LWorkspace/PythonGeneral/Snake
-
-python main.py
-

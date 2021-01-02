@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# TODO 
+dmenu_nav_history() { 
+    echo "Hey"
+}
+
+dmenu_browse() {
+    path=""
+    while [ -d "$NOTES/$path" ]; do
+        path+="/$(ls "$NOTES/$path" | dmenu)" || return;
+    done
+    open_file "$path"
+}
+
+open_file() {
+    gio open "$NOTES/$1";
+}
+
+main() {
+    [ -z $BROWSE ] || { dmenu_browse; return; }
+    [ -z "$1" ] && { dmenu_nav_history; return; }
+    open_file $@
+}
+
+_usage() { echo ""; }
+
+_invopt() {
+    echo "Incorrect options provided '$1'"; usage; exit 1
+}
+
+# Read arguments
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do 
+case $1 in
+    --browse) BROWSE=true ;;
+    -h|-?|--help) _usage ;;
+    -*) _invopt ;;
+    *) POSITIONAL+=("$1") ;;
+esac; shift; 
+done
+set -- "${POSITIONAL[@]}"
+
+main "$@"
+

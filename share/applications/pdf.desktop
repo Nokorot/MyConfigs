@@ -2,3 +2,5 @@
 Type=Application
 Name=PDF reader
 Exec=okular %U
+# zathura %U
+#okular %U

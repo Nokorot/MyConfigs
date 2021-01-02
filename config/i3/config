@@ -18,20 +18,53 @@ bar {
         inactive_workspace #020202 #020202 #888888
     }
 }
-set $WS0 "0: 📒"
-set $WS1 "1: "
-set $WS2 "2: "
-set $WS3 "3: "
-set $WS4 "4: ⅠⅤ"
-set $WS5 "5: Ⅴ"
-set $WS6 "6: ⅤⅠ"
-set $WS7 "7: ⅤⅠⅠ"
-set $WS8 "8: ⅤⅠⅠⅠ"
-set $WS9 "9: ⅠX"
-set $WS10 "10: 📧"
-set $WSgimp "🖌"
-set $WSmusic "🎵"
-set $WSmovie "📽"
+set $WS1	"1: "
+set $WS2	"2: "
+set $WS3	"3: "
+set $WS4	"4: ⅠⅤ"
+set $WS5	"5: Ⅴ"
+set $WS6	"6: ⅤⅠ"
+set $WS7	"7: ⅤⅠⅠ"
+set $WS8	"8: ⅤⅠⅠⅠ"
+set $WS9	"9: ⅠX"
+set $WS10	"10: 📧"
+set $WS0	"0: 📒"
+set $WSgimp	"🖌"
+set $WSmusic	"🎵"
+set $WSmovie	"📽"
+bindsym $mod+1  		workspace $WS1
+bindsym $mod+Ctrl+1 	move workspace $WS1
+bindsym $mod+Shift+1 	move workspace $WS1; workspace $WS1
+bindsym $mod+2  		workspace $WS2
+bindsym $mod+Ctrl+2 	move workspace $WS2
+bindsym $mod+Shift+2 	move workspace $WS2; workspace $WS2
+bindsym $mod+3  		workspace $WS3
+bindsym $mod+Ctrl+3 	move workspace $WS3
+bindsym $mod+Shift+3 	move workspace $WS3; workspace $WS3
+bindsym $mod+4  		workspace $WS4
+bindsym $mod+Ctrl+4 	move workspace $WS4
+bindsym $mod+Shift+4 	move workspace $WS4; workspace $WS4
+bindsym $mod+5  		workspace $WS5
+bindsym $mod+Ctrl+5 	move workspace $WS5
+bindsym $mod+Shift+5 	move workspace $WS5; workspace $WS5
+bindsym $mod+6  		workspace $WS6
+bindsym $mod+Ctrl+6 	move workspace $WS6
+bindsym $mod+Shift+6 	move workspace $WS6; workspace $WS6
+bindsym $mod+7  		workspace $WS7
+bindsym $mod+Ctrl+7 	move workspace $WS7
+bindsym $mod+Shift+7 	move workspace $WS7; workspace $WS7
+bindsym $mod+8  		workspace $WS8
+bindsym $mod+Ctrl+8 	move workspace $WS8
+bindsym $mod+Shift+8 	move workspace $WS8; workspace $WS8
+bindsym $mod+9  		workspace $WS9
+bindsym $mod+Ctrl+9 	move workspace $WS9
+bindsym $mod+Shift+9 	move workspace $WS9; workspace $WS9
+bindsym $mod+0  		workspace $WS10
+bindsym $mod+Ctrl+0 	move workspace $WS10
+bindsym $mod+Shift+0 	move workspace $WS10; workspace $WS10
+bindsym $mod+bar  		workspace $WS0
+bindsym $mod+Ctrl+bar 	move workspace $WS0
+bindsym $mod+Shift+bar 	move workspace $WS0; workspace $WS0
 set $movestep "50px or 3ppt"
 mode "resize" {
 	bindsym h	    $exec i3resize left   $movestep
@@ -50,10 +83,10 @@ bindsym $mod+h				focus left
 bindsym $mod+j				focus down
 bindsym $mod+k				focus up
 bindsym $mod+l				focus right
-bindsym $mod+Shift+h		move left  $movestep
-bindsym $mod+Shift+j		move down  $movestep
-bindsym $mod+Shift+k		move up    $movestep
-bindsym $mod+Shift+l		move right $movestep
+bindsym $mod+Shift+h		move left  50px
+bindsym $mod+Shift+j		move down  50px
+bindsym $mod+Shift+k		move up    50px
+bindsym $mod+Shift+l		move right 50px
 bindsym $mod+Ctrl+h			$exec i3resize left   $movestep
 bindsym $mod+Ctrl+j			$exec i3resize down   $movestep
 bindsym $mod+Ctrl+k			$exec i3resize up     $movestep
@@ -70,47 +103,14 @@ bindsym $mod+Ctrl+Left		$exec i3resize left   $movestep
 bindsym $mod+Ctrl+Down		$exec i3resize down   $movestep
 bindsym $mod+Ctrl+Up		$exec i3resize up     $movestep
 bindsym $mod+Ctrl+Right		$exec i3resize right  $movestep
-bindsym $mod+1		workspace $WS1
-bindsym $mod+2		workspace $WS2
-bindsym $mod+3		workspace $WS3
-bindsym $mod+4		workspace $WS4
-bindsym $mod+5		workspace $WS5
-bindsym $mod+6		workspace $WS6
-bindsym $mod+7		workspace $WS7
-bindsym $mod+8		workspace $WS8
-bindsym $mod+9		workspace $WS9
-bindsym $mod+0		workspace $WS10
-bindsym $mod+bar	workspace $WS0
-bindsym $mod+Control+1	    move workspace $WS1
-bindsym $mod+Control+2	    move workspace $WS2
-bindsym $mod+Control+3	    move workspace $WS3
-bindsym $mod+Control+4	    move workspace $WS4
-bindsym $mod+Control+5	    move workspace $WS5
-bindsym $mod+Control+6	    move workspace $WS6
-bindsym $mod+Control+7	    move workspace $WS7
-bindsym $mod+Control+8	    move workspace $WS8
-bindsym $mod+Control+9	    move workspace $WS9
-bindsym $mod+Control+0	    move workspace $WS10
-bindsym $mod+Control+bar    move workspace $WS0
-bindsym $mod+Shift+1	    move workspace $WS1;  workspace $WS1
-bindsym $mod+Shift+2	    move workspace $WS2;  workspace $WS2
-bindsym $mod+Shift+3	    move workspace $WS3;  workspace $WS3
-bindsym $mod+Shift+4	    move workspace $WS4;  workspace $WS4
-bindsym $mod+Shift+5	    move workspace $WS5;  workspace $WS5
-bindsym $mod+Shift+6	    move workspace $WS6;  workspace $WS6
-bindsym $mod+Shift+7	    move workspace $WS7;  workspace $WS7
-bindsym $mod+Shift+8	    move workspace $WS8;  workspace $WS8
-bindsym $mod+Shift+9	    move workspace $WS9;  workspace $WS9
-bindsym $mod+Shift+0	    move workspace $WS10; workspace $WS10
-bindsym $mod+Shift+bar	    move workspace $WS0;  workspace $WS0
 bindsym $mod+Home			workspace first
 bindsym $mod+Ctrl+Home		move workspace first
 bindsym $mod+Shift+Home		move workspace first; workspace last
 bindsym $mod+End			workspace last
 bindsym $mod+Ctrl+End		move workspace last
-bindsym $mod+Shift+End		move workspace last;
+bindsym $mod+Shift+End		move workspace last; workspace last
 bindsym $mod+aring			workspace last
-bindsym $mod+Ctrl+aring	    move workspace last; workspace last
+bindsym $mod+Ctrl+aring	    move workspace last
 bindsym $mod+Shift+aring	move workspace last; workspace last
 bindsym $mod+Prior			workspace prev
 bindsym $mod+Shift+Prior	move workspace prev; workspace prev;
@@ -123,13 +123,10 @@ set $mod Mod4
 set $mod2 Shift
 set $mod3 Control
 set $exec exec --no-startup-id
-set $dd   exec --no-startup-id dmenu_run2
+set $dd   exec --no-startup-id dml
 bindsym $mod+Return 		$exec $term
-bindsym $mod+Shift+f    	focus mode_toggle
-bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+Shift+Escape 	    $dd exit
 bindsym $mod+Shift+BackSpace	$dd shutdown
-
 bindsym Mod1+Ctrl+l		$dd lock
 bindsym $mod+x			$dd lock
 bindsym $mod+f			fullscreen toggle
@@ -143,17 +140,12 @@ bindsym $mod+Shift+b	border toggle
 bindsym $mod+Mod1+w 	layout tabbed
 bindsym $mod+Mod1+e 	layout toggle split
 bindsym $mod+t			split toggle
-bindsym $mod+Shift+a    $dd click_script
-bindsym Mod5+F1         $dd click_script
+bindsym $mod+Shift+f    	focus mode_toggle
+bindsym $mod+Shift+space 	floating toggle
 bindsym $Mod+oslash 	$exec dmenuunicode
-bindsym $mod+Shift+w	$dd nmtui
-bindsym $mod+i 			$dd htop
-bindsym $mod+r 			$dd ranger
-bindsym $mod+y			$dd calendar # calcurse
-bindsym $mod+u			$exec ddspawn dd-tmux
-bindsym $mod+n 			$exec ddspawn dd-r-notes
+bindsym $mod+n 		    $exec nn --browse
 bindsym $mod+c			$exec ddspawn dd-calc
-bindsym $mod+d			$exec dmenu_run2
+bindsym $mod+d			$exec dml
 bindsym $mod+Shift+d	$exec dmenu_run
 bindsym $mod+m 			$dd music
 bindsym $mod+w	        $dd browser
@@ -162,6 +154,8 @@ bindsym $mod+plus				$exec lmc up 5
 bindsym $mod+Shift+plus			$exec lmc up 1
 bindsym $mod+minus 				$exec lmc down 5
 bindsym $mod+Shift+minus		$exec lmc down 1
+bindsym $mod+comma 				$exec lmc prev
+bindsym $mod+period 				$exec lmc next
 bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
 bindsym $mod+greater			$exec lmc next
@@ -189,6 +183,10 @@ assign [instance="netflix"] $WSmovie
 for_window 	[instance="netflix"] 	border pixel 0
 for_window 	[instance="netflix"] 	border radius 0
 assign [class="thunderbird"] $WS10
+assign [class="discord"] $WS6
+for_window [class="discord"]    floating enable
+for_window [class="discord"]    resize set 1200 800
+for_window [class="discord"]    move position center
 for_window 	[class="Pinentry"] 		sticky enable
 for_window 	[class="sent"] 			border pixel 0px
 for_window 	[title="GIMP Startup"] 	move workspace $WSgimp
@@ -237,9 +235,9 @@ bindsym XF86Mail						$exec $term -e neomutt && pkill -RTMIN+12 i3blocks
 bindsym XF86Messenger					$exec $term -e weechat
 bindsym XF86Search						$exec $BROWSER https://duckduckgo.com
 bindsym Shift+XF86MonBrightnessDown		$exec sudo brightness -x -10
-bindsym XF86MonBrightnessDown			$exec sudo brightness -c -15%
+bindsym XF86MonBrightnessDown			$exec sudo brightness -c -10%
 bindsym Shift+XF86MonBrightnessUp		$exec sudo brightness -x 10
-bindsym XF86MonBrightnessUp				$exec sudo brightness -c 15%
+bindsym XF86MonBrightnessUp				$exec sudo brightness -c 10%
 bindsym XF86AudioMedia					$exec $term -e ncmpcpp
 bindsym XF86Display						$exec displayselect
 bindsym XF86Documents					$exec $term -e $FILE ~/Documents

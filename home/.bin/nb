@@ -1,0 +1,17 @@
+#!/bin/sh
+
+[ -z $NOTEBOOK_DIR ] && NOTEBOOK_DIR="~/NOTEBOOK"
+[ -d $NOTEBOOK_DIR ] || mkdir $NOTEBOOK_DIR
+
+cd "$NOTEBOOK_DIR";
+[ -z $1 ] && nvim . \
+    || {
+    # TODO: -p: prints the content, with markdown formating maybe
+    
+    
+    [ -z $2 ] && nvim "$1.md" \
+        || echo $@ >> "$1.md";
+}
+
+
+
