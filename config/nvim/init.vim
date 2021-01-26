@@ -4,8 +4,6 @@ nnoremap <M-PageDown> 	:tabnext<CR>
 nnoremap <M-l>      	:tabnext<CR>
 nnoremap <M-t> 		    :tabnew 
 
-nnoremap <C-N>	 	<ESC>?<++><CR>vf>
-nnoremap <M-n> 		<ESC>/<++><CR>vf>
 
 set tabstop=4
 set shiftwidth=4
@@ -27,3 +25,8 @@ hi SpellBad cterm=underline ctermbg=red
 autocmd FileType * exec("setlocal dictionary+=".$HOME."/.config/nvim/dictionaries/".expand('<amatch>'))
 set completeopt=menuone,longest,preview
 set complete+=k
+
+
+
+map <C-k>	 	<ESC>?<+.*+><CR>vf>
+map <C-j> 		<ESC>/<+.*+><CR>vf>

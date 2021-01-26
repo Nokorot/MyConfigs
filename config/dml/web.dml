@@ -1,0 +1,20 @@
+#
+## Web sites
+#
+uio             $BROWSER "uio.instructure.com"
+AFA(MAT4450)    $BROWSER https://www.uio.no/studier/emner/matnat/math/MAT4450/v21/
+AT(MAT4530)     $BROWSER https://www.uio.no/studier/emner/matnat/math/MAT4530/v21/
+
+
+# incognito     $BROWSER --incognito
+incognito       google-chrome --incognito
+netflix         $BROWSER --app="https://www.netflix.com" & \
+                i3-msg "workspace $WSmovie"
+calendar        $BROWSER --app="https://calendar.google.com/calendar"
+youtube         $BROWSER www.youtube.com/feed/subscriptions
+messenger       i3 workspace $WS8; \
+                $BROWSER --app="https://www.messenger.com"
+twitch          $BROWSER --app="https://www.twitch.com"
+porn            i3-msg "workspace PP; gaps inner current set 0"; \
+                google-chrome --new-window --incognito https://www.pornhub.com & \
+                (sleep 1;  i3-msg "border pixel 0")

@@ -44,6 +44,7 @@ convert() { magick -density 500 file.pdf -quality 90 file.$format; }
 open() { $OPEN && gio open "$1" & } 
 
 main() {
+    compile
     $CONVERT && { convert; open "file.$format"; } \
     	|| open "file.pdf";
 }

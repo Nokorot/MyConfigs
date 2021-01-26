@@ -1,10 +1,9 @@
 /* st */
-st.font: Monospace-12;
+st.font: pango:Monospace-12;
 
 /* URxvt */
+URxvt.font:    xft:Aaron Basic RTL Alpha
 URxvt.font:    xft:DejaVu Sans Mono-12
-/* URxvt.font:    xft:System San Francisco Display, FontAwesome 11:pixelsize12 */
- 
 
 URxvt.scrollBar: false
 

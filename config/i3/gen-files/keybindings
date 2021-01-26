@@ -71,6 +71,15 @@ $mod+Ctrl+Prior
 $mod+Next
 $mod+Shift+Next
 $mod+Ctrl+Next
+$mod+Mod3+k
+$mod+Mod3+l
+$mod+Mod3+j
+$mod+Mod3+h
+$mod+Mod3+g
+$mod+Mod3+v
+$mod+Mod3+b
+$mod+Mod3+u
+$mod+Mod3+i
 $mod+Return
 $mod+Shift+Escape
 $mod+Shift+BackSpace
@@ -91,7 +100,7 @@ $mod+Shift+f
 $mod+Shift+space
 $Mod+oslash
 $mod+n
-$mod+c
+$mod+u
 $mod+d
 $mod+Shift+d
 $mod+m

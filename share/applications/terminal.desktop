@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal
+Exec=urxvt %U
+# zathura %U
+#okular %U

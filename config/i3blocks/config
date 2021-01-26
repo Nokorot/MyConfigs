@@ -2,31 +2,16 @@ command=~/.scripts/statusbar/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-[joplin_sync]
-interval=300
 
-#[weather]
-#interval=18000
-#signal=5
+[clock]
+interval=1
 
-[screen_brightness]
-label=💡
-interval=once
-signal=5
-
-[memory]
-interval=30
-label=🧠
-
-[volume]
-interval=once
-signal=10
+# [memory]
+# interval=30
 
 [music]
-#label=🎼
 interval=once
 signal=11
-
 
 [disk]
 interval=60
@@ -36,19 +21,27 @@ command=disk /
 interval=60
 command=disk /home 🏠
 
+[screen_brightness]
+interval=once
+signal=5
+
+[volume]
+interval=once
+signal=10
+
 [battery]
 command=battery BAT0
 interval=5
 
-[clock]
-label=📅
-interval=30
-
 [internet]
 interval=10
 
-#[help]
-#interval=once
+
+
+# No apperence
+[joplin_sync]
+interval=300
+
 
 
 # This is to add and extra separater before the end

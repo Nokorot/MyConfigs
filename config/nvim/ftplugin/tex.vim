@@ -14,7 +14,7 @@ command! -nargs=1 Texenv call TexEnv("<args>")
 
 nnoremap <C-e> :call TexEnv(input("TeX environment name: "))<CR>
 
-nnoremap <M-CR>	 	:!./.compile.sh  <CR>
+nnoremap <M-CR>	 	:w <CR>:!./.compile.sh  <CR>
 nnoremap \\s	 	:!./.compile.sh silent<CR>
 " nnoremap \\o	 	:!zathura-tabbed main.pdf<CR>
 nnoremap \\o	 	:!./.compile.sh open<CR>
@@ -23,6 +23,8 @@ nnoremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 
 let g:Tex_SmartKeyQuote=0
 
+" map <C-k> 		<Esc>?<+.*+><CR>vf>
+" map <C-j> 		<Esc>/<+.*+><CR>vf>
 
 imap \[             \[  \]<Esc>2hi
 imap \{             \{  \}<Esc>2hi

@@ -3,6 +3,8 @@
 myconf=$HOME/.myconf
 git_clone_dir=$HOME/Source
 
+mygitpage="https://github.com/Nokorot"
+
 main() {
 
     # TODO: --clone-git-dir = /tmp ( default $HOME/Source ), 
@@ -99,13 +101,24 @@ fonts() {
     sudo apt install -y fonts-dejavu fonts-font-awesome fonts-emojione 
 }
 
+dmenu() {
+    sudo apt install -y libjansson-dev
+
+    mkdir -p $HOME/Source
+    mkdir $HOME/Source/dmenu || exit 1
+    cd $HOME/Source
+
+    git clone "$mygitpage/dmenu" dmenu
+    cd dmenu; make
+    sudo make install
+}
+
 basics() {
     sudo apt install -y neovim rxvt-unicode
     sudo apt install -y compton dunst unclutter libnotify-bin
     sudo apt install -y pulsemixer
     sudo apt install -y feh gnome-screenshots
-    sudo apt install -y dmenu
-
+    dmenu
     fonts
 }
 
@@ -144,6 +157,7 @@ symlinks() {
     gen_symlinks home		$HOME;
     gen_symlinks config		$HOME/.config;
     gen_symlinks share		$HOME/.local/share;
+    gen_symlinks lbin		$HOME/.local/bin;
     
     gen_symlinks bin	/usr/local/bin;
 }

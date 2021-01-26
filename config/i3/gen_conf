@@ -28,10 +28,23 @@ ws_keys() {
         }' > $gdir/ws-keys.i3
 }
 
+key_conflicts() {
+    conflicts="$(sort | uniq -c | grep -v '^ *1 ')"
+    [ -n "$conflicts" ] && { printf "Conflicts:\n$conflicts\n"; }
+}
+
+keybindings() {
+    grep ^bindsym \
+        | sed 's/\t/ /' \
+        | cut -d' ' -f 2 
+}
+
 < $cdir/ws-names rmc \
-    | tee >(ws_names_i3) \
-    | tee >(ws_names_sh) \
-    | ws_keys
+    > "$gdir/ws-names"
+
+< "$gdir/ws-names" ws_names_i3
+< "$gdir/ws-names" ws_names_sh
+< "$gdir/ws-names" ws_keys
 
 cat $cdir/base.i3 	   \
     $gdir/ws-names.i3  \
@@ -41,14 +54,9 @@ cat $cdir/base.i3 	   \
 	$cdir/prog-spes.i3 \
 	$cdir/xf86-keys.i3 \
 	$cdir/footer.i3    \
-	| sed -e "$rmc"    \
-	> $cdir/config
+    | rmc > $cdir/config;
 
+< $cdir/config keybindings \
+    > "$gdir/keybindings"
 
-# TODO: Look for conflicts
-cat $cdir/config \
-    | grep ^bindsym \
-    | sed 's/\t/ /' \
-    | cut -d' ' -f 2 \
-    > $gdir/keybindings
-
+< "$gdir/keybindings" key_conflicts

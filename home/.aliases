@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GHclone() { git clone "https://github.com/Nokorot/$1"; } 
+GHclone() { git clone "https://github.com/Nokorot/$1"; }
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -18,7 +18,7 @@ alias rn="bulkrename"
 function c() { [ ! -z "$1" ] && cd "$1"; clear && pp && ls; }
 
 function cpp() {
-    # TODO: Might want to allow $1 "the source" to consist of mutliple files, 
+    # TODO: Might want to allow $1 "the source" to consist of mutliple files,
     rsync -hr --info=progress2 "$1" "$2"
 }
 
@@ -33,7 +33,8 @@ yt_ply() { mpv "$(youtube-dl -xg "$1")"; }
 alias sxiv="sxiv -oat"
 
 # alias v="nvim"
-function v() { realpath "$@" | xargs nvim -p; }
+function v() { realpath "$@" | xargs -d'\n' nvim -p; }
+alias e=emacs
 
 alias r="ranger"
 
@@ -55,12 +56,27 @@ function ee() { emacs "$@" > /dev/null & disown; }
 # Default to sudo
 alias mount="sudo mount"
 alias umount="sudo umount"
-alias shutdown="sudo shutdown" 
+alias shutdown="sudo shutdown"
 
 #
 alias vi3="nvim ~/.config/i3"
+function vdml() {
+    pushd "$HOME/.config/dml"
+    nvim "$1"
+    popd >/dev/null
+}
 
-function dm-wlist() { echo "$@" >> ~/.config/dmenu_run.wlist; } 
+_vdml_complete() {
+    pushd "$HOME/.config/dml" >/dev/null
+    _longopt $@
+    popd >/dev/null
+}
+complete -o filenames -F _vdml_complete vdml
+
+
+function dm-wlist() { echo "$@" >> ~/.config/dmenu_run.wlist; }
+
+alias pdftrim='pdfcrop --margins "5 10 5 20"'
 
 
 # TODO() { [ -z $1 ] && cat ~/NoteBook/TODO.md || echo $@ >> ~/NoteBook/TODO.md; }

@@ -1,0 +1,53 @@
+#
+# Browsers
+#
+browser         $BROWSER
+google-chrome
+chrome
+zathura
+sxiv
+
+#
+# Terminals
+#
+st 
+urxvt
+xterm
+tilix
+kitty
+#
+# Editors
+#
+emacs
+gedit
+idea            idea
+eclipse 
+
+# ws spesific
+music 			i3-msg "workspace $WSmusic";    $TERMINAL -e ncmpcpp -p 6000
+thunderbird     i3-msg "workspace $WS10";       thunderbird
+gimp            i3-msg "workspace $WSgimp";     gimp
+okular          i3-msg "workspace $WS7; layout tabbed"; okular
+discord
+# skype           skypeforlinux
+# tc              tc.app
+
+#
+# Background programs
+#
+compton         pkill compton; compton --backend glx --force-win-blend \
+    --glx-fshader-win "$(cat ~/.config/compton/fshader.glsl)" &
+dropboxd
+
+#
+# Terminal programs 
+#
+# calcurse        $TERMINAL -e calcurse
+nudoku          $TERMINAL -e nudoku
+sudoku          $TERMINAL -e sudoku
+ranger          $TERMINAL -e ranger
+pulsemixer      $TERMINAL -e pulsemixer     # used by i3 
+nmtui           $TERMINAL -e nmtui          # used by i3 
+htop            $TERMINAL -e htop           # used by i3 
+joplin          i3 workspace $WS0; $TERMINAL -e joplin
+trans-qt        transmission-qt

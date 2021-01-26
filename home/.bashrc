@@ -26,6 +26,14 @@ _nn_complete() {
 }
 complete -o filenames -F _nn_complete nn
 
+_new_complete() {
+    [ $COMP_CWORD -eq 1 ] || return
+    pushd "$HOME/Templates" >/dev/null
+    COMPREPLY=($(compgen -f -X ".[^./]*"))
+    popd >/dev/null
+}
+complete -F _new_complete new
+
 _nb_complete() {
     local file; for file in $NOTEBOOK_DIR/"$2"*; do
         COMPREPLY+=( $(basename "${file%.md}") )

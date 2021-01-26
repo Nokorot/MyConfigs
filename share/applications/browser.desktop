@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Ungoogled Chrome
-Exec=browser %U
+Exec=google-chrome %U

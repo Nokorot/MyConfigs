@@ -1,17 +1,66 @@
-#!/bin/sh
+#!/bin/bash
 
 [ -z $NOTEBOOK_DIR ] && NOTEBOOK_DIR="~/NOTEBOOK"
 [ -d $NOTEBOOK_DIR ] || mkdir $NOTEBOOK_DIR
 
-cd "$NOTEBOOK_DIR";
-[ -z $1 ] && nvim . \
-    || {
-    # TODO: -p: prints the content, with markdown formating maybe
-    
-    
-    [ -z $2 ] && nvim "$1.md" \
-        || echo $@ >> "$1.md";
+
+list(){
+    ls "$NOTEBOOK_DIR" | grep 'md$' | sed 's/.md$//'
 }
 
+dmenu_browse() {
+    echo "$(list | dmenu)" # || return
+    # urxvt -e nvim "$name.md"
+}
 
+open() {
+    echo $1
 
+    $NEWWIN && { urxvt -e nvim -p "$@"; } \
+        || nvim -p "$@";
+}
+
+main() {
+    cd "$NOTEBOOK_DIR";
+
+    $BROWSE && {
+        note="$(dmenu_browse).md"
+        NEWWIN=true
+    } || {
+        note="$1.md"
+    }
+
+    $PRINT && {
+        [ -f $note ] && cat "$note"
+        return
+    }
+
+    [ -f "$note" ] && open "$note" \
+        || open .
+}
+
+_usage() { echo ""; }
+
+_invopt() {
+    echo "Incorrect options provided '$1'"; usage; exit 1
+}
+
+BROWSE=false
+PRINT=false
+NEWWIN=false
+
+# Read arguments
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+case $1 in
+    --browse) BROWSE=true ;;
+    --print|-p) PRINT=true ;;
+    --newwin|-nw) NEWWIN=true ;;
+    -h|-?|--help) _usage ;;
+    -*) _invopt ;;
+    *) POSITIONAL+=("$1") ;;
+esac; shift;
+done
+set -- "${POSITIONAL[@]}"
+
+main "$@"

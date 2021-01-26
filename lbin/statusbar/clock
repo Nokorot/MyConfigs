@@ -1,7 +1,17 @@
-#!/bin/sh
+#!/bin/bash
+
+get_clock_face() {
+    h=$( date '+%I' )
+    m=$( date '+%M' )
+    
+    [ 30 -ge $m ] && charoff=$((0x4f+10#$h))  \
+        || charoff=$((0x5b+10#$h));
+
+    printf "\U1F5$(printf '%x' $charoff )"
+}
 
 # date '+%y %b %d (%a) %I:%M%p'
-date '+%b %d (%a) %I:%M%p'
+printf "📅 $(date '+%b %d (%a)') $(get_clock_face) $(date '+%I:%M')   "
 
 case $BLOCK_BUTTON in
 	1) pgrep -x dunst >/dev/null && notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")" && notify-send "Appointments" "$(calcurse -D ~/.config/calcurse -d3)" ;;

@@ -10,6 +10,19 @@ set $exec exec --no-startup-id
 set $dd   exec --no-startup-id dml
 
 
+bindsym $mod+Mod3+k		exec xdotool mousemove_relative -p   0 10
+bindsym $mod+Mod3+l		exec xdotool mousemove_relative -p  90 10
+bindsym $mod+Mod3+j		exec xdotool mousemove_relative -p 180 10
+bindsym $mod+Mod3+h		exec xdotool mousemove_relative -p 270 10
+
+bindsym $mod+Mod3+g		exec xdotool mousedown 1 mouseup 1
+bindsym $mod+Mod3+v		exec xdotool mousedown 1
+bindsym $mod+Mod3+b		exec xdotool mouseup 1
+
+bindsym $mod+Mod3+u		exec xdotool click 5
+bindsym $mod+Mod3+i		exec xdotool click 4
+
+
 ## #---Basic Bindings---# #
 bindsym $mod+Return 		$exec $term
 
@@ -42,11 +55,12 @@ bindsym $mod+Shift+f    	focus mode_toggle
 bindsym $mod+Shift+space 	floating toggle
 
 ## #---Letter Key Bindings---# #
-bindsym $Mod+oslash 	$exec dmenuunicode
+bindsym $Mod+oslash 	$exec dmenu_unicode
 
 bindsym $mod+n 		    $exec nn --browse
+bindsym $mod+u 		    $exec nn --browse --note-dir "$HOME/UniMaterial"
 
-bindsym $mod+c			$exec ddspawn dd-calc 
+# bindsym $mod+c			$exec ddspawn dd-calc 
 
 bindsym $mod+d			$exec dml 
 bindsym $mod+Shift+d	$exec dmenu_run
@@ -65,7 +79,7 @@ bindsym $mod+Shift+minus		$exec lmc down 1
 
 # mpd keys
 bindsym $mod+comma 				$exec lmc prev
-bindsym $mod+period 				$exec lmc next
+bindsym $mod+period 			$exec lmc next
 
 bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
@@ -89,8 +103,8 @@ bindsym $mod+F2		$exec ~/.config/i3/gen_conf; restart
 bindsym $mod+F6		$exec torwrap 		#% transmition tool
 bindsym $mod+F7		$exec td-toggle		#% transmition tool
 # bindsym $mod+F8		
-bindsym $mod+F9		$exec dmenumount
-bindsym $mod+F10	$exec dmenuumount
+bindsym $mod+F9		$exec dmenu_mount
+bindsym $mod+F10	$exec dmenu_umount
 bindsym $mod+F11	$exec ducksearch
 bindsym $mod+F12	$dd nmtui
 

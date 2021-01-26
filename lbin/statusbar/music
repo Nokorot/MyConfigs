@@ -1,5 +1,4 @@
 #!/bin/sh
-
 mpc_port=6000
 
 
@@ -20,7 +19,8 @@ case $BLOCK_BUTTON in
     *) mpc status | filter ;;
 esac; 
 
-mpc -p $mpc_port status | grep playing > /dev/null && echo ▶️
-mpc -p $mpc_port status | grep paused > /dev/null && echo ⏸️
-echo "HEY"
+# printf "🎶 "
+mpc -p $mpc_port status | grep playing > /dev/null && echo "🎶 ▶️"   # ▶
+# mpc -p $mpc_port status | grep paused > /dev/null && echo ⏸️  # 
+echo ""
 

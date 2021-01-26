@@ -1,12 +1,14 @@
 #!/bin/sh
 # Give a battery name (e.g. BAT0) as an argument.
 
+BAT="BAT0"
+
 low_battery_audio_file="$HOME/.config/low_battery.wav"
 
-# varfile="$VARS"battery
-# if [ -f "$varfile" ]; then 
-# 	. "$varfile"
-# fi
+varfile="$HOME/.vars/battery"
+if [ -f "$varfile" ]; then 
+	. "$varfile"
+fi
 [ -x $play_low_battery_sound ] && play_low_battery_sound=1;
 
 
@@ -24,7 +26,17 @@ esac
 capacity=$(cat "/sys/class/power_supply/$1/capacity") || exit
 status=$(cat "/sys/class/power_supply/"$1"/status")
 
-## Play warning sound
+# Play warning sound when unpluged-charge
+[ "$status" == "discharging" ] && {
+    [ $play_unpluged_sound -le 0 ] && {
+		ffplay -nodisp -autoexit -t 2 $low_battery_audio_file \
+				> /dev/null 2>&1 &
+        play_unpluged_sound=5
+    } || { play_unpluged_sound="$((play_unpluged_sound - 1))"; }
+} || { play_unpluged_sound=0; }
+
+
+## Play warning sound when charge is low
 if [ "$capacity" -le 25 ] && [ "$status" != "Charging" ]; then
 	[ $play_low_battery_sound -ge 1 ] && \ 
 		ffplay -nodisp -autoexit -t 2 $low_battery_audio_file \
@@ -34,7 +46,8 @@ else
 	play_low_battery_sound=1
 fi
 
-# echo "play_low_battery_sound=\"$play_low_battery_sound\"">> $varfile
+# echo "play_low_battery_sound=\"$play_low_battery_sound\""  >"$varfile"
+# echo "play_unpluged_sound=\"$play_unpluged_sound\"" >>"$varfile"
 
 ## Status bar info
 

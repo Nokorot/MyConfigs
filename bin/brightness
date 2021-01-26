@@ -2,6 +2,7 @@
 
 # Change to be an environment variable or someting
 backlight_screen='intel_backlight'
+# backlight_screen='radeon_bl0'
 
 
 level="$( cat "/sys/class/backlight/$backlight_screen/brightness" )"
@@ -17,7 +18,8 @@ getv() {
         || echo "$1"
 }
 
-while getopts "s:z:x:c:" opt; do case ${opt} in
+while getopts "ps:z:x:c:" opt; do case ${opt} in
+    p ) echo "$(( 100 * $level / $maxlevel ))%"; exit 0;;
     s ) level=$( getv "$OPTARG" ); change="true" ;;
     z ) xlevel=$(( getv $OPTARG )); xchange="true" ;;
   c ) level=$(( $level + $(getv $OPTARG))); change="true" ;;

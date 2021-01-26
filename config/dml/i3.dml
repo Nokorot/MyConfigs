@@ -1,3 +1,17 @@
+#
+# i3 commands
+#
+no_borders      i3-msg "gaps inner current set 0; border pixel 0; border radius 0"
+scratch         i3-msg move scratchpad
+scratch_show    i3-msg scratchpad show
 
-workspace       dml -p "
+#
+# Print Screen
+#
+screen-print    gnome-screenshoot
+a-screen-print  gnome-screenshot -a
+w-screen-print  gnome-screenshot -w
+c-screen-print  gnome-screenshot -c
+ac-screen-print  gnome-screenshot -a -c
+
 

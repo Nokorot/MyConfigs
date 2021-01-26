@@ -1,23 +1,27 @@
 #!/bin/bash
 
-# TODO 
-dmenu_nav_history() { 
+NOTEDIR="$NOTES"
+
+# TODO
+dmenu_nav_history() {
     echo "Hey"
 }
 
 dmenu_browse() {
     path=""
-    while [ -d "$NOTES/$path" ]; do
-        path+="/$(ls "$NOTES/$path" | dmenu)" || return;
+    while [ -d "$NOTEDIR/$path" ]; do
+        path+="/$(ls --group-directories-first "$NOTEDIR/$path" | dmenu -l 20)" || return;
     done
     open_file "$path"
 }
 
 open_file() {
-    gio open "$NOTES/$1";
+    gio open "$NOTEDIR/$1";
 }
 
 main() {
+    echo "$NOTEDIR"
+
     [ -z $BROWSE ] || { dmenu_browse; return; }
     [ -z "$1" ] && { dmenu_nav_history; return; }
     open_file $@
@@ -31,13 +35,14 @@ _invopt() {
 
 # Read arguments
 POSITIONAL=()
-while [[ $# -gt 0 ]]; do 
+while [[ $# -gt 0 ]]; do
 case $1 in
     --browse) BROWSE=true ;;
+    --note-dir) NOTEDIR="$2" ; shift ;;
     -h|-?|--help) _usage ;;
     -*) _invopt ;;
     *) POSITIONAL+=("$1") ;;
-esac; shift; 
+esac; shift;
 done
 set -- "${POSITIONAL[@]}"
 

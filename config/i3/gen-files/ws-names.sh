@@ -1,12 +1,12 @@
 export WS1="1: "
 export WS2="2: "
 export WS3="3: "
-export WS4="4: ⅠⅤ"
-export WS5="5: Ⅴ"
-export WS6="6: ⅤⅠ"
-export WS7="7: ⅤⅠⅠ"
-export WS8="8: ⅤⅠⅠⅠ"
-export WS9="9: ⅠX"
+export WS4="4: 𓅦"
+export WS5="5: 𓂀"
+export WS6="6: 𓆣"
+export WS7="7: 𓋹"
+export WS8="8: 𓊑"
+export WS9="9: 𓋍"
 export WS10="10: 📧"
 export WS0="0: 📒"
 export WSgimp="🖌"

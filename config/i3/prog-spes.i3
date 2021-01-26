@@ -28,6 +28,9 @@ for_window 	[window_role="GtkFileChooserDialog"] resize set 800 600
 for_window 	[window_role="GtkFileChooserDialog"] move position center
 for_window 	[title="Default - Wine desktop"] 	 floating enable
 
+for_window 	[class="Matplotlib"] floating enable
+for_window 	[class="Matplotlib"] resize set 800 600
+for_window 	[class="Matplotlib"] move position center
 
 # Bindings to make the webcam float and stick.
 for_window 	[title="mpvfloat"] floating enable

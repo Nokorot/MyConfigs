@@ -2,12 +2,16 @@
 # Profile file. Runs on login
 
 export FILE="ranger"
-export TERMINAL="urxvt"  # "tilix" # "urxvt" # "st"
+# export TERMINAL="urxvt"  # "tilix" # "urxvt" # "st"
+export TERMINAL="kitty"
 export BROWSER="google-chrome" # "chrome" # "brave-browser"
 export EDITOR="nvim"
 
 export NOTEBOOK_DIR="$HOME/Sync/Dropbox/Apps/torhgjone.no/notes"
 export NOTES="$HOME/Documents/Notes"
+
+
+export GITNOKO="https://github.com/Nokorot"
 
 
 # ~/ Clean-up:
@@ -37,10 +41,7 @@ add2pathRec() {
 
 add2path ~/.bin/
 add2path ~/.local/bin/
-
-add2pathRec $HOME/.scripts/
-
-add2path ~/.local/bin
+add2path ~/.local/bin/i3cmds
 
 
 export PATH="$HOME/.cargo/bin:$PATH"

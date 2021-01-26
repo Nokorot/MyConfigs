@@ -3,9 +3,11 @@
 level="$( cat "/sys/class/backlight/$backlight_screen/brightness" )"
 maxlevel="$( cat "/sys/class/backlight/$backlight_screen/max_brightness" )"
 
+printf 💡
 if [ -f '/tmp/xbrightness' ]; then
 	xlevel=$( printf %.1f $(( $(cat /tmp/xbrightness) ))e-2 )
 	echo "$xlevel-$(( $level * 100 / $maxlevel ))%"
 else
-	echo "$(( $level * 100 / $maxlevel ))%"
+    brightness -p
+	# echo "$(( $level * 100 / $maxlevel ))%"
 fi;
