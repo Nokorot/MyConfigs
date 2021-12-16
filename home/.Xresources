@@ -2,7 +2,7 @@
 st.font: pango:Monospace-12;
 
 /* URxvt */
-URxvt.font:    xft:Aaron Basic RTL Alpha
+/* URxvt.font:    xft:Aaron Basic RTL Alpha */
 URxvt.font:    xft:DejaVu Sans Mono-12
 
 URxvt.scrollBar: false

@@ -1,7 +1,8 @@
 #
 # Games
 # 
-minecraft       MultiMC
+# minecraft       MultiMC
+multimc         multimc
 minetest
 2048-qt
 snake

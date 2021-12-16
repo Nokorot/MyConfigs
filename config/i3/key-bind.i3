@@ -1,7 +1,7 @@
 #- nvim: filetype=i3
 
 # #---Basic Definitions---# #
-set $term $TERMINAL 	#% Set $TERMIAL in .profile
+set $term kitty # $TERMINAL 	#% Set $TERMIAL in .profile
 set $mod Mod4
 set $mod2 Shift 
 set $mod3 Control
@@ -16,11 +16,12 @@ bindsym $mod+Mod3+j		exec xdotool mousemove_relative -p 180 10
 bindsym $mod+Mod3+h		exec xdotool mousemove_relative -p 270 10
 
 bindsym $mod+Mod3+g		exec xdotool mousedown 1 mouseup 1
+bindsym $mod+Mod3+n	    exec xdotool mousedown 2 mouseup 2
 bindsym $mod+Mod3+v		exec xdotool mousedown 1
 bindsym $mod+Mod3+b		exec xdotool mouseup 1
 
-bindsym $mod+Mod3+u		exec xdotool click 5
-bindsym $mod+Mod3+i		exec xdotool click 4
+bindsym $mod+Mod3+u		exec xdotool click 4
+bindsym $mod+Mod3+i		exec xdotool click 5
 
 
 ## #---Basic Bindings---# #
@@ -57,8 +58,8 @@ bindsym $mod+Shift+space 	floating toggle
 ## #---Letter Key Bindings---# #
 bindsym $Mod+oslash 	$exec dmenu_unicode
 
-bindsym $mod+n 		    $exec nn --browse
-bindsym $mod+u 		    $exec nn --browse --note-dir "$HOME/UniMaterial"
+bindsym $mod+n 		    $exec nn -browse
+bindsym $mod+u 		    $exec nn -browse -notes-dir "$HOME/UniMaterial"
 
 # bindsym $mod+c			$exec ddspawn dd-calc 
 
@@ -66,8 +67,8 @@ bindsym $mod+d			$exec dml
 bindsym $mod+Shift+d	$exec dmenu_run
 
 bindsym $mod+m 			$dd music
-bindsym $mod+w	        $dd browser 
-#bindsym $mod+Shift+a	$dd pulsemixer
+# bindsym $mod+w	        $dd browser 
+# bindsym $mod+Shift+a	$dd pulsemixer
 
 ## #---Media Keys---# #
 # Volume keys
@@ -78,8 +79,8 @@ bindsym $mod+minus 				$exec lmc down 5
 bindsym $mod+Shift+minus		$exec lmc down 1
 
 # mpd keys
-bindsym $mod+comma 				$exec lmc prev
-bindsym $mod+period 			$exec lmc next
+# bindsym $mod+comma 				$exec lmc prev
+# bindsym $mod+period 			$exec lmc next
 
 bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
@@ -110,7 +111,7 @@ bindsym $mod+F12	$dd nmtui
 
 # For screenshots
 # maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
-bindsym Print 				$exec gnome-screenshot
-bindsym Shift+Print 		$exec gnome-screenshot -a
-bindsym Control+Print 		$exec gnome-screenshot -w
+bindsym Print 				$exec prtscreen root
+#bindsym Shift+Print 		$exec prtscreen area
+bindsym Control+Print 		$exec prtscreen curwin
 bindsym $mod+Scroll_Lock	$exec "killall screenkey || screenkey"

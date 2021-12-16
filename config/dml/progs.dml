@@ -1,11 +1,20 @@
 #
 # Browsers
 #
-browser         $BROWSER
+browser         brave # $BROWSER
 google-chrome
+chromium
 chrome
 zathura
 sxiv
+firefox
+
+whatsapp        brave --app="https://web.whatsapp.com/"
+overleaf        brave --app="https://www.overleaf.com/"
+
+steam
+zoom_dmenu
+zoom
 
 #
 # Terminals
@@ -35,9 +44,13 @@ discord
 #
 # Background programs
 #
-compton         pkill compton; compton --backend glx --force-win-blend \
+picom           pkill picom; picom --vsync --backend glx --force-win-blend \
     --glx-fshader-win "$(cat ~/.config/compton/fshader.glsl)" &
 dropboxd
+
+# Tools
+#
+colorpicker     colorpicker --one-shot --preview | xclip -selection clipboard
 
 #
 # Terminal programs 

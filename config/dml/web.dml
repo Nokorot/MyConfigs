@@ -8,6 +8,8 @@ AT(MAT4530)     $BROWSER https://www.uio.no/studier/emner/matnat/math/MAT4530/v2
 
 # incognito     $BROWSER --incognito
 incognito       google-chrome --incognito
+# netflix         $BROWSER --app="https://www.netflix.com" & \
+#                 i3-msg "workspace $WSmovie"
 netflix         $BROWSER --app="https://www.netflix.com" & \
                 i3-msg "workspace $WSmovie"
 calendar        $BROWSER --app="https://calendar.google.com/calendar"
@@ -16,5 +18,5 @@ messenger       i3 workspace $WS8; \
                 $BROWSER --app="https://www.messenger.com"
 twitch          $BROWSER --app="https://www.twitch.com"
 porn            i3-msg "workspace PP; gaps inner current set 0"; \
-                google-chrome --new-window --incognito https://www.pornhub.com & \
+                brave --new-window --incognito https://www.pornhub.com & \
                 (sleep 1;  i3-msg "border pixel 0")

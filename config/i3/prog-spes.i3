@@ -2,24 +2,30 @@
 
 ## #---Program spesifics---# #
 #
-assign [class="vlc"] $WSmovie
+assign [class="vlc"]                $WSmovie
 
-for_window 	[class="chrome"] 	border pixel 3
+for_window 	[class="chrome"] 	    border pixel 3
 
-assign [instance="netflix"] $WSmovie
+assign [instance="netflix"]         $WSmovie
 for_window 	[instance="netflix"] 	border pixel 0
 for_window 	[instance="netflix"] 	border radius 0
 
-assign [class="thunderbird"] $WS10
+assign [class="thunderbird"]        $WS10
 
-assign [class="discord"] $WS6
-for_window [class="discord"]    floating enable
-for_window [class="discord"]    resize set 1200 800
-for_window [class="discord"]    move position center
+assign [class="discord"]            $WS6
+for_window [class="discord"]        floating enable
+for_window [class="discord"]        resize set 1200 800
+for_window [class="discord"]        move position center
 
+# assign [instance="web.whatsapp.com"] $WS6
+for_window [instance="WhatsApp"]    floating enable
+for_window [instance="WhatsApp"]    resize set 1200 800
+for_window [instance="WhatsApp"]    move position center
 
-# for_window 	[class="okular"] 	    move workspace $WS7
-# for_window 	[class="okular"] 		workspace $ws7; layout tabbed
+# assign [class="okular"] $WS7
+
+# for_window 	[class="okular"] 	move workspace $WS7
+# for_window 	[class="okular"] 	workspace $ws7; layout tabbed
 for_window 	[class="Pinentry"] 		sticky enable
 for_window 	[class="sent"] 			border pixel 0px
 for_window 	[title="GIMP Startup"] 	move workspace $WSgimp
@@ -28,14 +34,17 @@ for_window 	[window_role="GtkFileChooserDialog"] resize set 800 600
 for_window 	[window_role="GtkFileChooserDialog"] move position center
 for_window 	[title="Default - Wine desktop"] 	 floating enable
 
-for_window 	[class="Matplotlib"] floating enable
-for_window 	[class="Matplotlib"] resize set 800 600
-for_window 	[class="Matplotlib"] move position center
+for_window 	[class="zoom"] 	        floating enable
+for_window 	[title="Zoom Meeting"] 	floating disabled
+
+for_window 	[class="Matplotlib"]    floating enable
+for_window 	[class="Matplotlib"]    resize set 800 600
+for_window 	[class="Matplotlib"]    move position center
 
 # Bindings to make the webcam float and stick.
-for_window 	[title="mpvfloat"] floating enable
-for_window 	[title="mpvfloat"] sticky enable
-for_window 	[title="mpvfloat"] border pixel 0
+for_window 	[title="mpvfloat"]      floating enable
+for_window 	[title="mpvfloat"]      sticky enable
+for_window 	[title="mpvfloat"]      border pixel 0
 no_focus 	[title="mpvfloat"]
 
 

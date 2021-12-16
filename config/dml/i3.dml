@@ -1,17 +1,22 @@
 #
 # i3 commands
 #
+borders         i3-msg "border pixel" $(dmenu -p "Border px"); 
 no_borders      i3-msg "gaps inner current set 0; border pixel 0; border radius 0"
 scratch         i3-msg move scratchpad
 scratch_show    i3-msg scratchpad show
 
+
+picom-trans     picom-trans -w "$(get_winId)" $(dmenu -p "% value: ")
+get_winID       get_winId | xc
+
 #
 # Print Screen
 #
-screen-print    gnome-screenshoot
-a-screen-print  gnome-screenshot -a
-w-screen-print  gnome-screenshot -w
-c-screen-print  gnome-screenshot -c
-ac-screen-print  gnome-screenshot -a -c
+screen-print    prtscreen
+# a-screen-print  gnome-screenshot -a
+# w-screen-print  gnome-screenshot -w
+# c-screen-print  gnome-screenshot -c
+# ac-screen-print  gnome-screenshot -a -c
 
 

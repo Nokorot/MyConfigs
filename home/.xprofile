@@ -4,8 +4,12 @@ setbg &		# Set the background
 remaps
 [ -f "$HOME/.Xresources" ] && xrdb $HOME/.Xresources
 unclutter -idle 2 &		# Remove mouse when idle
-compton --backend glx --force-win-blend \
+picom --vsync --backend glx --force-win-blend \
     --glx-fshader-win "$(cat ~/.config/compton/fshader.glsl)" &
 dunst &			# dunst for notifications
 mpd &
+
+# dml ytpl
+ytpl -s -p ~/LMedia/Music/*.lst &
+
 dropboxd &

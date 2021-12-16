@@ -1,25 +1,27 @@
-command=~/.scripts/statusbar/$BLOCK_NAME
+command=/home/noko/.local/bin/statusbar/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
 
 [clock]
+command=~/.local/bin/statusbar/clock
 interval=1
 
-# [memory]
-# interval=30
+[memory]
+interval=30
 
 [music]
-interval=once
+interval=1
+# interval=once
 signal=11
 
 [disk]
 interval=60
-command=disk /
+command=/home/noko/.local/bin/statusbar/disk /
 
 [disk]
 interval=60
-command=disk /home 🏠
+command=~/.local/bin/statusbar/disk /home 🏠
 
 [screen_brightness]
 interval=once
@@ -30,7 +32,7 @@ interval=once
 signal=10
 
 [battery]
-command=battery BAT0
+command=~/.local/bin/statusbar/battery BAT1
 interval=5
 
 [internet]
@@ -39,8 +41,8 @@ interval=10
 
 
 # No apperence
-[joplin_sync]
-interval=300
+# [joplin_sync]
+# interval=300
 
 
 

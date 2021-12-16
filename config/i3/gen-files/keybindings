@@ -48,6 +48,8 @@ $mod+Left
 $mod+Down
 $mod+Up
 $mod+Right
+$mod+comma
+$mod+period
 $mod+Shift+Left
 $mod+Shift+Down
 $mod+Shift+Up
@@ -76,6 +78,7 @@ $mod+Mod3+l
 $mod+Mod3+j
 $mod+Mod3+h
 $mod+Mod3+g
+$mod+Mod3+n
 $mod+Mod3+v
 $mod+Mod3+b
 $mod+Mod3+u
@@ -104,14 +107,11 @@ $mod+u
 $mod+d
 $mod+Shift+d
 $mod+m
-$mod+w
 $mod+Shift+m
 $mod+plus
 $mod+Shift+plus
 $mod+minus
 $mod+Shift+minus
-$mod+comma
-$mod+period
 $mod+less
 $mod+Shift+less
 $mod+greater
@@ -130,7 +130,6 @@ $mod+F10
 $mod+F11
 $mod+F12
 Print
-Shift+Print
 Control+Print
 $mod+Scroll_Lock
 XF86AudioMute
@@ -159,9 +158,7 @@ XF86WebCam
 XF86Mail
 XF86Messenger
 XF86Search
-Shift+XF86MonBrightnessDown
 XF86MonBrightnessDown
-Shift+XF86MonBrightnessUp
 XF86MonBrightnessUp
 XF86AudioMedia
 XF86Display

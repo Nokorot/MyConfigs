@@ -1,8 +1,11 @@
 #- nvim: filetype=i3
 
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+
 ## #---Window borders---# #
 default_border pixel 2
-default_border_radius 15
+default_border_radius 5
 gaps inner 10
 gaps outer 0
 

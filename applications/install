@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+DST_DIR="$HOME/.local/share/applications"
+SRC_DIR="$(dirname "$(realpath ${BASH_SOURCE[0]})")"
+
+mkdir -p "$DST_DIR"
+
+cp "$SRC_DIR"/*desktop "$SRC_DIR"/mimeapps.list \
+    "$SRC_DIR"/mimeinfo.cache "$DST_DIR"
+
+
+
+

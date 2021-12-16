@@ -2,16 +2,21 @@
 
 set $movestep "50px or 3ppt"
 
-mode "resize" {
-	bindsym h	    $exec i3resize left   $movestep
-	bindsym j	    $exec i3resize down   $movestep
-	bindsym k	    $exec i3resize up     $movestep
-	bindsym l	    $exec i3resize right  $movestep
+# This is useless since commands are not evaluated recursivly
+set $scripts $HOME/.config/i3/scripts
 
-	bindsym Left	$exec i3resize left   $movestep
-	bindsym Down	$exec i3resize down   $movestep
-	bindsym Up 		$exec i3resize up     $movestep
-	bindsym Rgiht	$exec i3resize right  $movestep
+set $resize exec $HOME/.config/i3/scripts/i3resize
+
+mode "resize" {
+	bindsym h	    $resize left   $movestep
+	bindsym j	    $resize down   $movestep
+	bindsym k	    $resize up     $movestep
+	bindsym l	    $resize right  $movestep
+
+	bindsym Left	$resize left$movestep
+	bindsym Down	$resize down   $movestep
+	bindsym Up 		$resize up     $movestep
+	bindsym Rgiht	$resize right  $movestep
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -30,10 +35,10 @@ bindsym $mod+Shift+j		move down  50px
 bindsym $mod+Shift+k		move up    50px
 bindsym $mod+Shift+l		move right 50px
 
-bindsym $mod+Ctrl+h			$exec i3resize left   $movestep
-bindsym $mod+Ctrl+j			$exec i3resize down   $movestep
-bindsym $mod+Ctrl+k			$exec i3resize up     $movestep
-bindsym $mod+Ctrl+l			$exec i3resize right  $movestep
+bindsym $mod+Ctrl+h			$resize left   $movestep
+bindsym $mod+Ctrl+j			$resize down   $movestep
+bindsym $mod+Ctrl+k			$resize up     $movestep
+bindsym $mod+Ctrl+l			$resize right  $movestep
 
 # #---Arrow Keys---# #
 bindsym $mod+Left			focus left
@@ -41,15 +46,18 @@ bindsym $mod+Down			focus down
 bindsym $mod+Up				focus up
 bindsym $mod+Right 			focus right
 
+bindsym $mod+comma     	    focus parent
+bindsym $mod+period        	focus child
+
 bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
 bindsym $mod+Shift+Right 	move right
 
-bindsym $mod+Ctrl+Left		$exec i3resize left   $movestep
-bindsym $mod+Ctrl+Down		$exec i3resize down   $movestep
-bindsym $mod+Ctrl+Up		$exec i3resize up     $movestep
-bindsym $mod+Ctrl+Right		$exec i3resize right  $movestep
+bindsym $mod+Ctrl+Left		$resize left   $movestep
+bindsym $mod+Ctrl+Down		$resize down   $movestep
+bindsym $mod+Ctrl+Up		$resize up     $movestep
+bindsym $mod+Ctrl+Right		$resize right  $movestep
 
 # #---Workspace Bindings---# #
 

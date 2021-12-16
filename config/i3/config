@@ -1,5 +1,6 @@
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
 default_border pixel 2
-default_border_radius 15
+default_border_radius 5
 gaps inner 10
 gaps outer 0
 floating_modifier $mod
@@ -84,6 +85,8 @@ bindsym $mod+bar  		workspace $WS0
 bindsym $mod+Ctrl+bar 	move workspace $WS0
 bindsym $mod+Shift+bar 	move workspace $WS0; workspace $WS0
 set $movestep "50px or 3ppt"
+set $scripts "$HOME/.config/i3/scripts"
+set $resize exec $HOME/.config/i3/scripts/i3resize
 mode "resize" {
 	bindsym h	    $exec i3resize left   $movestep
 	bindsym j	    $exec i3resize down   $movestep
@@ -105,14 +108,16 @@ bindsym $mod+Shift+h		move left  50px
 bindsym $mod+Shift+j		move down  50px
 bindsym $mod+Shift+k		move up    50px
 bindsym $mod+Shift+l		move right 50px
-bindsym $mod+Ctrl+h			$exec i3resize left   $movestep
-bindsym $mod+Ctrl+j			$exec i3resize down   $movestep
-bindsym $mod+Ctrl+k			$exec i3resize up     $movestep
-bindsym $mod+Ctrl+l			$exec i3resize right  $movestep
+bindsym $mod+Ctrl+h			$resize left   $movestep
+bindsym $mod+Ctrl+j			$resize down   $movestep
+bindsym $mod+Ctrl+k			$resize up     $movestep
+bindsym $mod+Ctrl+l			$resize right  $movestep
 bindsym $mod+Left			focus left
 bindsym $mod+Down			focus down
 bindsym $mod+Up				focus up
 bindsym $mod+Right 			focus right
+bindsym $mod+comma     	    focus parent
+bindsym $mod+period        	focus child
 bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
@@ -136,7 +141,7 @@ bindsym $mod+Ctrl+Prior	    move workspace prev
 bindsym $mod+Next			workspace next
 bindsym $mod+Shift+Next		move workspace next; workspace next;
 bindsym $mod+Ctrl+Next		move workspace next
-set $term $TERMINAL
+set $term kitty # $TERMINAL
 set $mod Mod4
 set $mod2 Shift
 set $mod3 Control
@@ -147,10 +152,11 @@ bindsym $mod+Mod3+l		exec xdotool mousemove_relative -p  90 10
 bindsym $mod+Mod3+j		exec xdotool mousemove_relative -p 180 10
 bindsym $mod+Mod3+h		exec xdotool mousemove_relative -p 270 10
 bindsym $mod+Mod3+g		exec xdotool mousedown 1 mouseup 1
+bindsym $mod+Mod3+n	    exec xdotool mousedown 2 mouseup 2
 bindsym $mod+Mod3+v		exec xdotool mousedown 1
 bindsym $mod+Mod3+b		exec xdotool mouseup 1
-bindsym $mod+Mod3+u		exec xdotool click 5
-bindsym $mod+Mod3+i		exec xdotool click 4
+bindsym $mod+Mod3+u		exec xdotool click 4
+bindsym $mod+Mod3+i		exec xdotool click 5
 bindsym $mod+Return 		$exec $term
 bindsym $mod+Shift+Escape 	    $dd exit
 bindsym $mod+Shift+BackSpace	$dd shutdown
@@ -169,20 +175,17 @@ bindsym $mod+Mod1+e 	layout toggle split
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+f    	focus mode_toggle
 bindsym $mod+Shift+space 	floating toggle
-bindsym $Mod+oslash 	$exec dmenuunicode
-bindsym $mod+n 		    $exec nn --browse
-bindsym $mod+u 		    $exec nn --browse --note-dir "$HOME/UniMaterial"
+bindsym $Mod+oslash 	$exec dmenu_unicode
+bindsym $mod+n 		    $exec nn -browse
+bindsym $mod+u 		    $exec nn -browse -notes-dir "$HOME/UniMaterial"
 bindsym $mod+d			$exec dml
 bindsym $mod+Shift+d	$exec dmenu_run
 bindsym $mod+m 			$dd music
-bindsym $mod+w	        $dd browser
 bindsym $mod+Shift+m			$exec lmc mute
 bindsym $mod+plus				$exec lmc up 5
 bindsym $mod+Shift+plus			$exec lmc up 1
 bindsym $mod+minus 				$exec lmc down 5
 bindsym $mod+Shift+minus		$exec lmc down 1
-bindsym $mod+comma 				$exec lmc prev
-bindsym $mod+period 			$exec lmc next
 bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
 bindsym $mod+greater			$exec lmc next
@@ -196,24 +199,26 @@ bindsym $mod+Shift+bracketright $exec lmc forward 120
 bindsym $mod+F2		$exec ~/.config/i3/gen_conf; restart
 bindsym $mod+F6		$exec torwrap
 bindsym $mod+F7		$exec td-toggle
-bindsym $mod+F9		$exec dmenumount
-bindsym $mod+F10	$exec dmenuumount
+bindsym $mod+F9		$exec dmenu_mount
+bindsym $mod+F10	$exec dmenu_umount
 bindsym $mod+F11	$exec ducksearch
 bindsym $mod+F12	$dd nmtui
-bindsym Print 				$exec gnome-screenshot
-bindsym Shift+Print 		$exec gnome-screenshot -a
-bindsym Control+Print 		$exec gnome-screenshot -w
+bindsym Print 				$exec prtscreen root
+bindsym Control+Print 		$exec prtscreen curwin
 bindsym $mod+Scroll_Lock	$exec "killall screenkey || screenkey"
-assign [class="vlc"] $WSmovie
-for_window 	[class="chrome"] 	border pixel 3
-assign [instance="netflix"] $WSmovie
+assign [class="vlc"]                $WSmovie
+for_window 	[class="chrome"] 	    border pixel 3
+assign [instance="netflix"]         $WSmovie
 for_window 	[instance="netflix"] 	border pixel 0
 for_window 	[instance="netflix"] 	border radius 0
-assign [class="thunderbird"] $WS10
-assign [class="discord"] $WS6
-for_window [class="discord"]    floating enable
-for_window [class="discord"]    resize set 1200 800
-for_window [class="discord"]    move position center
+assign [class="thunderbird"]        $WS10
+assign [class="discord"]            $WS6
+for_window [class="discord"]        floating enable
+for_window [class="discord"]        resize set 1200 800
+for_window [class="discord"]        move position center
+for_window [instance="WhatsApp"]    floating enable
+for_window [instance="WhatsApp"]    resize set 1200 800
+for_window [instance="WhatsApp"]    move position center
 for_window 	[class="Pinentry"] 		sticky enable
 for_window 	[class="sent"] 			border pixel 0px
 for_window 	[title="GIMP Startup"] 	move workspace $WSgimp
@@ -221,12 +226,14 @@ for_window 	[class="Gimp"] 			move workspace $WSgimp
 for_window 	[window_role="GtkFileChooserDialog"] resize set 800 600
 for_window 	[window_role="GtkFileChooserDialog"] move position center
 for_window 	[title="Default - Wine desktop"] 	 floating enable
-for_window 	[class="Matplotlib"] floating enable
-for_window 	[class="Matplotlib"] resize set 800 600
-for_window 	[class="Matplotlib"] move position center
-for_window 	[title="mpvfloat"] floating enable
-for_window 	[title="mpvfloat"] sticky enable
-for_window 	[title="mpvfloat"] border pixel 0
+for_window 	[class="zoom"] 	        floating enable
+for_window 	[title="Zoom Meeting"] 	floating disabled
+for_window 	[class="Matplotlib"]    floating enable
+for_window 	[class="Matplotlib"]    resize set 800 600
+for_window 	[class="Matplotlib"]    move position center
+for_window 	[title="mpvfloat"]      floating enable
+for_window 	[title="mpvfloat"]      sticky enable
+for_window 	[title="mpvfloat"]      border pixel 0
 no_focus 	[title="mpvfloat"]
 for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
@@ -264,10 +271,8 @@ bindsym XF86WebCam						$exec camtoggle
 bindsym XF86Mail						$exec $term -e neomutt && pkill -RTMIN+12 i3blocks
 bindsym XF86Messenger					$exec $term -e weechat
 bindsym XF86Search						$exec $BROWSER https://duckduckgo.com
-bindsym Shift+XF86MonBrightnessDown		$exec sudo brightness -x -10
-bindsym XF86MonBrightnessDown			$exec sudo brightness -c -10%
-bindsym Shift+XF86MonBrightnessUp		$exec sudo brightness -x 10
-bindsym XF86MonBrightnessUp				$exec sudo brightness -c 10%
+bindsym XF86MonBrightnessDown			$exec lux -s 10%
+bindsym XF86MonBrightnessUp				$exec lux -a 10%
 bindsym XF86AudioMedia					$exec $term -e ncmpcpp
 bindsym XF86Display						$exec displayselect
 bindsym XF86Documents					$exec $term -e $FILE ~/Documents
