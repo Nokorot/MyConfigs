@@ -1,8 +1,14 @@
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
+exec source ~/.usrvars
 default_border pixel 2
 default_border_radius 5
 gaps inner 10
 gaps outer 0
+set $base00 #020202
+set $base01 #ffffff
+set $base02 #252936
+set $base03 #7780a1
+set $base04 #888888
+set $base05 #d1d4e0
 floating_modifier $mod
 popup_during_fullscreen smart
 font pango:DejaVu Sans Mono 8
@@ -13,30 +19,14 @@ bar {
     strip_workspace_numbers yes
     separator_symbol "|" # 𓀅
     colors {
-        background #020202
-        statusline #ffffff
-        separator #666666
-        focused_workspace  #020202 #020202 #ffffff
-        inactive_workspace #020202 #020202 #888888
+        background $base00
+        statusline $base05
+        separator  $base03
+        focused_workspace  $base00 $base00  $base01
+        active_workspace   $base00 $base00  $base03
+        inactive_workspace $base00 $base00  $base04
     }
 }
-set $base00 #101218
-set $base01 #1f222d
-set $base02 #252936
-set $base03 #7780a1
-set $base04 #C0C5CE
-set $base05 #d1d4e0
-set $base06 #C9CCDB
-set $base07 #ffffff
-set $base08 #ee829f
-set $base09 #f99170
-set $base0A #ffefcc
-set $base0B #a5ffe1
-set $base0C #97e0ff
-set $base0D #97bbf7
-set $base0E #c0b7f9
-set $base0F #fcc09e
-client.focused            $base03 $base03    $base07 $base0F
 set $WS1	"1: "
 set $WS2	"2: "
 set $WS3	"3: "
@@ -85,17 +75,17 @@ bindsym $mod+bar  		workspace $WS0
 bindsym $mod+Ctrl+bar 	move workspace $WS0
 bindsym $mod+Shift+bar 	move workspace $WS0; workspace $WS0
 set $movestep "50px or 3ppt"
-set $scripts "$HOME/.config/i3/scripts"
+set $scripts $HOME/.config/i3/scripts
 set $resize exec $HOME/.config/i3/scripts/i3resize
 mode "resize" {
-	bindsym h	    $exec i3resize left   $movestep
-	bindsym j	    $exec i3resize down   $movestep
-	bindsym k	    $exec i3resize up     $movestep
-	bindsym l	    $exec i3resize right  $movestep
-	bindsym Left	$exec i3resize left   $movestep
-	bindsym Down	$exec i3resize down   $movestep
-	bindsym Up 		$exec i3resize up     $movestep
-	bindsym Rgiht	$exec i3resize right  $movestep
+	bindsym h	    $resize left   $movestep
+	bindsym j	    $resize down   $movestep
+	bindsym k	    $resize up     $movestep
+	bindsym l	    $resize right  $movestep
+	bindsym Left	$resize left$movestep
+	bindsym Down	$resize down   $movestep
+	bindsym Up 		$resize up     $movestep
+	bindsym Rgiht	$resize right  $movestep
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -122,10 +112,10 @@ bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
 bindsym $mod+Shift+Right 	move right
-bindsym $mod+Ctrl+Left		$exec i3resize left   $movestep
-bindsym $mod+Ctrl+Down		$exec i3resize down   $movestep
-bindsym $mod+Ctrl+Up		$exec i3resize up     $movestep
-bindsym $mod+Ctrl+Right		$exec i3resize right  $movestep
+bindsym $mod+Ctrl+Left		$resize left   $movestep
+bindsym $mod+Ctrl+Down		$resize down   $movestep
+bindsym $mod+Ctrl+Up		$resize up     $movestep
+bindsym $mod+Ctrl+Right		$resize right  $movestep
 bindsym $mod+Home			workspace first
 bindsym $mod+Ctrl+Home		move workspace first
 bindsym $mod+Shift+Home		move workspace first; workspace last
@@ -176,8 +166,8 @@ bindsym $mod+t			split toggle
 bindsym $mod+Shift+f    	focus mode_toggle
 bindsym $mod+Shift+space 	floating toggle
 bindsym $Mod+oslash 	$exec dmenu_unicode
-bindsym $mod+n 		    $exec nn -browse
-bindsym $mod+u 		    $exec nn -browse -notes-dir "$HOME/UniMaterial"
+bindsym $mod+n 		    $exec dml nn_notes # nn -browse -notes-dir "$HOME/Notes"
+bindsym $mod+u 		    $exec dml nn_unim # nn -browse -notes-dir "$HOME/UniMaterial"
 bindsym $mod+d			$exec dml
 bindsym $mod+Shift+d	$exec dmenu_run
 bindsym $mod+m 			$dd music
@@ -279,4 +269,5 @@ bindsym XF86Documents					$exec $term -e $FILE ~/Documents
 set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
 mode "$freeze" { bindsym $mod+Shift+f mode "default"
 }
+exec $HOME/.profile
 exec $HOME/.xprofile

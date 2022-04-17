@@ -1,19 +1,19 @@
 #
 ## Web sites
 #
-uio             $BROWSER "uio.instructure.com"
-AFA(MAT4450)    $BROWSER https://www.uio.no/studier/emner/matnat/math/MAT4450/v21/
-AT(MAT4530)     $BROWSER https://www.uio.no/studier/emner/matnat/math/MAT4530/v21/
+# uio             $BROWSER "uio.instructure.com"
+# AFA(MAT4450)    $BROWSER https://www.uio.no/studier/emner/matnat/math/MAT4450/v21/
+# AT(MAT4530)     $BROWSER https://www.uio.no/studier/emner/matnat/math/MAT4530/v21/
 
 
 # incognito     $BROWSER --incognito
 incognito       google-chrome --incognito
 # netflix         $BROWSER --app="https://www.netflix.com" & \
 #                 i3-msg "workspace $WSmovie"
-netflix         $BROWSER --app="https://www.netflix.com" & \
+netflix         brave --app="https://www.netflix.com" & \
                 i3-msg "workspace $WSmovie"
-calendar        $BROWSER --app="https://calendar.google.com/calendar"
-youtube         $BROWSER www.youtube.com/feed/subscriptions
+calendar        brave --app="https://calendar.google.com/calendar"
+youtube         brave www.youtube.com/feed/subscriptions
 messenger       i3 workspace $WS8; \
                 $BROWSER --app="https://www.messenger.com"
 twitch          $BROWSER --app="https://www.twitch.com"

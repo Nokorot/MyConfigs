@@ -9,4 +9,5 @@ mode "$freeze" { bindsym $mod+Shift+f mode "default"
 # bindsym $mod+Shift+f		mode "$freeze" ;; $exec --no-startup-id notify-send "Distraction-free mode activated." "Press Super+Shift+f to return."
 
 # Source .xprofile
+exec $HOME/.profile
 exec $HOME/.xprofile

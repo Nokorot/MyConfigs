@@ -4,7 +4,7 @@
 # Divide this into a directory
 # 
 # Basics
-shutdown        prompt "Shutdown computer?" "SUDO_ASKPASS='/usr/bin/ask_test' sudo -A shutdown now"
+shutdown        prompt "Shutdown computer?" "shutdown now"
 reboot          prompt "Reboot computer?" "sudo reboot"
 hibernate 	    prompt "Reboot computer?" "sudo -A systemctl suspend"
 exit            prompt "Exit i3?" "i3-msg exit"
@@ -13,15 +13,16 @@ lock            xset dpms force off; i3lock-fancy
 unicode         dmenuunicode
 unicode_insert  dmenuunicode insert
 
-nn_notes        nn --browse
-nb              nb --browse
+nn_notes        nn -notes-dir "/home/noko/Notes" -browse 
+nn_unim         nn -notes-dir "/home/noko/Uni/UniMaterial" -browse 
+nb              nb -browse
 
 dl_uni          python $HOME/UniMaterial/read_feed.py
 
-%include .config/dml/progs.dml
-%include .config/dml/games.dml
-%include .config/dml/i3.dml
-%include .config/dml/web.dml
+%include /home/noko/.config/dml/progs.dml
+%include /home/noko/.config/dml/games.dml
+%include /home/noko/.config/dml/i3.dml
+%include /home/noko/.config/dml/web.dml
 
 #               This does not stop the mpv subprosess. 
 #               Could run mpv in a thread, that would be closed when proting to C.

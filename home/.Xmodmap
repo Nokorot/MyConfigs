@@ -13,7 +13,7 @@ clear mod5
 keycode   9 = Mode_switch	# The Escape key
 keycode  37 = Control_L		# The Control_L key
 keycode  66 = Escape	 	# The Caps_Lock key
-keycode 135 = Super_R	 	# The Menu key
+keycode 105 = Super_R	 	# The Right Control key
 keycode 248 = Caps_Lock		# Fn + f11
 
 ! keycode  37 = Escape		# The Control_L key

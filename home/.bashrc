@@ -1,4 +1,7 @@
 
+zsh && exit
+
+
 # Prints the date ans time when a new bash profile is started
 date
 

@@ -9,7 +9,9 @@ picom --vsync --backend glx --force-win-blend \
 dunst &			# dunst for notifications
 mpd &
 
+nm-applet &
+
 # dml ytpl
 ytpl -s -p ~/LMedia/Music/*.lst &
 
-dropboxd &
+dropbox-cli start &

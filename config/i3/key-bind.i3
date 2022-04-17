@@ -58,8 +58,8 @@ bindsym $mod+Shift+space 	floating toggle
 ## #---Letter Key Bindings---# #
 bindsym $Mod+oslash 	$exec dmenu_unicode
 
-bindsym $mod+n 		    $exec nn -browse
-bindsym $mod+u 		    $exec nn -browse -notes-dir "$HOME/UniMaterial"
+bindsym $mod+n 		    $exec dml nn_notes # nn -browse -notes-dir "$HOME/Notes"
+bindsym $mod+u 		    $exec dml nn_unim # nn -browse -notes-dir "$HOME/UniMaterial"
 
 # bindsym $mod+c			$exec ddspawn dd-calc 
 

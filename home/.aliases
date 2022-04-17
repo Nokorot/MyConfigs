@@ -17,6 +17,10 @@ alias rn="bulkrename"
 # cd + clear
 function c() { [ ! -z "$1" ] && cd "$1"; clear && pp && ls; }
 
+function cd() { 
+    builtin cd "$@"
+    ls
+}
 function cpp() {
     # TODO: Might want to allow $1 "the source" to consist of mutliple files,
     rsync -hr --info=progress2 "$1" "$2"
@@ -65,13 +69,6 @@ function vdml() {
     nvim "$1"
     popd >/dev/null
 }
-
-_vdml_complete() {
-    pushd "$HOME/.config/dml" >/dev/null
-    _longopt $@
-    popd >/dev/null
-}
-complete -o filenames -F _vdml_complete vdml
 
 
 function dm-wlist() { echo "$@" >> ~/.config/dmenu_run.wlist; }
