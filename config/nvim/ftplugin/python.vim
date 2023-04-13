@@ -1,5 +1,5 @@
 
-map <M-CR>	 	:w <CR>:!python % <CR>
+" map <M-CR>	 	:w <CR>:!python % <CR>
 
 " map <C-j> 		/<++><CR>vf>c
 

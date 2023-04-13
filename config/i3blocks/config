@@ -1,10 +1,10 @@
-command=/home/noko/.local/bin/statusbar/$BLOCK_NAME
+command=/home/noko/.config/i3blocks/scripts/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
 
 [clock]
-command=~/.local/bin/statusbar/clock
+command=~/.config/i3blocks/scripts/clock
 interval=1
 
 [memory]
@@ -17,11 +17,11 @@ signal=11
 
 [disk]
 interval=60
-command=/home/noko/.local/bin/statusbar/disk /
+command=/home/noko/.config/i3blocks/scripts/disk / 💾
 
-[disk]
-interval=60
-command=~/.local/bin/statusbar/disk /home 🏠
+# [disk]
+# interval=60
+# command=~/.config/i3blocks/scripts/disk /home 🏠
 
 [screen_brightness]
 interval=once
@@ -32,7 +32,7 @@ interval=once
 signal=10
 
 [battery]
-command=~/.local/bin/statusbar/battery BAT1
+command=~/.config/i3blocks/scripts/battery BAT1
 interval=5
 
 [internet]

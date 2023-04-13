@@ -4,12 +4,15 @@ get_clock_face() {
     h=$( date '+%I' )
     m=$( date '+%M' )
     
-    [ 30 -ge $m ] && charoff=$((0x4f+10#$h))  \
-        || charoff=$((0x5b+10#$h));
+    if [ 30 -le $m ]; then 
+      charoff=$((0x9b+10#$h))
+    else
+      charoff=$((0x8f+10#$h));
+    fi
 
-    printf "\U1F5$(printf '%x' $charoff )"
+    # printf '%x' "$charoff" # 
+    printf "\xf0\x9f\x95\x$(printf '%x' $charoff )"
 }
-
 
 # date '+%y %b %d (%a) %I:%M%p'
 printf "📅 $(date '+%b %d (%a)') $(get_clock_face) $(date '+%I:%M') \n"
@@ -23,4 +26,28 @@ case $BLOCK_BUTTON in
 - Middle click opens calcurse if installed" ;;
 esac
 
-# 🕛 🕧 🕐 🕜 🕑 🕝 🕒 🕞 🕓 🕟 🕔 🕠 🕕 🕡 🕖 🕢 🕗 🕣 🕘 🕤 🕙 🕥 🕚 🕦
+# 🕐🕑🕒🕓🕔🕕🕖🕗🕘🕙🕚🕛🕜🕝🕞🕟🕠🕡🕢🕣🕤🕥🕦🕧
+# printf "\xf0\x9f\x95\x90"
+# printf "\xf0\x9f\x95\x91"
+# printf "\xf0\x9f\x95\x92"
+# printf "\xf0\x9f\x95\x93"
+# printf "\xf0\x9f\x95\x94"
+# printf "\xf0\x9f\x95\x95"
+# printf "\xf0\x9f\x95\x96"
+# printf "\xf0\x9f\x95\x97"
+# printf "\xf0\x9f\x95\x98"
+# printf "\xf0\x9f\x95\x99"
+# printf "\xf0\x9f\x95\x9a"
+# printf "\xf0\x9f\x95\x9b"
+# printf "\xf0\x9f\x95\x9c"
+# printf "\xf0\x9f\x95\x9d"
+# printf "\xf0\x9f\x95\x9e"
+# printf "\xf0\x9f\x95\x9f"
+# printf "\xf0\x9f\x95\xa0"
+# printf "\xf0\x9f\x95\xa1"
+# printf "\xf0\x9f\x95\xa2"
+# printf "\xf0\x9f\x95\xa3"
+# printf "\xf0\x9f\x95\xa4"
+# printf "\xf0\x9f\x95\xa5"
+# printf "\xf0\x9f\x95\xa6"
+# printf "\xf0\x9f\x95\xa7"

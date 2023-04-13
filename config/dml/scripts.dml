@@ -1,0 +1,51 @@
+
+RR_IR           cd "/home/noko/Source/html_to_epub"; \
+                python RR_rss.py books/IR/IR.yaml -o >(read o; \
+                [ -z "$o" ] \
+                    && notify-send "No Update!" \
+                    || { notify-send "Sending - $o"; \
+                         sendToKindle "$o" | xargs notify-send; } )
+
+# lean-tut        cd Lean; code tutorials
+lean-geo        cd Lean; code geometry
+
+parent          i3-msg focus parent
+child           i3-msg focus child 
+
+
+click           xdotool mousedown 1; xdotool keydown w
+
+displayselect   $HOME/.bin/displayselect
+
+yt_music_stream $TERMINAL -e 'yt_music_stream'
+
+
+
+# nn
+bookmarks       ~/.bin/bookmarks-nn
+
+nn_notes        nn -notes-dir "$NOTES" -browse \
+                        -dmargs "-i -l 20 -pv >(PVDIR='$NOTES' ~/.bin/preview_mupdf.sh) "
+nn_unim         nn -notes-dir "$UNINOTES" -browse \
+                        -dmargs "-i -l 20 -pv >(PVDIR='$UNINOTES' ~/.bin/preview_mupdf.sh) "
+# nb              nb -nw
+nb              .i3/scripts/ddspawn nb -pp --menu tmenu
+
+# unicode         dmenuunicode
+# unicode_insert  dmenuunicode insert
+
+unicode         .i3/scripts/ddspawn unicode_menu -i -w "$(get_winId)" 
+unicode-clip    .i3/scripts/ddspawn unicode_menu
+
+trash-empty     res="$(trash-empty --is-empty)" && { dm_alert "$res" } || \
+                   .i3/scripts/ddspawn trash-empty
+trash-restore   res="$(trash-empty --is-empty)" && { dm_alert "$res" } || \
+                   .i3/scripts/ddspawn restore
+
+music 			    lmc dmenu
+
+dl_uni          python $HOME/Dropbox/Documents/UniMaterial/read_feed.py
+gen_snipits     cd $TEMPLATES/snipits/; gen_index . > _index.json
+
+
+colorpicker     colorpicker --one-shot --preview | xclip -selection clipboard

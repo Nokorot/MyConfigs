@@ -1,9 +1,12 @@
 #!/bin/sh
 
-level="$( cat "/sys/class/backlight/$backlight_screen/brightness" )"
-maxlevel="$( cat "/sys/class/backlight/$backlight_screen/max_brightness" )"
+# level="$( cat "/sys/class/backlight/$backlight_screen/brightness" )"
+# maxlevel="$( cat "/sys/class/backlight/$backlight_screen/max_brightness" )"
 
-printf 💡
+printf "%s: %s\n" '💡' "$(lux -G)"
+exit 0
+
+
 if [ -f '/tmp/xbrightness' ]; then
 	xlevel=$( printf %.1f $(( $(cat /tmp/xbrightness) ))e-2 )
 	echo "$xlevel-$(( $level * 100 / $maxlevel ))%"

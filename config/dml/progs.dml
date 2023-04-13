@@ -2,15 +2,12 @@
 # Browsers
 #
 browser         brave # $BROWSER
-google-chrome
-chromium
-chrome
-zathura
-sxiv
-firefox
-
-whatsapp        brave --app="https://web.whatsapp.com/"
-overleaf        brave --app="https://www.overleaf.com/"
+# google-chrome
+# chromium
+# chrome
+# zathura
+# sxiv
+# firefox
 
 steam
 zoom_dmenu
@@ -19,10 +16,11 @@ zoom
 #
 # Terminals
 #
-st 
-urxvt
-xterm
-tilix
+terminal kitty
+# st 
+# urxvt
+# xterm
+# tilix
 kitty
 #
 # Editors
@@ -31,26 +29,57 @@ emacs
 gedit
 idea            idea
 eclipse 
+vscode          code
+
+icalc.py        $TERMINAL -e icalc.py
 
 # ws spesific
-music 			i3-msg "workspace $WSmusic";    $TERMINAL -e ncmpcpp -p 6000
+# music 			i3-msg "workspace $WSmusic";    $TERMINAL -e ncmpcpp -p 6000
+
 thunderbird     i3-msg "workspace $WS10";       thunderbird
 gimp            i3-msg "workspace $WSgimp";     gimp
 okular          i3-msg "workspace $WS7; layout tabbed"; okular
 discord
+signal          signal-desktop
 # skype           skypeforlinux
 # tc              tc.app
+
+# Games
+# 
+# minecraft       MultiMC
+multimc         multimc
+minetest
+2048-qt
+snake
+mc4d
+# xpuzles
+# xpyraminx
+# xbarrel
+# xmlink
+# xmball          xmball -bg "#111111" -fg "#111111" -bd "#0f0f0f"
+# xoct            xoct   -bg "#111111" -fg "#111111" -bd "#0f0f0f"
+# xpanex          xpanex -bg "#111111" -fg "#111111" -bd "#0f0f0f"
+# # slides
+# xtriangles      xtriangles  -bg "#111111" -fg "#111111" -tile  "#55aaaa"
+# xcubes          xcubes      -bg "#111111" -fg "#111111" -block "#55aaaa"
+# xhexagons       xhexagons   -bg "#111111" -fg "#111111" -tile  "#55aaaa"
+# # Ribix's
+# xdino
+# xrubik          cd ~/Games/Xrubik && \
+#                 xrubik -bg "#ff00ff" -face0 white -face1 blue -face2 red \
+#                     -face3 green -face4 yellow -face5 orange
+# xskewb          xskewb -face0 white -face1 blue -face2 red -face3 green -face4 yellow -face5 orange
+
 
 #
 # Background programs
 #
-picom           pkill picom; picom --vsync --backend glx --force-win-blend \
-    --glx-fshader-win "$(cat ~/.config/compton/fshader.glsl)" &
-dropboxd
+picom           pkill picom; sleep .1; picom --vsync --backend glx --force-win-blend \
+    --glx-fshader-win "$(cat ~/.config/compton/fshader.glsl)"
 
-# Tools
-#
-colorpicker     colorpicker --one-shot --preview | xclip -selection clipboard
+# Note:     This does not stop the mpv subprosess. 
+#           Could run mpv in a thread, that would be closed when porting to C.
+ytpl            pkill ytpl; ytpl -s ~/LMedia/Music/*.lst
 
 #
 # Terminal programs 

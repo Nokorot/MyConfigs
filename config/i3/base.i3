@@ -1,6 +1,6 @@
 #- nvim: filetype=i3
 
-exec source ~/.usrvars
+exec source ~/.uservars
 
 ## #---Window borders---# #
 default_border pixel 2

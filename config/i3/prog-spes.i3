@@ -12,6 +12,9 @@ for_window 	[instance="netflix"] 	border radius 0
 
 assign [class="thunderbird"]        $WS10
 
+assign [class="Minecraft"]          $WS5
+
+
 assign [class="discord"]            $WS6
 for_window [class="discord"]        floating enable
 for_window [class="discord"]        resize set 1200 800
@@ -23,6 +26,8 @@ for_window [instance="WhatsApp"]    resize set 1200 800
 for_window [instance="WhatsApp"]    move position center
 
 # assign [class="okular"] $WS7
+
+for_window 	[class="Zathura"] 	border pixel 0px
 
 # for_window 	[class="okular"] 	move workspace $WS7
 # for_window 	[class="okular"] 	workspace $ws7; layout tabbed
@@ -48,6 +53,16 @@ for_window 	[title="mpvfloat"]      border pixel 0
 no_focus 	[title="mpvfloat"]
 
 
+for_window 	[class="MuPDF"]      floating enable
+for_window 	[class="MuPDF"]      resize set 800 600
+for_window 	[class="MuPDF"]      move position center
+for_window 	[class="MuPDF"]      move right 500 
+for_window 	[class="MuPDF"]      move down 200 
+for_window 	[class="MuPDF"]      border pixel 0
+no_focus 	[class="MuPDF"]
+
+
+
 ## #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
 for_window [instance="dropdown_*"] floating enable
@@ -60,4 +75,7 @@ for_window [instance="dropdown_dropdowncalc"] resize set 800 600
 for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
+
+for_window [instance="dropdown_icalc.py"] resize set 500 500 
+for_window [instance="dropdown_icalc.py"] move position 200 260
 

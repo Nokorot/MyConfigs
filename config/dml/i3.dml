@@ -6,6 +6,7 @@ no_borders      i3-msg "gaps inner current set 0; border pixel 0; border radius 
 scratch         i3-msg move scratchpad
 scratch_show    i3-msg scratchpad show
 
+sticky          i3-msg sticky toggle
 
 picom-trans     picom-trans -w "$(get_winId)" $(dmenu -p "% value: ")
 get_winID       get_winId | xc

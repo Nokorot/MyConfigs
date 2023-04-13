@@ -1,4 +1,4 @@
-exec source ~/.usrvars
+exec source ~/.uservars
 default_border pixel 2
 default_border_radius 5
 gaps inner 10
@@ -27,16 +27,16 @@ bar {
         inactive_workspace $base00 $base00  $base04
     }
 }
-set $WS1	"1: "
-set $WS2	"2: "
-set $WS3	"3: "
-set $WS4	"4: 𓅦"
-set $WS5	"5: 𓂀"
-set $WS6	"6: 𓆣"
-set $WS7	"7: 𓋹"
-set $WS8	"8: 𓊑"
-set $WS9	"9: 𓋍"
-set $WS10	"10: 📧"
+set $WS1	"1"
+set $WS2	"2"
+set $WS3	"3"
+set $WS4	"4"
+set $WS5	"5"
+set $WS6	"6"
+set $WS7	"7"
+set $WS8	"8"
+set $WS9	"9"
+set $WS10	"10"
 set $WS0	"0: 📒"
 set $WSgimp	"🖌"
 set $WSmusic	"🎵"
@@ -76,7 +76,7 @@ bindsym $mod+Ctrl+bar 	move workspace $WS0
 bindsym $mod+Shift+bar 	move workspace $WS0; workspace $WS0
 set $movestep "50px or 3ppt"
 set $scripts $HOME/.config/i3/scripts
-set $resize exec $HOME/.config/i3/scripts/i3resize
+set $resize exec $HOME/.i3/scripts/i3resize
 mode "resize" {
 	bindsym h	    $resize left   $movestep
 	bindsym j	    $resize down   $movestep
@@ -90,47 +90,51 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Ctrl+r mode "resize"
-bindsym $mod+h				focus left
-bindsym $mod+j				focus down
-bindsym $mod+k				focus up
-bindsym $mod+l				focus right
-bindsym $mod+Shift+h		move left  50px
-bindsym $mod+Shift+j		move down  50px
-bindsym $mod+Shift+k		move up    50px
-bindsym $mod+Shift+l		move right 50px
-bindsym $mod+Ctrl+h			$resize left   $movestep
-bindsym $mod+Ctrl+j			$resize down   $movestep
-bindsym $mod+Ctrl+k			$resize up     $movestep
-bindsym $mod+Ctrl+l			$resize right  $movestep
-bindsym $mod+Left			focus left
-bindsym $mod+Down			focus down
-bindsym $mod+Up				focus up
-bindsym $mod+Right 			focus right
-bindsym $mod+comma     	    focus parent
-bindsym $mod+period        	focus child
-bindsym $mod+Shift+Left		move left
-bindsym $mod+Shift+Down		move down
-bindsym $mod+Shift+Up		move up
-bindsym $mod+Shift+Right 	move right
-bindsym $mod+Ctrl+Left		$resize left   $movestep
-bindsym $mod+Ctrl+Down		$resize down   $movestep
-bindsym $mod+Ctrl+Up		$resize up     $movestep
-bindsym $mod+Ctrl+Right		$resize right  $movestep
-bindsym $mod+Home			workspace first
-bindsym $mod+Ctrl+Home		move workspace first
-bindsym $mod+Shift+Home		move workspace first; workspace last
-bindsym $mod+End			workspace last
-bindsym $mod+Ctrl+End		move workspace last
-bindsym $mod+Shift+End		move workspace last; workspace last
-bindsym $mod+aring			workspace last
-bindsym $mod+Ctrl+aring	    move workspace last
-bindsym $mod+Shift+aring	move workspace last; workspace last
-bindsym $mod+Prior			workspace prev
-bindsym $mod+Shift+Prior	move workspace prev; workspace prev;
-bindsym $mod+Ctrl+Prior	    move workspace prev
-bindsym $mod+Next			workspace next
-bindsym $mod+Shift+Next		move workspace next; workspace next;
-bindsym $mod+Ctrl+Next		move workspace next
+bindsym $mod+h              focus left
+bindsym $mod+j              focus down
+bindsym $mod+k              focus up
+bindsym $mod+l              focus right
+bindsym $mod+p              focus parent
+bindsym $mod+Shift+p        focus child
+bindsym $mod+Shift+h        move left  50px
+bindsym $mod+Shift+j        move down  50px
+bindsym $mod+Shift+k        move up    50px
+bindsym $mod+Shift+l        move right 50px
+bindsym $mod+Ctrl+h         $resize left   $movestep
+bindsym $mod+Ctrl+j         $resize down   $movestep
+bindsym $mod+Ctrl+k         $resize up     $movestep
+bindsym $mod+Ctrl+l         $resize right  $movestep
+bindsym $mod+Left           focus left
+bindsym $mod+Down           focus down
+bindsym $mod+Up             focus up
+bindsym $mod+Right          focus right
+bindsym $mod+comma          focus parent
+bindsym $mod+period         focus child
+bindsym $mod+Shift+Left     move left
+bindsym $mod+Shift+Down     move down
+bindsym $mod+Shift+Up       move up
+bindsym $mod+Shift+Right    move right
+bindsym $mod+Ctrl+Left      $resize left   $movestep
+bindsym $mod+Ctrl+Down      $resize down   $movestep
+bindsym $mod+Ctrl+Up        $resize up     $movestep
+bindsym $mod+Ctrl+Right     $resize right  $movestep
+bindsym $mod+Home           workspace first
+bindsym $mod+Ctrl+Home      move workspace first
+bindsym $mod+Shift+Home     move workspace first; workspace last
+bindsym $mod+End            workspace last
+bindsym $mod+Ctrl+End       move workspace last
+bindsym $mod+Shift+End      move workspace last; workspace last
+bindsym $mod+aring          workspace last
+bindsym $mod+Ctrl+aring     move workspace last
+bindsym $mod+Shift+aring    move workspace last; workspace last
+bindsym $mod+Prior          workspace prev_on_output
+bindsym $mod+Shift+Prior    move workspace prev_on_output; workspace prev_on_output;
+bindsym $mod+Ctrl+Prior     move workspace prev_on_output
+bindsym $mod+Next           workspace next_on_output
+bindsym $mod+Shift+Next     move workspace next_on_output; workspace next_on_output;
+bindsym $mod+Ctrl+Next      move workspace next_on_output
+bindsym $mod+Mod3+Prior     move workspace to output eDP;
+bindsym $mod+Mod3+Next      move workspace to output HDMI-A-0;
 set $term kitty # $TERMINAL
 set $mod Mod4
 set $mod2 Shift
@@ -158,16 +162,19 @@ bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+S	gaps inner current minus 5
 bindsym $mod+o          border radius plus 5
 bindsym $mod+Shift+o    border radius minus 5
-bindsym $mod+b			bar mode toggle
+bindsym $mod+b			  $dd bookmarks # bar mode toggle
+bindsym $mod+n			  $dd nb # bar mode toggle
 bindsym $mod+Shift+b	border toggle
 bindsym $mod+Mod1+w 	layout tabbed
 bindsym $mod+Mod1+e 	layout toggle split
 bindsym $mod+t			split toggle
 bindsym $mod+Shift+f    	focus mode_toggle
 bindsym $mod+Shift+space 	floating toggle
-bindsym $Mod+oslash 	$exec dmenu_unicode
-bindsym $mod+n 		    $exec dml nn_notes # nn -browse -notes-dir "$HOME/Notes"
+bindsym $Mod+backslash 	$dd unicode
+bindsym $mod+a 		    $exec dml nn_notes # nn -browse -notes-dir "$HOME/Notes"
 bindsym $mod+u 		    $exec dml nn_unim # nn -browse -notes-dir "$HOME/UniMaterial"
+bindsym $mod+c			  $exec $HOME/.i3/scripts/ddspawn icalc.py # dd-halc
+bindsym $mod+Shift+n	$exec $HOME/.i3/scripts/ddspawn nb  # dd-halc
 bindsym $mod+d			$exec dml
 bindsym $mod+Shift+d	$exec dmenu_run
 bindsym $mod+m 			$dd music
@@ -180,13 +187,11 @@ bindsym $mod+less 				$exec lmc prev
 bindsym $mod+Shift+less			$exec lmc replay
 bindsym $mod+greater			$exec lmc next
 bindsym $mod+Shift+greater		$exec lmc next
-bindsym $mod+p					$exec lmc toggle
-bindsym $mod+Shift+p			$exec lmc pause
 bindsym $mod+bracketleft 		$exec lmc back 10
 bindsym $mod+Shift+bracketleft 	$exec lmc back 120
 bindsym $mod+bracketright 		$exec lmc forward 10
 bindsym $mod+Shift+bracketright $exec lmc forward 120
-bindsym $mod+F2		$exec ~/.config/i3/gen_conf; restart
+bindsym $mod+F2		$exec ~/.i3/gen_conf; restart
 bindsym $mod+F6		$exec torwrap
 bindsym $mod+F7		$exec td-toggle
 bindsym $mod+F9		$exec dmenu_mount
@@ -202,6 +207,7 @@ assign [instance="netflix"]         $WSmovie
 for_window 	[instance="netflix"] 	border pixel 0
 for_window 	[instance="netflix"] 	border radius 0
 assign [class="thunderbird"]        $WS10
+assign [class="Minecraft"]          $WS5
 assign [class="discord"]            $WS6
 for_window [class="discord"]        floating enable
 for_window [class="discord"]        resize set 1200 800
@@ -209,6 +215,7 @@ for_window [class="discord"]        move position center
 for_window [instance="WhatsApp"]    floating enable
 for_window [instance="WhatsApp"]    resize set 1200 800
 for_window [instance="WhatsApp"]    move position center
+for_window 	[class="Zathura"] 	border pixel 0px
 for_window 	[class="Pinentry"] 		sticky enable
 for_window 	[class="sent"] 			border pixel 0px
 for_window 	[title="GIMP Startup"] 	move workspace $WSgimp
@@ -225,6 +232,13 @@ for_window 	[title="mpvfloat"]      floating enable
 for_window 	[title="mpvfloat"]      sticky enable
 for_window 	[title="mpvfloat"]      border pixel 0
 no_focus 	[title="mpvfloat"]
+for_window 	[class="MuPDF"]      floating enable
+for_window 	[class="MuPDF"]      resize set 800 600
+for_window 	[class="MuPDF"]      move position center
+for_window 	[class="MuPDF"]      move right 500
+for_window 	[class="MuPDF"]      move down 200
+for_window 	[class="MuPDF"]      border pixel 0
+no_focus 	[class="MuPDF"]
 for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
@@ -235,37 +249,39 @@ for_window [instance="dropdown_dropdowncalc"] resize set 800 600
 for_window [instance="dropdown_tmuxdd"] border pixel 3
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
-bindsym XF86AudioMute					$exec lmc mute
-bindsym XF86AudioLowerVolume			$exec lmc down 1
-bindsym Shift+XF86AudioLowerVolume		$exec lmc down 10
-bindsym XF86AudioRaiseVolume			$exec lmc up 1
-bindsym Shift+XF86AudioRaiseVolume		$exec lmc up 10
-bindsym XF86PowerOff					$exec prompt "Shutdown computer?" "$shutdown"
-bindsym XF86Calculator					$exec ddspawn dropdowncalc -f mono:pixelsize=24
-bindsym XF86Explorer					$exec $term -e $FILE
-bindsym XF86WWW							$exec $BROWSER
-bindsym XF86ScreenSaver					$exec lockscreen
-bindsym XF86MyComputer					$exec $term -e $FILE
-bindsym XF86Eject						$exec dmenuumount
-bindsym XF86AudioNext					$exec lmc next
-bindsym XF86AudioPlay					$exec lmc toggle
-bindsym XF86AudioPrev					$exec lmc prev
-bindsym XF86AudioStop					$exec lmc toggle
-bindsym XF86AudioRewind					$exec lmc back 10
-bindsym XF86AudioForward				$exec lmc forward 10
-bindsym XF86HomePage					$exec $BROWSER
-bindsym XF86Reload						restart
-bindsym XF86Suspend						$exec lockscreen
-bindsym XF86Close						kill
-bindsym XF86WebCam						$exec camtoggle
-bindsym XF86Mail						$exec $term -e neomutt && pkill -RTMIN+12 i3blocks
-bindsym XF86Messenger					$exec $term -e weechat
-bindsym XF86Search						$exec $BROWSER https://duckduckgo.com
-bindsym XF86MonBrightnessDown			$exec lux -s 10%
-bindsym XF86MonBrightnessUp				$exec lux -a 10%
-bindsym XF86AudioMedia					$exec $term -e ncmpcpp
-bindsym XF86Display						$exec displayselect
-bindsym XF86Documents					$exec $term -e $FILE ~/Documents
+for_window [instance="dropdown_icalc.py"] resize set 500 500
+for_window [instance="dropdown_icalc.py"] move position 200 260
+bindsym XF86AudioMute                   $exec lmc mute
+bindsym XF86AudioLowerVolume            $exec lmc down 1
+bindsym Shift+XF86AudioLowerVolume      $exec lmc down 10
+bindsym XF86AudioRaiseVolume            $exec lmc up 1
+bindsym Shift+XF86AudioRaiseVolume      $exec lmc up 10
+bindsym XF86PowerOff                    $dd shutdown
+bindsym XF86Calculator                  $exec ddspawn dropdowncalc -f mono:pixelsize=24
+bindsym XF86Explorer                    $exec $term -e $FILE
+bindsym XF86WWW                         $exec $BROWSER
+bindsym XF86ScreenSaver                 $exec lockscreen
+bindsym XF86MyComputer                  $exec $term -e $FILE
+bindsym XF86Eject                       $exec dmenuumount
+bindsym XF86AudioNext                   $exec lmc next
+bindsym XF86AudioPlay                   $exec lmc toggle
+bindsym XF86AudioPrev                   $exec lmc prev
+bindsym XF86AudioStop                   $exec lmc toggle
+bindsym XF86AudioRewind                 $exec lmc back 10
+bindsym XF86AudioForward                $exec lmc forward 10
+bindsym XF86HomePage                    $exec $BROWSER
+bindsym XF86Reload						          restart
+bindsym XF86Suspend                     $exec lockscreen
+bindsym XF86Close						            kill
+bindsym XF86WebCam                      $exec camtoggle
+bindsym XF86Mail                        $exec $term -e neomutt && pkill -RTMIN+12 i3blocks
+bindsym XF86Messenger                   $exec $term -e weechat
+bindsym XF86Search                      $exec $BROWSER https://duckduckgo.com
+bindsym XF86MonBrightnessDown           $exec lux -s 10%
+bindsym XF86MonBrightnessUp             $exec lux -a 10%
+bindsym XF86AudioMedia                  $exec $term -e ncmpcpp
+bindsym XF86Display                     $exec displayselect
+bindsym XF86Documents                   $exec $term -e $FILE ~/Documents
 set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
 mode "$freeze" { bindsym $mod+Shift+f mode "default"
 }

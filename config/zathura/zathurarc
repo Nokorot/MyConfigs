@@ -1,9 +1,13 @@
-set default-bg "#444444"
+# set default-bg "#444444"
+set default-bg ff00ff
 set selection-clipboard clipboard
 
 set page-padding 1
 
-window-title-home-tilde
+# echao
+# font monospace normal 20
+
+# window-title-home-tilde
 #statusbar-home-tilde
 
 #map <A-j> scroll down
@@ -11,10 +15,13 @@ window-title-home-tilde
 #map j scroll half-down
 #map k scroll half-up
 
+map [index] I down 
+
 # set recolor true
 map I set recolor true
-set recolor_darkcolor "#BDE090"
-set recolor_lightcolor "#333333"
+# set recolor_darkcolor BDE090
+set recolor_lightcolor ff00ff
+# set recolor_lightcolor "#5555555"
 
 map <Space> scroll half-down
 map <S-Space> scroll half-up

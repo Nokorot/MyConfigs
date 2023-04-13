@@ -6,5 +6,6 @@ case $BLOCK_BUTTON in
 - Click to show memory hogs." ;;
 esac
 
+
 printf "🧠 "
 free --si -h | awk '/^Mem:/ {print $3 "/" $2}'

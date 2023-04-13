@@ -10,12 +10,17 @@
 if xwininfo -tree -root | grep "(\"dropdown_$1\" ";
 then
 	echo "Window detected."
-	i3 "[instance=\"dropdown_$1\"] scratchpad show; [instance=\"dropdown_$1\"] move position center"
+	i3 "[instance=\"dropdown_$1\"] scratchpad show;"
+      #  [instance=\"dropdown_$1\"] move position center"
 else
 	echo "Window not detected... spawning."
 	case $TERMINAL in 
 		"st") echo "st -n dropdown_$1 -e $@" | ${SHELL:-"/bin/sh"} ;;
 		"urxvt") echo "urxvt -name dropdown_$1 -e $@" | ${SHELL:-"/bin/sh"} ;;
-		*) notify-send "$TERMINAL is not suported!"
+    "kitty") # NOTE: This requies .bashrc to run ONSTART if set
+          echo "ONSTART=\"$@\" kitty --name dropdown_$1" | ${SHELL:-"/bin/sh"} ;
+
+          echo "Hey" ;;
+		*) notify-send "$TERMINAL is not suported!";;
 	esac
 fi
