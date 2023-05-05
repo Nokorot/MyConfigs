@@ -9,6 +9,8 @@ vmap <M-a> 		    :!align -clmn 4 ''<Left>
 nmap <M-J>         :m +1<CR>
 nmap <M-K>         :m -2<CR>
 
+set spell spelllang=en_gb
+setlocal spellfile+=oneoff.utf-8.add
 
 set tabstop=2
 set shiftwidth=4
@@ -153,5 +155,4 @@ map Tw  "xdiwhxbP"xP
 call plug#begin('~/.vim/plugged')
 Plug 'mk12/vim-lean', { 'for': 'lean' }
 call plug#end()
-
 

@@ -27,7 +27,7 @@ for_window [instance="WhatsApp"]    move position center
 
 # assign [class="okular"] $WS7
 
-for_window 	[class="Zathura"] 	border pixel 0px
+# for_window 	[class="Zathura"] 	border pixel 0px
 
 # for_window 	[class="okular"] 	move workspace $WS7
 # for_window 	[class="okular"] 	workspace $ws7; layout tabbed
@@ -42,9 +42,10 @@ for_window 	[title="Default - Wine desktop"] 	 floating enable
 for_window 	[class="zoom"] 	        floating enable
 for_window 	[title="Zoom Meeting"] 	floating disabled
 
-for_window 	[class="Matplotlib"]    floating enable
-for_window 	[class="Matplotlib"]    resize set 800 600
-for_window 	[class="Matplotlib"]    move position center
+for_window 	[class="matplotlib"]    floating enable
+for_window 	[class="matplotlib"]    resize set 800 600
+for_window 	[class="matplotlib"]    move position center
+for_window 	[class="matplotlib"]    move right 400 
 
 # Bindings to make the webcam float and stick.
 for_window 	[title="mpvfloat"]      floating enable

@@ -75,7 +75,7 @@ mc4d
 # Background programs
 #
 picom           pkill picom; sleep .1; picom --vsync --backend glx --force-win-blend \
-    --glx-fshader-win "$(cat ~/.config/compton/fshader.glsl)"
+    --glx-fshader-win "$(~/.config/compton/fshader.sh)"
 
 # Note:     This does not stop the mpv subprosess. 
 #           Could run mpv in a thread, that would be closed when porting to C.

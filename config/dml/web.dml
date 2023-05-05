@@ -16,6 +16,9 @@ incognito       google-chrome --incognito
 netflix         i3-msg "workspace $WSmovie"; \
                 brave --app="https://www.netflix.com" & \
                 i3-on_open "border pixel 0" "border radius 0" & 
+disney+         i3-msg "workspace $WSmovie"; \
+                brave --app="https://www.disneyplus.com/eu/en-gb/home" & \
+                i3-on_open "border pixel 0" "border radius 0" & 
 prime_vid       i3-msg "workspace $WSmovie"; \
                 brave --app="https://www.amazon.com/gp/video/storefront" & \
                 i3-on_open "border pixel 0" "border radius 0" & 

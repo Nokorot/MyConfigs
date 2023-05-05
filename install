@@ -179,10 +179,13 @@ install_i3() {
 
   git clone https://www.github.com/Nokorot/i3 i3
   cd i3
-  autoreconf --force --install
-  rm -rf build/ && mkdir -p build && cd build/
-  ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
-  make && sudo make install
+  rm -rf build && mkdir -p build && cd build
+  meson ..
+  ninja
+  # autoreconf --force --install
+  # rm -rf build/ && mkdir -p build && cd build/
+  # ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+  # make && sudo make install
 
 
   sudo apt install -y i3blocks

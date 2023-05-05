@@ -1,7 +1,7 @@
 exec source ~/.uservars
 default_border pixel 2
-default_border_radius 5
-gaps inner 10
+default_border_radius 0
+gaps inner 0
 gaps outer 0
 set $base00 #020202
 set $base01 #ffffff
@@ -215,7 +215,6 @@ for_window [class="discord"]        move position center
 for_window [instance="WhatsApp"]    floating enable
 for_window [instance="WhatsApp"]    resize set 1200 800
 for_window [instance="WhatsApp"]    move position center
-for_window 	[class="Zathura"] 	border pixel 0px
 for_window 	[class="Pinentry"] 		sticky enable
 for_window 	[class="sent"] 			border pixel 0px
 for_window 	[title="GIMP Startup"] 	move workspace $WSgimp
@@ -225,9 +224,10 @@ for_window 	[window_role="GtkFileChooserDialog"] move position center
 for_window 	[title="Default - Wine desktop"] 	 floating enable
 for_window 	[class="zoom"] 	        floating enable
 for_window 	[title="Zoom Meeting"] 	floating disabled
-for_window 	[class="Matplotlib"]    floating enable
-for_window 	[class="Matplotlib"]    resize set 800 600
-for_window 	[class="Matplotlib"]    move position center
+for_window 	[class="matplotlib"]    floating enable
+for_window 	[class="matplotlib"]    resize set 800 600
+for_window 	[class="matplotlib"]    move position center
+for_window 	[class="matplotlib"]    move right 400
 for_window 	[title="mpvfloat"]      floating enable
 for_window 	[title="mpvfloat"]      sticky enable
 for_window 	[title="mpvfloat"]      border pixel 0

@@ -19,7 +19,7 @@ displayselect   $HOME/.bin/displayselect
 
 yt_music_stream $TERMINAL -e 'yt_music_stream'
 
-
+curve_brightnes ~/.bin/curve-brightnes.sh
 
 # nn
 bookmarks       ~/.bin/bookmarks-nn

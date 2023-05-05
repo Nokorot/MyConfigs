@@ -16,7 +16,6 @@ nnoremap <C-e> :call TexEnv(input("TeX environment name: "))<CR>
 
 " nnoremap <M-CR>	 	:w <CR>:!./.compile.sh  <CR>
 nnoremap \\s	 	:!./.compile.sh silent<CR>
-" nnoremap \\o	 	:!zathura-tabbed main.pdf<CR>
 nnoremap \\o	 	:!./.compile.sh open<CR>
 nnoremap \b cw\begin{<C-R>"}<CR>\end{<C-R>"}
 
@@ -26,28 +25,15 @@ function! Synctex()
 endfunction
 map <C-enter> :call Synctex()<cr>
 
-
-
-
 " nnoremap <C-s>      a<BG><Esc>:r!{tex_snipits \| sed 's/BG//g'}<CR>?BG<CR>dd/<CSR><CR>
 " nmap <C-s>      :call Snipits("tex")<CR>
 " vmap <C-s>      "rx:call Snipits("tex")<CR>"rP
 " vmap <C-s>      :'<,'>!snipits -e tex<CR>?<CR>vf>x
 
-
-
 let g:Tex_SmartKeyQuote=0
-
-" map <C-k> 		<Esc>?<+.*+><CR>vf>
-" map <C-j> 		<Esc>/<+.*+><CR>vf>
 
 imap \[             \[  \]<++><Esc>6hi
 imap \{             \{  \}<++><Esc>6hi
-" imap {}   {}<Esc>i
-" imap ()   ()<Esc>i
-" imap []   []<Esc>i
-" imap <>   <><Esc>i
-" imap ""   ""<Esc>i
 imap $$         $$<++><ESC>4hi
 imap {}         {}<++><ESC>4hi
 imap ()         ()<++><ESC>4hi
@@ -56,9 +42,6 @@ imap <>         <><++><ESC>4hi
 imap ""         ""<++><ESC>4hi
 imap ''         ''<++><ESC>4hi
 
-
-
-set spell spelllang=en_gb
 
 " set numbers " (optional - will help to visually verify that it's working)
 set textwidth=80

@@ -4,8 +4,8 @@ exec source ~/.uservars
 
 ## #---Window borders---# #
 default_border pixel 2
-default_border_radius 5
-gaps inner 10
+default_border_radius 0
+gaps inner 0
 gaps outer 0
 
 set $base00 #020202
