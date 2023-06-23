@@ -1,27 +1,22 @@
-# This file list all the keywords that apear when runding dmenu_run
-#
-# TODO:
-# Divide this into a directory
+# vim: ft=dml
+
+# This file list all the keywords that appear when running dml
 # 
 # Basics
 shutdown        prompt "Shutdown computer?" && shutdown now
 reboot          prompt "Reboot computer?" && sudo reboot
-hibernate 	    prompt "Reboot computer?" && sudo -A systemctl suspend
+hibernate 	    prompt "Hibernate computer?" && sudo -A systemctl suspend
 exit            prompt "Exit i3?" && i3-msg exit
 lock            xset dpms force off; i3lock-fancy
 
-
+%if [ -z "$DML_EXCLUDE_SCRIPTS" ]
 %include /home/noko/.config/dml/scripts.dml
+%endif 
+
 %include /home/noko/.config/dml/progs.dml
+
+%if pgrep -x i3
 %include /home/noko/.config/dml/i3.dml
+%endif
+
 %include /home/noko/.config/dml/web.dml
-
-
-# Restart Demons
-#               This does not stop the mpv subprosess. 
-#               Could run mpv in a thread, that would be closed when proting to C.
-ytpl            pkill ytpl; ytpl -s ~/LMedia/Music/*.lst
-
-ci3             i3 workspace i3_conf; cd ~/.i3; $TERMINAL
-vdml            i3 workspace dml_conf; cd ~/.config/dml; $TERMINAL
-# i3-msg         dml -p "i3-msg" -c "$HOME/.config/dml/i3.dml"

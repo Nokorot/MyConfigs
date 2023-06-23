@@ -81,7 +81,7 @@ void main() {
     // c = c * (1. + sqrt( (c.r+c.g+c.b)/3. ));
 
     vec3 hsl = rgb2hsl(c.rgb);
-    hsl.z = pow(hsl.z, max(.2, min(1.0, BRIGHTNES_CURVE)));
+    hsl.z = pow(hsl.z, BRIGHTNES_CURVE);
     
     c.rgb = hsl2rgb(hsl);
     

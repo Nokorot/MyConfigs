@@ -1,0 +1,2 @@
+
+%pregen find "$NOTES" -type f \( -name "*.pnf" -o -name "*.epub" \)

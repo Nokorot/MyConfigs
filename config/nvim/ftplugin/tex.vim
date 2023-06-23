@@ -6,13 +6,9 @@ set sw=0
 " all the figure labels. Very useful!
 set iskeyword+=:
 
-fun! TexEnv(name)
-        call append(line("."), "\\end{" . a:name . "}")
-        call append(line(".")-1, "\\begin{" . a:name . "}")
-endfun
-command! -nargs=1 Texenv call TexEnv("<args>")
+set spell spelllang=en_gb
+setlocal spellfile+=oneoff.utf-8.add
 
-nnoremap <C-e> :call TexEnv(input("TeX environment name: "))<CR>
 
 " nnoremap <M-CR>	 	:w <CR>:!./.compile.sh  <CR>
 nnoremap \\s	 	:!./.compile.sh silent<CR>
@@ -51,3 +47,23 @@ set linebreak " (optional - breaks by word rather than character)
 
 
 set nofoldenable
+
+
+""""""""""""""""""""""""
+"" latex-suite """""""""
+""""""""""""""""""""""""
+filetype plugin on
+filetype indent on
+let g:tex_flavor='latex'
+
+hi clear SpellBad
+hi SpellBad cterm=underline ctermbg=red
+
+autocmd FileType * exec("setlocal dictionary+=".$HOME."/.config/nvim/dictionaries/".expand('<amatch>'))
+set completeopt=menuone,longest,preview
+set complete+=k
+
+call plug#begin('~/.vim/plugged')
+Plug 'mk12/vim-lean', { 'for': 'lean' }
+call plug#end()
+

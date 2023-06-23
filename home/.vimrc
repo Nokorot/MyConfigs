@@ -1,24 +1,32 @@
 nnoremap <C-j> 		:tabprevious<CR>
 nnoremap <C-k> 		:tabnext<CR>
 
-inoremap jj <ESC>
-
 set tabstop=4
 " set smartindent
 
+call plug#begin()
+Plug 'neoclide/coc.nvim'
+Plug 'preservim/nerdtree'
+Plug 'jiangmiao/auto-pairs'
+Plug 'gruvbox-community/gruvbox'
+
+call plug#end()
+
+" use <tab> to trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+"set termguicolors
+" colo gruvbox
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <c-b> <Esc>:NERDTreeToggle<cr>
+nnoremap <c-b> <Esc>:NERDTreeToggle<cr>
 
 
-" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
-
-" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
-" can be called correctly.
-set shellslash
-
-" OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'

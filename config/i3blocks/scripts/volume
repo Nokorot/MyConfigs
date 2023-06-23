@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e pulsemixer > /dev/null & ;;
+	# 1) setsid "$TERMINAL" -e pulsemixer > /dev/null & ;;
+	1) gnome-control-center sound ;;
 	2) pulsemixer --toggle-mute ;;
 	4) pulsemixer --change-volume +5 ;;
 	5) pulsemixer --change-volume -5 ;;
@@ -10,9 +11,15 @@ case $BLOCK_BUTTON in
 - Scroll to change."
 esac
 
-[ "$(pulsemixer --get-mute)" = "1" ] && printf "🔇\\n" && exit
+# [ "$(pulsemixer --get-mute)" = "1" ] && printf "🔇\\n" && exit
+if [[ "$(pactl get-sink-mute 0)" == *"yes" ]]; then
+  printf "🔇\\n" && exit
+fi
 
-vol=$(pulsemixer --get-volume | awk '{print $1}')
+# echo "'$(pactl get-sink-mute 0)'"
+
+# vol=$(awk '{print $1}' <(pulsemixer --get-volume))
+vol=$(awk -F"[][]" '/Left:/ { print $2 }' <(amixer sget Master))
 
 if [ "$vol" -gt "70" ]; then
 	icon="🔊"
@@ -22,4 +29,4 @@ else
 	icon="🔉"
 fi
 
-printf "%s %s%%\n" "$icon" "$vol"
+printf "%s %s\n" "$icon" "$vol"

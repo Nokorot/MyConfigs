@@ -1,95 +1,109 @@
+# vim: ft=dml
+
 #
 # Browsers
 #
-browser         brave # $BROWSER
-# google-chrome
-# chromium
-# chrome
-# zathura
-# sxiv
-# firefox
+browser         brave-browser # $BROWSER
 
-steam
-zoom_dmenu
-zoom
+%check google-chrome
+%check chromium
+%check chrome
+%check firefox
 
+# %check zathura
+# %check sxiv
+%check nautilus nautilus
+
+%check* brave   Tor brave --tor
+
+%check steam
+%check lutris
+%check heroic          flatpak run com.heroicgameslauncher.hgl
+%check zoom_dmenu
+%check zoom
+
+%check* gnome-control-center \
+       gnome-settings     gnome-control-center
+%check gnome-calculator
+%check gnome-software
+%check gnome-characters
+%check gnome-terminal
+%check gnome-text-editor
 #
 # Terminals
 #
-terminal kitty
-# st 
-# urxvt
-# xterm
-# tilix
-kitty
+terminal $TERMINAL
+
+%check st
+%check urxvt
+%check xterm
+%check tilix
+%check kitty
 #
 # Editors
 #
-emacs
-gedit
-idea            idea
-eclipse 
-vscode          code
+%check emacs
+%check* nvim      nvim $TERMINAL -e nvim
+%check neovide
+%check gedit
+%check eclipse
+%check idea
+%check* code      vscode  code
 
-icalc.py        $TERMINAL -e icalc.py
+
+%check icalc.py        $TERMINAL -e icalc.py
 
 # ws spesific
 # music 			i3-msg "workspace $WSmusic";    $TERMINAL -e ncmpcpp -p 6000
 
-thunderbird     i3-msg "workspace $WS10";       thunderbird
-gimp            i3-msg "workspace $WSgimp";     gimp
-okular          i3-msg "workspace $WS7; layout tabbed"; okular
-discord
-signal          signal-desktop
-# skype           skypeforlinux
-# tc              tc.app
+%check thunderbird     i3-msg "workspace $WS10";       thunderbird
+%check gimp            i3-msg "workspace $WSgimp";     gimp
+%check okular          i3-msg "workspace $WS7; layout tabbed"; okular
+%check discord
+# %check signal          signal-desktop
+signal                 flatpak run org.signal.Signal
+%check skype           skypeforlinux
 
 # Games
-# 
+#
 # minecraft       MultiMC
-multimc         multimc
-minetest
-2048-qt
-snake
-mc4d
+%check MultiMC    multimc         MultiMC
+polymc            polymc_launch
+%check minetest
+%check 2048-qt
+%check snake
+%check mc4d
+
+
 # xpuzles
-# xpyraminx
-# xbarrel
-# xmlink
-# xmball          xmball -bg "#111111" -fg "#111111" -bd "#0f0f0f"
-# xoct            xoct   -bg "#111111" -fg "#111111" -bd "#0f0f0f"
-# xpanex          xpanex -bg "#111111" -fg "#111111" -bd "#0f0f0f"
-# # slides
-# xtriangles      xtriangles  -bg "#111111" -fg "#111111" -tile  "#55aaaa"
-# xcubes          xcubes      -bg "#111111" -fg "#111111" -block "#55aaaa"
-# xhexagons       xhexagons   -bg "#111111" -fg "#111111" -tile  "#55aaaa"
-# # Ribix's
-# xdino
-# xrubik          cd ~/Games/Xrubik && \
-#                 xrubik -bg "#ff00ff" -face0 white -face1 blue -face2 red \
-#                     -face3 green -face4 yellow -face5 orange
-# xskewb          xskewb -face0 white -face1 blue -face2 red -face3 green -face4 yellow -face5 orange
-
+%check xpyraminx
+%check xbarrel
+%check xmlink
+%check xmball          xmball -bg "#111111" -fg "#111111" -bd "#0f0f0f"
+%check xoct            xoct   -bg "#111111" -fg "#111111" -bd "#0f0f0f"
+%check xpanex          xpanex -bg "#111111" -fg "#111111" -bd "#0f0f0f"
+%check xtriangles      xtriangles  -bg "#111111" -fg "#111111" -tile  "#55aaaa"
+%check xcubes          xcubes      -bg "#111111" -fg "#111111" -block "#55aaaa"
+%check xhexagons       xhexagons   -bg "#111111" -fg "#111111" -tile  "#55aaaa"
+%check xdino
+%check xrubik          cd ~/Games/Xrubik && \
+                       xrubik -bg "#ff00ff" -face0 white -face1 blue -face2 red \
+                           -face3 green -face4 yellow -face5 orange
+%check xskewb          xskewb -face0 white -face1 blue -face2 red -face3 green -face4 yellow -face5 orange
 
 #
-# Background programs
-#
-picom           pkill picom; sleep .1; picom --vsync --backend glx --force-win-blend \
-    --glx-fshader-win "$(~/.config/compton/fshader.sh)"
-
-# Note:     This does not stop the mpv subprosess. 
-#           Could run mpv in a thread, that would be closed when porting to C.
-ytpl            pkill ytpl; ytpl -s ~/LMedia/Music/*.lst
-
-#
-# Terminal programs 
+# Terminal programs
 #
 # calcurse        $TERMINAL -e calcurse
-nudoku          $TERMINAL -e nudoku
-sudoku          $TERMINAL -e sudoku
-ranger          $TERMINAL -e ranger
-pulsemixer      $TERMINAL -e pulsemixer     # used by i3 
-nmtui           $TERMINAL -e nmtui          # used by i3 
-htop            $TERMINAL -e htop           # used by i3 
-joplin          i3 workspace $WS0; $TERMINAL -e joplin
-trans-qt        transmission-qt
+%check nudoku          $TERMINAL -e nudoku
+%check sudoku          $TERMINAL -e sudoku
+%check ranger          $TERMINAL -e ranger
+%check pulsemixer      $TERMINAL -e pulsemixer     # used by i3
+%check nmtui           $TERMINAL -e nmtui          # used by i3
+%check htop            $TERMINAL -e htop           # used by i3
+%check joplin          i3 workspace $WS0; $TERMINAL -e joplin
+%check trans-qt        transmission-qt
+
+
+%check colorpicker     colorpicker --one-shot --preview | xclip -selection clipboard
+

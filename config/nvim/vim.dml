@@ -1,0 +1,26 @@
+# vim_search           call Search(input())
+vim_search           call Search()
+#       Note this one does not have _templates.json
+# snipits              call SnipitsNew() 
+snipits              call Snipits(&filetype)
+term_new             call system("$TERMINAL &")
+#                    new_term    call system("kitty &")
+
+%if [ "$FT" = "c" ] || [ "$FT" = "cpp" ]
+term_gdb             call system("$TERMINAL ./build.sh gdb &")
+# term_gdb             call system("$TERMINAL gdb -q --tui % &")
+%endif
+
+gen_snipits          !cd $TEMPLATES/snipits/; gen_index . | tee _index.json
+
+open_init            tabnew $HOME/.config/nvim/init.vim
+open_vdml            tabnew $HOME/.config/nvim/vim.dml
+open_custom_plugins  tabnew $HOME/.config/nvim/plugin/custom.vim
+
+open_snipits         tabnew $TEMPLATES/snipits/$FT
+
+
+%if [ -n "$FT" ]
+open_ftplugin        tabnew $HOME/.config/nvim/ftplugin/$FT.vim
+%endif
+

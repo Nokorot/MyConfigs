@@ -55,10 +55,10 @@ no_focus 	[title="mpvfloat"]
 
 
 for_window 	[class="MuPDF"]      floating enable
-for_window 	[class="MuPDF"]      resize set 800 600
-for_window 	[class="MuPDF"]      move position center
-for_window 	[class="MuPDF"]      move right 500 
-for_window 	[class="MuPDF"]      move down 200 
+for_window 	[class="MuPDF"]      resize set 800 900
+# for_window 	[class="MuPDF"]      move position center
+for_window 	[class="MuPDF"]      move right 1060 
+for_window 	[class="MuPDF"]      move down 100 
 for_window 	[class="MuPDF"]      border pixel 0
 no_focus 	[class="MuPDF"]
 

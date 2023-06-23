@@ -18,9 +18,9 @@ else
 		"st") echo "st -n dropdown_$1 -e $@" | ${SHELL:-"/bin/sh"} ;;
 		"urxvt") echo "urxvt -name dropdown_$1 -e $@" | ${SHELL:-"/bin/sh"} ;;
     "kitty") # NOTE: This requies .bashrc to run ONSTART if set
-          echo "ONSTART=\"$@\" kitty --name dropdown_$1" | ${SHELL:-"/bin/sh"} ;
-
-          echo "Hey" ;;
+          # echo "ONSTART=\"$@\" kitty --name dropdown_$1" | ${SHELL:-"/bin/sh"} ;
+          echo "ONSTART=\"$@\" kitty --name dropdown_$1" | ${SHELL:-"/bin/sh"} ;;
+          # echo "kitty -e $@ --name dropdown_$1" | ${SHELL:-"/bin/sh"} ;;
 		*) notify-send "$TERMINAL is not suported!";;
 	esac
 fi

@@ -16,7 +16,7 @@ mode "resize" {
 	bindsym Left	$resize left$movestep
 	bindsym Down	$resize down   $movestep
 	bindsym Up 		$resize up     $movestep
-	bindsym Rgiht	$resize right  $movestep
+	bindsym Right	$resize right  $movestep
 
     bindsym Return mode "default"
     bindsym Escape mode "default"

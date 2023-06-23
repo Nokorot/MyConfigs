@@ -83,12 +83,18 @@ case "$extension" in
     7z)
         # avoid password prompt by providing empty password
         try 7z -p l "$path" && { dump | trim; exit 0; } || exit 1;;
-	# PS and EPS documents:
-	ps|eps)
-		try gs -sDEVICE=jpeg -dJPEGQ=100 -dNOPAUSE -dBATCH -dSAFER -r300 -sOutputFile="${cached}" "$path" && exit 6 || exit 1;;
+	  # PS and EPS documents:
+	  ps|eps)
+	  	try gs -sDEVICE=jpeg -dJPEGQ=100 -dNOPAUSE -dBATCH -dSAFER -r300 -sOutputFile="${cached}" "$path" && exit 6 || exit 1;;
+    # EPUB
+    epub)
+		  unzip -p "$path" EPUB/cover.png \
+        | convert - -resize 800x "${cached//.png}" \
+        && exit 6 || exit 1 ;;
+
     # PDF documents:
     pdf)
-		try pdftoppm -jpeg -singlefile "$path" "${cached//.jpg}" && exit 6 || exit 1;;
+      pdftoppm -jpeg -singlefile "$path" "${cached//.jpg}" && exit 6 || exit 1;;
         #try pdftotext -l 10 -nopgbrk -q "$path" - && \
             #{ dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
     # BitTorrent Files
@@ -103,8 +109,8 @@ case "$extension" in
         try lynx   -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
         try elinks -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
         ;; # fall back to highlight/cat if the text browsers fail
+    *)
 esac
-
 
 case "$mimetype" in
     # Syntax highlight for text files:

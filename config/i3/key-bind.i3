@@ -2,7 +2,7 @@
 
 # #---Basic Definitions---# #
 set $term kitty # $TERMINAL 	#% Set $TERMIAL in .profile
-set $mod Mod4
+# set $mod Mod4
 set $mod2 Shift 
 set $mod3 Control
 
@@ -24,7 +24,7 @@ bindsym $mod+Mod3+i		exec xdotool click 5
 
 
 ## #---Basic Bindings---# #
-bindsym $mod+Return 		$exec $term
+bindsym $mod+Return 		$dd terminal
 
 bindsym $mod+Shift+Escape 	    $dd exit
 bindsym $mod+Shift+BackSpace	$dd shutdown
@@ -57,21 +57,26 @@ bindsym $mod+Shift+f    	focus mode_toggle
 bindsym $mod+Shift+space 	floating toggle
 
 ## #---Letter Key Bindings---# #
-# bindsym $Mod+oslash 	$exec dmenu_unicode
-bindsym $Mod+backslash 	$dd unicode
+# bindsym $mod+oslash 	$exec dmenu_unicode
+bindsym $mod+backslash 	$dd unicode
 
 
 
 bindsym $mod+a 		    $exec dml nn_notes # nn -browse -notes-dir "$HOME/Notes"
 bindsym $mod+u 		    $exec dml nn_unim # nn -browse -notes-dir "$HOME/UniMaterial"
 
+# bindsym $mod+c			  $exec $HOME/.i3/scripts/ddspawn icalc.py # dd-halc 
 bindsym $mod+c			  $exec $HOME/.i3/scripts/ddspawn icalc.py # dd-halc 
 bindsym $mod+Shift+n	$exec $HOME/.i3/scripts/ddspawn nb  # dd-halc 
+
+bindsym $mod+w      $exec rofi -show window
+
 
 bindsym $mod+d			$exec dml 
 bindsym $mod+Shift+d	$exec dmenu_run
 
 bindsym $mod+m 			$dd music
+
 # bindsym $mod+w      sticky toggle
 # bindsym $mod+w	        $dd browser 
 # bindsym $mod+Shift+a	$dd pulsemixer

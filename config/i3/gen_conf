@@ -3,6 +3,8 @@
 cdir=$HOME/.i3/
 gdir=$HOME/.i3/gen-files/
 
+mkdir -p $gdir
+
 rmc() { sed -e '/^\s*$/d;s/\s*$//;/^\s*#/d;s/\s*#%.*$//'; }
 
 ws_names_i3() {

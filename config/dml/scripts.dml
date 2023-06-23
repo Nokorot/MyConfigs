@@ -1,4 +1,5 @@
 
+# Random command
 RR_IR           cd "/home/noko/Source/html_to_epub"; \
                 python RR_rss.py books/IR/IR.yaml -o >(read o; \
                 [ -z "$o" ] \
@@ -6,46 +7,59 @@ RR_IR           cd "/home/noko/Source/html_to_epub"; \
                     || { notify-send "Sending - $o"; \
                          sendToKindle "$o" | xargs notify-send; } )
 
-# lean-tut        cd Lean; code tutorials
-lean-geo        cd Lean; code geometry
 
-parent          i3-msg focus parent
-child           i3-msg focus child 
+click          xdotool type "player 100 login"; sleep .1; xdotool key Return; sleep .1; \
+                  xdotool type "player 101 login"; sleep .1; xdotool key Return; sleep .1; \
+                  xdotool type "player 102 login"; sleep .1; xdotool key Return; sleep .1; \
+                  xdotool type "player 103 login"; sleep .1; xdotool key Return; sleep .1;
+# click           xdotool mousedown 1; xdotool keydown w
 
 
-click           xdotool mousedown 1; xdotool keydown w
-
-displayselect   $HOME/.bin/displayselect
-
+music           lmc dmenu
 yt_music_stream $TERMINAL -e 'yt_music_stream'
 
-curve_brightnes ~/.bin/curve-brightnes.sh
+# Menues
+nn_notes        nn_pv $NOTES
+nn_unim         nn_pv $UNINOTES
+nb              $HOME/.i3/scripts/ddspawn nb -pp --menu tmenu
+bookmarks       bookmarks-nn
+bookmarks_tmenu $HOME/.i3/scripts/ddspawn bookmarks-nn --menu tmenu
 
-# nn
-bookmarks       ~/.bin/bookmarks-nn
 
-nn_notes        nn -notes-dir "$NOTES" -browse \
-                        -dmargs "-i -l 20 -pv >(PVDIR='$NOTES' ~/.bin/preview_mupdf.sh) "
-nn_unim         nn -notes-dir "$UNINOTES" -browse \
-                        -dmargs "-i -l 20 -pv >(PVDIR='$UNINOTES' ~/.bin/preview_mupdf.sh) "
-# nb              nb -nw
-nb              .i3/scripts/ddspawn nb -pp --menu tmenu
+nn_books        nn -regex '.epub$' -browse -notes-dir ~/books \
+          -dmargs "-width 1000 -l 22 -pv >(PVDIR=/home/noko/books ~/.bin/preview_mupdf.sh --epub)" 
 
-# unicode         dmenuunicode
-# unicode_insert  dmenuunicode insert
-
-unicode         .i3/scripts/ddspawn unicode_menu -i -w "$(get_winId)" 
-unicode-clip    .i3/scripts/ddspawn unicode_menu
+unicode         $HOME/.i3/scripts/ddspawn unicode_menu # -i -w "$(get_winId)"
 
 trash-empty     res="$(trash-empty --is-empty)" && { dm_alert "$res" } || \
                    .i3/scripts/ddspawn trash-empty
 trash-restore   res="$(trash-empty --is-empty)" && { dm_alert "$res" } || \
                    .i3/scripts/ddspawn restore
 
-music 			    lmc dmenu
+%check        picom           pkill picom; sleep .1; picom --vsync --backend glx --force-win-blend \
+                                         --glx-fshader-win "$(~/.config/compton/fshader.sh)"
 
-dl_uni          python $HOME/Dropbox/Documents/UniMaterial/read_feed.py
+## Run scripts
+curve_brightnes ~/.bin/curve-brightnes.sh
+xbrightness     printf '1.0\n.9\n.8\n.7\n.6\n.5' | dmenu | read i; \
+                         [ -z "$i" ] || { xrandr --output eDP --brightness "$i"; }
+
 gen_snipits     cd $TEMPLATES/snipits/; gen_index . > _index.json
+# dl_uni          python $DROPBOX_DIR/Documents/UniMaterial/read_feed.py
 
+## Restart Demons
+#               This does not stop the mpv subprosess.
+#               Could run mpv in a thread, that would be closed when proting to C.
 
-colorpicker     colorpicker --one-shot --preview | xclip -selection clipboard
+ytpl            pkill ytpl; ytpl -s ~/LMedia/Music/*.lst
+
+## Open config workspaces
+
+%check* neovide   i3_config       i3 workspace i3_conf; cd ~/.i3; neovide
+# ci3             i3 workspace i3_conf; cd ~/.i3; $TERMINAL
+
+%check* neovide   dml_config      i3 workspace dml_conf; cd ~/.config/dml; neovide main
+# %otherwise   vdml            i3 workspace dml_conf; cd ~/.config/dml; $TERMINAL
+
+# i3-msg         dml -p "i3-msg" -c "$HOME/.config/dml/i3.dml"
+

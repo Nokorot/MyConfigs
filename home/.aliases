@@ -15,19 +15,12 @@ alias cp="cp -i"
 alias rn="bulkrename"
 
 # cd + clear
-function c() { [ ! -z "$1" ] && cd "$1"; clear && pp && ls; }
+function c() { [ ! -z "$1" ] && cd "$1"; clear && pp; }
 
-function cd() { 
-    builtin cd "$@"
-    ls
-}
 function cpp() {
     # TODO: Might want to allow $1 "the source" to consist of mutliple files,
     rsync -hr --info=progress2 "$1" "$2"
 }
-
-# youtube-dl
-
 
 alias yt_x='youtube-dl -xi --download-archive ./list' # ~/.config/youtube-dl/music.txt'
 alias yt_v='youtube-dl --download-archive ./list' # ~/.config/youtube-dl/video.txt
@@ -37,8 +30,12 @@ yt_ply() { mpv "$(youtube-dl -xg "$1")"; }
 alias sxiv="sxiv -oat"
 
 # alias v="nvim"
-function v() { realpath "$@" | xargs -d'\n' nvim -p; }
-alias e=emacs
+function realpaths () {
+    realpath "$@" | \
+        sed 's/\(.*\)/"\1"/' | tr '\n' ' '
+}
+function v() { sh -c "nvim -p $(realpaths "$@")";  }
+alias vgit="nvim -c ':Git'"
 
 alias r="ranger"
 
@@ -52,10 +49,7 @@ alias uniPrint="~/.bin/uniPrint"
 alias xc="xclip -selection clipboard"
 alias hl="/usr/share/vim/vim81/macros/less.sh"
 
-
-alias gg="google-chrome-stable >/dev/null 2>&1 & disown"
-function ga() { google-chrome --app="http://$1" 2>&1 & disown; }
-function ee() { emacs "$@" > /dev/null & disown; }
+alias dragon="dragon -x -a"
 
 # Default to sudo
 alias mount="sudo mount"
@@ -69,7 +63,6 @@ function vdml() {
     nvim "$1"
     popd >/dev/null
 }
-
 
 function dm-wlist() { echo "$@" >> ~/.config/dmenu_run.wlist; }
 

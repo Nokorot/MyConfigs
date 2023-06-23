@@ -5,7 +5,7 @@ exec source ~/.uservars
 ## #---Window borders---# #
 default_border pixel 2
 default_border_radius 0
-gaps inner 0
+gaps inner 5
 gaps outer 0
 
 set $base00 #020202
@@ -26,7 +26,7 @@ bar {
     status_command i3blocks
     position top
     strip_workspace_numbers yes
-    separator_symbol "|" # 𓀅
+    # separator_symbol "|" # 𓀅
     colors {
         background $base00
         statusline $base05
@@ -37,6 +37,8 @@ bar {
         inactive_workspace $base00 $base00  $base04
     }
 }
+
+set $mod Mod4
 
 # Widow Colours
 #                       border  background text    indicator

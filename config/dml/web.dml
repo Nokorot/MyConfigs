@@ -5,30 +5,30 @@
 # AFA(MAT4450)    $BROWSER https://www.uio.no/studier/emner/matnat/math/MAT4450/v21/
 # AT(MAT4530)     $BROWSER https://www.uio.no/studier/emner/matnat/math/MAT4530/v21/
 
-whatsapp        brave --app="https://web.whatsapp.com/"
-overleaf        brave --app="https://www.overleaf.com/"
+whatsapp        $BROWSER --app="https://web.whatsapp.com/"
+overleaf        $BROWSER --app="https://www.overleaf.com/"
 
 
 # incognito     $BROWSER --incognito
-incognito       google-chrome --incognito
+incognito       $BROWSER --incognito
 # netflix         $BROWSER --app="https://www.netflix.com" & \
 #                 i3-msg "workspace $WSmovie"
 netflix         i3-msg "workspace $WSmovie"; \
-                brave --app="https://www.netflix.com" & \
-                i3-on_open "border pixel 0" "border radius 0" & 
+                $BROWSER --app="https://www.netflix.com" & \
+                i3-on_open "border pixel 0" "border radius 0" &
 disney+         i3-msg "workspace $WSmovie"; \
-                brave --app="https://www.disneyplus.com/eu/en-gb/home" & \
-                i3-on_open "border pixel 0" "border radius 0" & 
+                $BROWSER --app="https://www.disneyplus.com/eu/en-gb/home" & \
+                i3-on_open "border pixel 0" "border radius 0" &
 prime_vid       i3-msg "workspace $WSmovie"; \
-                brave --app="https://www.amazon.com/gp/video/storefront" & \
-                i3-on_open "border pixel 0" "border radius 0" & 
+                $BROWSER --app="https://www.amazon.com/gp/video/storefront" & \
+                i3-on_open "border pixel 0" "border radius 0" &
 
 
-calendar        brave --app="https://calendar.google.com/calendar"
-youtube         brave www.youtube.com/feed/subscriptions
+calendar        $BROWSER --app="https://calendar.google.com/calendar"
+youtube         $BROWSER www.youtube.com/feed/subscriptions
 messenger       i3 workspace $WS8; \
                 $BROWSER --app="https://www.messenger.com"
 twitch          $BROWSER --app="https://www.twitch.com"
-porn            i3-msg "workspace PP; gaps inner current set 0"; \
+PP              i3-msg "workspace PP; gaps inner current set 0"; \
                 i3-on_open "border pixel 0" "border radius 0" & \
-                brave --new-window --incognito https://www.pornhub.com & \
+                $BROWSER --new-window --incognito https://www.pornhub.com &
